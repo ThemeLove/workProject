@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<permissionConfig>
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+	</permissionConfig>
+	<applicationConfig>
+		<activity
+            android:name="com.dkm.sdk.activity.DkmMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/DkmCustomTheme" >
+        </activity>
+        <activity
+            android:name="com.dkm.sdk.activity.DkmLoginActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/DkmCustomTheme" >
+        </activity>
+        <activity
+            android:name="com.dkm.sdk.activity.DkmPaymentActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.dkm.sdk.activity.DkmRegistertActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/DkmCustomTheme" >
+        </activity>
+        <activity
+            android:name="com.dkm.sdk.activity.DkmAgreementActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/DkmCustomTheme" >
+        </activity>
+        <activity
+            android:name="com.dkm.sdk.activity.DkmCustomerActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/DkmCustomTheme" >
+        </activity>
+        <!-- 银联 -->
+        <activity
+            android:name="com.unionpay.uppay.PayActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- 支付宝 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
+
+        <!-- 短信支付 -->
+        <activity
+            android:name="com.unicom.unicomallsmspayment.SshellSMSMainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.unicom.unicomallsmspayment.SshellSMSSuccessActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.unicom.unicomallsmspayment.SshellSMSFaildActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.unicom.unicomallsmspayment.SshellSMSTimeOutActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop" />
+
+        <receiver
+            android:name="mm.yp.purchasesdk.sms.SMSReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="aspire.iap.SMS_SEND_ACTIOIN" />
+                <action android:name="aspire.iap.SMS_DELIVERED_ACTION" />
+            </intent-filter>
+        </receiver>
+        <!-- 短信支付 -->
+
+
+        <!-- 短信支付渠道号 -->
+        <meta-data
+            android:name="CHINA_UNICOM_MOBILE_CHANNEL"
+            android:value="U110502" />
+	</applicationConfig>
+</manifest>

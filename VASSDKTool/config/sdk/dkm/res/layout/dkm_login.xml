@@ -1,0 +1,151 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dkm_bg"
+    android:orientation="vertical" >
+
+
+    <include layout="@layout/title" />
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+            
+            <TextView 
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/dkm_login_tile"
+                android:textSize="24dp"
+                android:textColor="@color/dkm_blue"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"/>
+            
+            
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/dkm_rect_bg"
+                android:orientation="horizontal">
+                
+                <ImageView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dkm_account_icon"
+                    android:layout_gravity="center_vertical"/>
+                
+                <EditText 
+                    android:id="@+id/et_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:imeOptions="flagNoExtractUi"
+                    android:layout_marginLeft="5dp"
+                    android:background="@null"
+                    android:hint="@string/dkm_login_hint"
+                    android:layout_gravity="center_vertical"/>
+                
+            </LinearLayout>
+            
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/dkm_rect_bg"
+                android:orientation="horizontal">
+                
+                <ImageView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dkm_pwd_icon"
+                    android:layout_gravity="center_vertical"/>
+                
+                <EditText 
+                    android:id="@+id/et_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:layout_marginLeft="5dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="textPassword"
+                    android:hint="@string/dkm_login_pwd_hint"
+                    android:background="@null"/>
+                
+            </LinearLayout>
+            
+            <TextView 
+                android:id="@+id/tv_forgetpwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:textColor="@color/dkm_gray"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:visibility="invisible"
+                android:text="@string/dkm_fogetpwd_text"/>
+            
+            
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="15dp">
+                
+                <Button 
+                    android:id="@+id/btn_register"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/dkm_rect_blue_bg"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:textColor="@color/dkm_white"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/dkm_onekey_register"/>
+                
+                <View 
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                
+                <Button 
+                    android:id="@+id/btn_login"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/dkm_rect_orange_bg"
+                    android:textSize="16dp"
+                    android:textColor="@color/dkm_white"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/dkm_login_rightnow"/>
+                
+            </LinearLayout>
+            
+            
+        </LinearLayout>
+        
+    </ScrollView>
+
+</LinearLayout>

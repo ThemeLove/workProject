@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<config>
+    <operations>
+        <operation step="1" type="merge" from="SDKManifest.xml" to="AndroidManifest.xml" />
+        <operation step="2" type="copy" from="libs" to="lib" />
+        <operation step="3" type="copy" from="assets" to="assets" />
+    </operations>
+	<plugins>
+	    <plugin name="cc.ak.sdk.uc.plugin.UcUserPlugin" type="1" />
+	    <plugin name="cc.ak.sdk.uc.plugin.UcPayPlugin" type="2" />
+	</plugins>
+</config>

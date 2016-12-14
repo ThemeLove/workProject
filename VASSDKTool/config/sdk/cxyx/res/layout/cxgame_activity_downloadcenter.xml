@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rela_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cxgame_white" >
+
+    <RelativeLayout
+        android:id="@+id/rela_title"
+        style="@style/cxgame_ActionBarStyle" >
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:clickable="true"
+            android:drawableLeft="@drawable/cxgame_back_selector"
+            android:gravity="center_vertical"
+            android:text="@string/cx_back"
+            android:textColor="@color/cxgame_white"
+            android:textSize="@dimen/cxgame_font_16" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/cxgame_ActionBar_centertext_style"
+            android:layout_centerInParent="true"
+            android:text="@string/cxgame_download_center" />
+        
+        
+        <TextView 
+            android:id="@+id/tv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:text="@string/cxgame_delete"
+            android:textColor="@color/cxgame_white"
+            android:textSize="@dimen/cxgame_font_16"/>
+
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rela_title"
+        android:cacheColorHint="#00000000"
+        android:divider="#e5e5e5"
+        android:dividerHeight="1dp"
+        android:headerDividersEnabled="false" />
+
+</RelativeLayout>

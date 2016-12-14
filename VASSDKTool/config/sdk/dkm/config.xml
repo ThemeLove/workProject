@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<config>
+    <operations>
+        <operation step="1" type="merge" from="SDKManifest.xml" to="AndroidManifest.xml" />
+        <operation step="2" type="copy" from="libs" to="lib" />
+        <operation step="3" type="copy" from="res" to="res" />
+    </operations>
+	<plugins>
+	    <plugin name="cc.ak.sdk.dkm.plugin.DKMUserPlugin" type="1" />
+	    <plugin name="cc.ak.sdk.dkm.plugin.DKMPayPlugin" type="2" />
+	    <plugin name="cc.ak.sdk.dkm.plugin.DKMWxPlugin" type="3" />
+	</plugins>
+</config>

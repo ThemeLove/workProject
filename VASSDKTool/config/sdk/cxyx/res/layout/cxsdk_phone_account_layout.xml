@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="@dimen/cxsdk_margin_top"
+    android:layout_marginLeft="@dimen/cxsdk_margin_left_and_right"
+    android:layout_marginRight="@dimen/cxsdk_margin_left_and_right"
+    android:orientation="vertical" >
+    
+        <EditText
+            android:id="@+id/phone_account"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cxsdk_edit_text_hight"
+            android:hint="@string/cxsdk_hint_phone"
+            style="@style/cxsdk_CxAccountEditTextStyle"
+            android:drawableLeft="@drawable/cxsdk_icon_phone"
+            android:imeOptions="flagNoExtractUi"
+            android:singleLine="true"
+            android:inputType="phone"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/cxsdk_margin_top" >
+            
+            <com.cxyx.sdk.view.DelayTimeButton
+                android:id="@+id/get_verification_button"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/cxsdk_edit_text_hight"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/cxsdk_yellow"
+                android:textSize="@dimen/cxsdk_get_verifycode_textsize"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:background="@drawable/cxsdk_verify_code_selector"
+                android:text="@string/cxsdk_get_verification_code" />
+
+            <EditText
+                android:id="@+id/verification_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cxsdk_edit_text_hight"
+                android:layout_toLeftOf="@id/get_verification_button"
+                style="@style/cxsdk_CxAccountEditTextStyle"
+                android:drawableLeft="@drawable/cxsdk_icon_verifycode"
+                android:imeOptions="flagNoExtractUi"
+                android:singleLine="true"
+                android:hint="@string/cxsdk_input_verification"/>
+
+        </RelativeLayout>
+</LinearLayout>

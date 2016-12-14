@@ -1,0 +1,10 @@
+<resources>
+
+    <!-- values xhdpi -->
+    <dimen name="cxsdk_center_iv_width">60dip</dimen>
+    <dimen name="cxsdk_edit_text_hight">35dp</dimen>
+    <dimen name="cxsdk_title_hight">45dp</dimen>
+    <dimen name="cxsdk_margin_top">15dp</dimen>
+    <dimen name="cxsdk_guest_login_textsize">20sp</dimen>
+    <dimen name="cxsdk_title_btn_heigth">32sp</dimen>
+</resources>

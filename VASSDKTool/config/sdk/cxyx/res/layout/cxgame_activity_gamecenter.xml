@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rela_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cxgame_white" >
+
+    <RelativeLayout
+        android:id="@+id/rela_title"
+        style="@style/cxgame_ActionBarStyle" >
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:clickable="true"
+            android:drawableLeft="@drawable/cxgame_back_selector"
+            android:gravity="center_vertical"
+            android:text="@string/cx_back"
+            android:textColor="@color/cxgame_white"
+            android:textSize="@dimen/cxgame_font_16" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/cxgame_ActionBar_centertext_style"
+            android:layout_centerInParent="true"
+            android:text="@string/cx_gamecenter" />
+
+        <LinearLayout
+            android:id="@+id/lin_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/iv_news"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:src="@drawable/cxgame_new_selector" />
+
+            <ImageView
+                android:id="@+id/iv_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:clickable="true"
+                android:src="@drawable/cxgame_download_selector" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rela_title" >
+
+        <com.cxgame.center.widget.PullToRefreshListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#00000000"
+            android:divider="#e5e5e5"
+            android:dividerHeight="1dp"
+            android:headerDividersEnabled="false" />
+
+        <LinearLayout
+            android:id="@+id/lin_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dip"
+            android:background="#EFEFEF"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/loading_icon_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dip"
+                android:text="@string/cxgame_loading_title"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@color/cxgame_text_gray" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

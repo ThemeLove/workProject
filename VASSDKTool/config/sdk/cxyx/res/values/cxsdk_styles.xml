@@ -1,0 +1,101 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+
+
+    <!-- Application theme. -->
+
+    <style name="cxsdk_transparent" parent="@android:style/Theme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="cxsdk_custom_theme" parent="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="cxsdk_progress_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="cxsdk_CxAccountEditTextStyle">
+        <item name="android:background">@drawable/cxsdk_edit_bg</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:textColor">@color/cxsdk_black</item>
+        <item name="android:textColorHint">@color/cxsdk_hint_color</item>
+    </style>
+
+    <style name="cxsdk_CxPasswordEditTextStyle">
+        <item name="android:background">@drawable/cxsdk_edit_bg</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:drawableLeft">@drawable/cxsdk_icon_password</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:textColor">@color/cxsdk_black</item>
+        <item name="android:textColorHint">@color/cxsdk_hint_color</item>
+    </style>
+
+    <style name="cxsdk_CxCustomBlueButtonStyle">
+        <item name="android:background">@drawable/cxsdk_btn_bg_selector</item>
+        <item name="android:textColor">@color/cxsdk_blue</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="cxsdk_CxProgressBar_Mini" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:maxHeight">50dip</item>
+        <item name="android:minHeight">8dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:progressDrawable">@drawable/cxsdk_progress_bg</item>
+    </style>
+
+    <style name="cxsdk_popwin_anim_style">
+        <item name="android:windowEnterAnimation">@anim/cxsdk_pop_anim_show</item>
+        <item name="android:windowExitAnimation">@anim/cxsdk_pop_anim_hide</item>
+    </style>
+
+    <style name="cxgame_ActionBarStyle">
+        <item name="android:layout_height">51dp</item>
+        <item name="android:background">@color/cxgame_actionbar_bg</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <!-- 顶部栏中间文字样式 -->
+    <style name="cxgame_ActionBar_centertext_style">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/cxgame_font_20</item>
+        <item name="android:textColor">@color/cxgame_white</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="cxgame_custom_dialog_common" parent="@android:Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- 自定义loading -->
+    <style name="cxgame_custom_dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item> <!-- 模糊 -->
+        <item name="android:windowAnimationStyle">@style/cxgame_custom_dialog_animstyle</item>
+    </style>
+
+    <style name="cxgame_custom_dialog_animstyle">
+        <item name="android:windowEnterAnimation">@anim/cxgame_activity_right_in</item>
+        <item name="android:windowExitAnimation">@anim/cxgame_activity_right_out</item>
+    </style>
+
+</resources>

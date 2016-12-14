@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cxgame_white"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp" >
+
+    <LinearLayout
+        android:id="@+id/lin_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/cxgame_delete_selector"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/cxgame_icon_default" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_download_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/cxgame_download_bg"
+        android:gravity="center"
+        android:textColor="@color/cxgame_white"
+        android:textSize="@dimen/cxgame_font_16" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/btn_download_status"
+        android:layout_toRightOf="@+id/lin_icon"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="#666666"
+            android:textSize="@dimen/cxgame_font_16" />
+
+        <RelativeLayout
+            android:id="@+id/rela_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" >
+
+            <LinearLayout
+                android:id="@+id/lin_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/tv_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/cxgame_font_12" />
+
+                <TextView
+                    android:id="@+id/tv_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/cxgame_font_12" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rela_process"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/tv_process"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:textColor="#409BE8"
+                    android:textSize="@dimen/cxgame_font_12" />
+
+                <ProgressBar
+                    android:id="@+id/pb_process"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@+id/tv_process"
+                    android:max="100"
+                    android:progressDrawable="@drawable/cxgame_po_progressbar" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

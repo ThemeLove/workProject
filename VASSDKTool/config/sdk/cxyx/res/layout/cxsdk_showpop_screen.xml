@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000">
+    
+    
+    
+    <RelativeLayout
+        android:id="@+id/rela_pop" 
+        android:layout_width="270dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/cxsdk_sidepop_bg">
+        
+        
+        <ImageView 
+            android:id="@+id/iv_modify_pwd"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:src="@drawable/cxsdk_modify_pwd_selector"/>
+        
+        
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+            
+            
+            <ImageView 
+                android:id="@+id/iv_user_center"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:clickable="true"
+                android:src="@drawable/cxsdk_user_center_selector"/>
+            
+            <ImageView 
+                android:id="@+id/iv_cancle"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:src="@drawable/cxsdk_btn_cancel"/>
+            
+            <ImageView 
+                android:id="@+id/iv_costumer_server"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:clickable="true"
+                android:src="@drawable/cxsdk_customer_server_selector"/>
+            
+            
+            
+        </RelativeLayout>
+        
+        
+        
+        <ImageView 
+            android:id="@+id/iv_hide_bar"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="30dp"
+            android:clickable="true"
+            android:src="@drawable/cxsdk_hide_sidebar_selector"/>
+        
+        
+    </RelativeLayout>
+
+    
+
+   
+
+</RelativeLayout>

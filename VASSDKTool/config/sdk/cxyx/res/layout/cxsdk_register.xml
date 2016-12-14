@@ -1,0 +1,172 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cxsdk_main_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/cxsdk_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="@null" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/normal_content_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/cxsdk_margin_left_and_right"
+                android:layout_marginRight="@dimen/cxsdk_margin_left_and_right"
+                android:layout_marginTop="@dimen/cxsdk_margin_top"
+                android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/normal_account_edit"
+                    style="@style/cxsdk_CxAccountEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/cxsdk_edit_text_hight"
+                    android:drawableLeft="@drawable/cxsdk_icon_user"
+                    android:hint="@string/cxsdk_hint_account"
+                    android:imeOptions="flagNoExtractUi"
+                    android:singleLine="true"
+                    android:inputType="textEmailAddress" />
+
+                <EditText
+                    android:id="@+id/normal_password"
+                    style="@style/cxsdk_CxPasswordEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/cxsdk_edit_text_hight"
+                    android:layout_marginTop="@dimen/cxsdk_margin_top"
+                    android:hint="@string/cxsdk_hint_password"
+                    android:imeOptions="flagNoExtractUi"
+                    android:singleLine="true"
+                    android:inputType="textPassword" />
+
+                <EditText
+                    android:id="@+id/normal_comfim_password"
+                    style="@style/cxsdk_CxPasswordEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/cxsdk_edit_text_hight"
+                    android:layout_marginTop="@dimen/cxsdk_margin_top"
+                    android:drawableLeft="@drawable/cxsdk_icon_confim_paw"
+                    android:hint="@string/cxsdk_hint_confim_passwrod"
+                    android:imeOptions="flagNoExtractUi"
+                    android:singleLine="true"
+                    android:inputType="textPassword" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/phone_content_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <include
+                    android:id="@+id/phone_account_layout"
+                    layout="@layout/cxsdk_phone_account_layout" />
+
+                <EditText
+                    android:id="@+id/phone_password_edit"
+                    style="@style/cxsdk_CxPasswordEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/cxsdk_edit_text_hight"
+                    android:layout_marginLeft="@dimen/cxsdk_margin_left_and_right"
+                    android:layout_marginRight="@dimen/cxsdk_margin_left_and_right"
+                    android:layout_marginTop="@dimen/cxsdk_margin_top"
+                    android:imeOptions="flagNoExtractUi"
+                    android:singleLine="true"
+                    android:hint="@string/cxsdk_hint_password" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mail_content_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/cxsdk_margin_left_and_right"
+                android:layout_marginRight="@dimen/cxsdk_margin_left_and_right"
+                android:layout_marginTop="@dimen/cxsdk_margin_top"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <EditText
+                    android:id="@+id/mail_account_edit"
+                    style="@style/cxsdk_CxAccountEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/cxsdk_edit_text_hight"
+                    android:drawableLeft="@drawable/cxsdk_icon_email"
+                    android:hint="@string/cxsdk_hint_email"
+                    android:imeOptions="flagNoExtractUi"
+                    android:singleLine="true"
+                    android:inputType="textEmailAddress" />
+
+                <EditText
+                    android:id="@+id/mail_password"
+                    style="@style/cxsdk_CxPasswordEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/cxsdk_edit_text_hight"
+                    android:layout_marginTop="@dimen/cxsdk_margin_top"
+                    android:hint="@string/cxsdk_hint_password"
+                    android:imeOptions="flagNoExtractUi"
+                    android:singleLine="true"
+                    android:inputType="textPassword" />
+
+                <EditText
+                    android:id="@+id/mail_comfim_password"
+                    style="@style/cxsdk_CxPasswordEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/cxsdk_edit_text_hight"
+                    android:layout_marginTop="@dimen/cxsdk_margin_top"
+                    android:drawableLeft="@drawable/cxsdk_icon_confim_paw"
+                    android:hint="@string/cxsdk_hint_confim_passwrod"
+                    android:imeOptions="flagNoExtractUi"
+                    android:singleLine="true"
+                    android:inputType="textPassword" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/cxsdk_margin_left_and_right"
+                android:layout_marginRight="@dimen/cxsdk_margin_left_and_right"
+                android:layout_marginTop="@dimen/cxsdk_margin_top"
+                android:visibility="gone" >
+
+                <CheckBox
+                    android:id="@+id/cb_agreement"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/cxsdk_checkbox_bg"
+                    android:button="@null"
+                    android:checked="true" />
+
+                <TextView
+                    android:id="@+id/tv_agreement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/cb_agreement"
+                    android:singleLine="true"
+                    android:text="用户注册协议"
+                    android:textColor="@color/cxsdk_blue" />
+            </RelativeLayout>
+
+            <include
+                android:id="@+id/button_layout"
+                layout="@layout/cxsdk_confim_button_layout" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

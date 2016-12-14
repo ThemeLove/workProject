@@ -1,0 +1,132 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cxsdk_main_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/cxsdk_title" />
+
+
+    <RelativeLayout
+        android:id="@+id/confim_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/cxsdk_margin_left_and_right"
+        android:layout_marginTop="@dimen/cxsdk_margin_top"
+        android:layout_marginLeft="@dimen/cxsdk_margin_left_and_right" >
+        
+        <EditText
+	        android:id="@+id/account"
+	        style="@style/cxsdk_CxAccountEditTextStyle"
+	        android:layout_width="match_parent"
+	        android:layout_height="@dimen/cxsdk_edit_text_hight"
+	        android:drawableLeft="@drawable/cxsdk_icon_phone"
+	        android:hint="@string/cxsdk_hint_findpwd_account"
+	        android:imeOptions="flagNoExtractUi"
+	        android:singleLine="true"/>
+
+        <com.cxyx.sdk.view.DelayTimeButton
+            android:id="@+id/get_verification_button"
+            android:layout_below="@id/account"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/cxsdk_edit_text_hight"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:background="@drawable/cxsdk_verify_code_selector"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/cxsdk_get_verification_code"
+            android:layout_marginTop="@dimen/cxsdk_margin_top"
+            android:textColor="@color/cxsdk_yellow"
+            android:textSize="@dimen/cxsdk_get_verifycode_textsize" />
+
+        <EditText
+            android:id="@+id/verification_edit"
+            style="@style/cxsdk_CxAccountEditTextStyle"
+            android:layout_below="@id/account"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cxsdk_edit_text_hight"
+            android:layout_toLeftOf="@id/get_verification_button"
+            android:drawableLeft="@drawable/cxsdk_icon_verifycode"
+            android:layout_marginTop="@dimen/cxsdk_margin_top"
+            android:hint="@string/cxsdk_input_verification"
+            android:singleLine="true"
+            android:imeOptions="flagNoExtractUi" />
+        
+        <LinearLayout 
+            android:layout_below="@id/get_verification_button"
+            android:layout_margin="20dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            
+            <Button 
+                android:id="@+id/confim"
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@style/cxsdk_CxCustomBlueButtonStyle"
+                android:layout_marginRight="5dp"
+                android:text="@string/cxsdk_verify"/>
+            
+            <Button 
+                android:id="@+id/cancel_confim"
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@style/cxsdk_CxCustomBlueButtonStyle"
+                android:layout_marginLeft="5dp"
+                android:text="@string/cxsdk_back"/>
+        </LinearLayout>
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/reset_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         android:layout_marginRight="@dimen/cxsdk_margin_left_and_right"
+        android:layout_marginTop="@dimen/cxsdk_margin_top"
+        android:layout_marginLeft="@dimen/cxsdk_margin_left_and_right" 
+        android:visibility="gone" >
+        
+        <EditText
+            android:id="@+id/password_edit"
+            style="@style/cxsdk_CxAccountEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cxsdk_edit_text_hight"
+            android:drawableLeft="@drawable/cxsdk_icon_password"
+            android:hint="@string/cxsdk_hint_newpassword"
+            android:singleLine="true"
+            android:imeOptions="flagNoExtractUi" />
+        
+        <LinearLayout 
+            android:layout_below="@id/password_edit"
+            android:layout_margin="25dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            
+            <Button 
+                android:id="@+id/sure"
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@style/cxsdk_CxCustomBlueButtonStyle"
+                android:layout_marginRight="5dp"
+                android:text="@string/cxsdk_sure"/>
+            
+            <Button 
+                android:id="@+id/reset_back"
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@style/cxsdk_CxCustomBlueButtonStyle"
+                android:layout_marginLeft="5dp"
+                android:text="@string/cxsdk_back"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

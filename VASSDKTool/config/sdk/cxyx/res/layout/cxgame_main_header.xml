@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/rela_banner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true" >
+
+            <com.cxgame.center.widget.ChildViewPager
+                android:id="@+id/bannerVP"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#ffffff"
+                android:flipInterval="30"
+                android:persistentDrawingCache="animation" />
+
+            <RelativeLayout
+                android:id="@+id/rela_dot"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignBottom="@+id/bannerVP"
+                android:background="#80000000" >
+
+                <com.cxgame.center.widget.PointWidget
+                    android:id="@+id/banner_ponit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/loading_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#EFEFEF"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/loading_icon_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dip"
+                android:text="@string/cxgame_loading_title"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@color/cxgame_text_gray" />
+        </LinearLayout>
+    </RelativeLayout>
+    
+    <TextView 
+        android:id="@+id/tv_recommend"
+        android:layout_below="@+id/rela_banner"
+        android:background="#F5F5F5"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textColor="#666666"
+        android:paddingLeft="15dp"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/cxgame_font_16"
+        android:text="@string/cxgame_recommend"/>
+
+</RelativeLayout>

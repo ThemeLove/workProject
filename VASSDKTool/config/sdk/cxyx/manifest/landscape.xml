@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<permissionConfig>
+		<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+		<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+		<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+		<uses-permission android:name="android.permission.INTERNET" />
+		<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+		<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+		<uses-permission android:name="android.permission.INTERNET" />
+		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+		<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+		<uses-permission android:name="android.permission.CALL_PHONE" />
+		<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+		<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+		<uses-permission android:name="android.permission.VIBRATE" />
+
+		<!-- 在SDCard中创建与删除文件权限 -->
+		<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+		<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+		<uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+		<uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+	</permissionConfig>
+	<applicationConfig>
+		<!-- SDK的Activity声明 -->
+
+		<!-- 声明微信Activity -->
+		<activity android:name=".wxapi.WXEntryActivity"
+			android:theme="@style/cxsdk_transparent" android:exported="true">
+		</activity>
+
+		<activity android:name=".wxapi.WXPayEntryActivity"
+			android:theme="@style/cxsdk_transparent" android:launchMode="singleTop"
+			android:exported="true">
+		</activity>
+		<activity android:name="com.cxyx.sdk.activity.CxMainActivity"
+			android:launchMode="singleTask" android:screenOrientation="landscape"
+			android:theme="@style/cxsdk_custom_theme">
+		</activity>
+		<activity android:name="com.cxyx.sdk.activity.CxLoginActivity"
+			android:launchMode="singleTask" android:screenOrientation="landscape"
+			android:theme="@style/cxsdk_custom_theme">
+		</activity>
+		<activity android:name="com.cxyx.sdk.activity.CxPaymentActivity"
+			android:launchMode="singleTask" android:screenOrientation="landscape"
+			android:theme="@android:style/Theme.NoTitleBar">
+		</activity>
+		<activity android:name="com.cxyx.sdk.activity.CxRegistertActivity"
+			android:launchMode="singleTask" android:screenOrientation="landscape"
+			android:theme="@style/cxsdk_custom_theme">
+		</activity>
+		<activity android:name="com.cxyx.sdk.activity.CxAgreementActivity"
+			android:launchMode="singleTask" android:screenOrientation="landscape"
+			android:theme="@style/cxsdk_custom_theme">
+		</activity>
+
+		<activity android:name="com.cxyx.sdk.activity.CxForgetPwdActivity"
+			android:launchMode="singleTask" android:screenOrientation="landscape"
+			android:theme="@style/cxsdk_custom_theme">
+		</activity>
+
+		<activity android:name="com.cxyx.sdk.activity.CxPayWapActivity"
+			android:launchMode="singleTask" android:screenOrientation="landscape"
+			android:theme="@style/cxsdk_custom_theme">
+		</activity>
+		<!-- 银联 -->
+		<activity android:name="com.unionpay.uppay.PayActivity"
+			android:configChanges="orientation|keyboardHidden"
+			android:excludeFromRecents="true" android:screenOrientation="landscape"
+			android:windowSoftInputMode="adjustResize" />
+
+		<!-- 支付宝 -->
+		<activity android:name="com.alipay.sdk.app.H5PayActivity"
+			android:configChanges="orientation|keyboardHidden|navigation"
+			android:exported="false" android:screenOrientation="behind">
+		</activity>
+
+		<!-- 短信支付 -->
+		<activity android:name="com.unicom.unicomallsmspayment.SshellSMSMainActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+		</activity>
+		<activity android:name="com.unicom.unicomallsmspayment.SshellSMSSuccessActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:launchMode="singleTop" />
+		<activity android:name="com.unicom.unicomallsmspayment.SshellSMSFaildActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:launchMode="singleTop" />
+		<activity android:name="com.unicom.unicomallsmspayment.SshellSMSTimeOutActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:launchMode="singleTop" />
+
+		<receiver android:name="mm.yp.purchasesdk.sms.SMSReceiver"
+			android:exported="false">
+			<intent-filter>
+				<action android:name="aspire.iap.SMS_SEND_ACTIOIN" />
+				<action android:name="aspire.iap.SMS_DELIVERED_ACTION" />
+			</intent-filter>
+		</receiver>
+		<!-- 短信支付 -->
+
+		<!-- 短信支付渠道号 -->
+		<meta-data android:name="CHINA_UNICOM_MOBILE_CHANNEL"
+			android:value="U110502" />
+		<!-- 游戏中心相关界面 -->
+		<activity android:name="com.cxgame.center.activity.CxGameCenterActivity"
+			android:screenOrientation="portrait" />
+		<activity android:name="com.cxgame.center.activity.CxNewsCenterActivity"
+			android:screenOrientation="portrait" />
+		<activity android:name="com.cxgame.center.activity.CxGameDetailActivity"
+			android:screenOrientation="portrait" />
+		<activity android:name="com.cxgame.center.activity.CxDownLoadCenterActivity"
+			android:screenOrientation="portrait" android:launchMode="singleTask" />
+		<activity android:name="com.cxgame.center.activity.CxNewsDetailActivity"
+			android:screenOrientation="portrait" />
+		<activity android:name="com.cxgame.center.activity.CxGalleryActivity"
+			android:screenOrientation="portrait" />
+		<service android:name="com.cxgame.center.service.DownloadService">
+			<intent-filter>
+				<action android:name="com.cxgame.downloader.service.DownloadService" />
+			</intent-filter>
+		</service>
+		<receiver android:name="com.cxgame.center.receiver.NetStatusChangeReceiver">
+			<intent-filter>
+				<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+			</intent-filter>
+		</receiver>
+		<meta-data android:name="partnerId" android:value="1" />
+		<meta-data android:name="wxAppId" android:value="wx3d53e1aa8d7942ab" />
+		<meta-data android:name="wxSecret" android:value="d4624c36b6795d1d99dcf0547af5443d" />
+		<meta-data android:name="com.google.android.gms.version"
+			android:value="@integer/cxsdk_google_play_services_version" />
+	</applicationConfig>
+</manifest>

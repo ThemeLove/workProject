@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rela_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cxgame_white"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp" >
+
+    <RelativeLayout
+        android:id="@+id/rela_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="15dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true" >
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+             />
+        
+        <ImageView 
+            android:id="@+id/iv_gift"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           	android:layout_alignParentRight="true"
+            android:src="@drawable/cxgame_show_gift"/>
+        
+        
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_content"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@+id/btn_status"
+        android:layout_toRightOf="@+id/rela_icon"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="#666666"
+            android:textSize="@dimen/cxgame_font_18" />
+
+        <TextView
+            android:id="@+id/tv_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="#999999"
+            android:textSize="@dimen/cxgame_font_14" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/cxgame_download_bg"
+        android:gravity="center"
+        android:text="@string/cxgame_btn_download"
+        android:textColor="@color/cxgame_white"
+        android:textSize="@dimen/cxgame_font_16" />
+
+</RelativeLayout>

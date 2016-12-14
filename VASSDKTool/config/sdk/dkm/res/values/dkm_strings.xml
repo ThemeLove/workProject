@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- DKM -->
+    <string name="dkm_login">登录</string>
+    <string name="dkm_register">注册</string>
+    <string name="dkm_login_tile">用户登录</string>
+    <string name="dkm_login_hint">输入您的账号</string>
+    <string name="dkm_login_pwd_hint">请输入密码</string>
+    <string name="dkm_fogetpwd_text">忘记密码？</string>
+    <string name="dkm_onekey_register">一键注册</string>
+    <string name="dkm_login_rightnow">立即登录</string>
+    <string name="dkm_getveri_code">发送验证码</string>
+    <string name="dkm_exist_account">已有账号</string>
+    <string name="dkm_account_register">账号注册</string>
+    <string name="dkm_sure">确认</string>
+    <string name="dkm_cancel">取消</string>
+    <string name="dkm_custom_text"> 海量礼包，超多福利，请加官方QQ群：\n\n 《家庭教师》：460298809 \n\n 《神域霸业》：492371189 \n\n 《复仇者：自由之战》：286840264</string>
+
+</resources>

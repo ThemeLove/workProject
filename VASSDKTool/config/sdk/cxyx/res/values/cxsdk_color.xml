@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	    
+    <color name="cxsdk_red">#FF1014</color>
+	<color name="cxsdk_white">#FFFFFF</color>
+	<color name="cxsdk_gray">#808080</color>
+	<color name="cxsdk_black">#000000</color>
+	<color name="cxsdk_blue">#00BAFF</color>
+	<color name="cxsdk_edittext_color">#D7D7D7</color>
+	<color name="cxsdk_yellow">#FFBA00</color>
+	<color name="cxsdk_bind_email_text_color">#40CB5E</color>
+	<color name="cxsdk_guest_text_color">#05BCBA</color>
+	<color name="cxsdk_main_bg">#E6E6E6</color>
+	<color name="cxsdk_hint_color">#D7D7D7</color>
+	<color name="cxsdk_line">#d3d3d3</color>
+
+	<color name="cxgame_transparent_background">#00000000</color>
+ 	<color name="cxgame_blue_color">#0a5cad</color>
+ 	<color name="cxgame_green_color">#33b83c</color> 
+ 	<color name="cxgame_background">#e6e6e6</color>
+ 	<color name="cxgame_text_color">#3899c6</color>
+ 	<color name="cxgame_text_gray">#666666</color>
+ 	<color name="cxgame_actionbar_bg">#157bc5</color>
+ 	<color name="cxgame_transparent">#00ffffff</color>
+ 	<color name="cxgame_dialog_background">#ffffff</color>
+ 	<color name="cxgame_text_black">#000000</color>
+ 	<color name="cxgame_white">#ffffff</color>
+ 	<color name="cxgame_comn_text_gray">#272727</color>
+ 	<color name="cxgame_common_text_color">#505050</color>
+ 	<color name="cxgame_list_view_item_color">#FFFFFF</color>
+ 	<color name="cxgame_default_line_color">#e5e5e5</color>
+</resources>

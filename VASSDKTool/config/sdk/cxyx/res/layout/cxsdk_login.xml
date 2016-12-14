@@ -1,0 +1,196 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cxsdk_main_bg"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/cxsdk_title" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/cxsdk_margin_left_and_right"
+        android:layout_marginRight="@dimen/cxsdk_margin_left_and_right"
+        android:layout_marginTop="@dimen/cxsdk_margin_top" >
+
+        <Button
+            android:id="@+id/guest_login"
+            android:layout_width="@dimen/cxsdk_guest_button_width"
+            android:layout_height="@dimen/cxsdk_guest_button_width"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/cxsdk_guest_login"
+            android:textColor="@color/cxsdk_guest_text_color"
+            android:textSize="@dimen/cxsdk_guest_login_textsize"
+            android:text="@string/cxsdk_guest_login"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/guest_login"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/username"
+                    style="@style/cxsdk_CxAccountEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/cxsdk_edit_text_hight"
+                    android:layout_centerVertical="true"
+                    android:drawableLeft="@drawable/cxsdk_icon_user"
+                    android:hint="@string/cxsdk_login_hint"
+                    android:imeOptions="flagNoExtractUi"
+                    android:singleLine="true"
+                    android:textColor="@color/cxsdk_black" />
+
+                <ImageView
+                    android:id="@+id/iv_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/username"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="2dp"
+                    android:padding="5dp"
+                    android:src="@drawable/cxsdk_login_select_btn" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rela_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/cxsdk_margin_top" >
+
+                <EditText
+                    android:id="@+id/password"
+                    style="@style/cxsdk_CxPasswordEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/cxsdk_edit_text_hight"
+                    android:layout_centerVertical="true"
+                    android:hint="@string/cxsdk_password_hint"
+                    android:imeOptions="flagNoExtractUi"
+                    android:singleLine="true"
+                    android:textColor="@color/cxsdk_black" />
+
+                <ImageView
+                    android:id="@+id/iv_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/password"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="2dp"
+                    android:padding="5dp"
+                    android:src="@drawable/cxsdk_clear_pwd"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:scrollbars="none" >
+
+                <com.cxyx.sdk.view.FlowLayout
+                    android:id="@+id/lin_select_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cxsdk_edit_bg"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+                </com.cxyx.sdk.view.FlowLayout>
+            </ScrollView>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rela_fogetpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/cxsdk_margin_left_and_right"
+        android:layout_marginRight="@dimen/cxsdk_margin_left_and_right"
+        android:layout_marginTop="@dimen/cxsdk_margin_top" >
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/cxsdk_checkbox_bg"
+            android:button="@null"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/forget_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/cxsdk_forget_password"
+            android:textColor="@color/cxsdk_blue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toLeftOf="@id/forget_password"
+            android:layout_toRightOf="@id/checkbox"
+            android:singleLine="true"
+            android:text="@string/cxsdk_save_password"
+            android:textColor="@color/cxsdk_blue" />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/in_button"
+        layout="@layout/cxsdk_confim_button_layout" />
+
+    <LinearLayout
+        android:id="@+id/lin_third_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/cxsdk_margin_left_and_right"
+        android:layout_marginTop="@dimen/cxsdk_margin_top"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/third_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/cxsdk_third_login" />
+
+        <ImageButton
+            android:id="@+id/weixin_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/cxsdk_weixin" />
+
+        <ImageButton
+            android:id="@+id/qq_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/cxsdk_qq" />
+
+        <ImageButton
+            android:id="@+id/sina_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/cxsdk_sina" />
+    </LinearLayout>
+
+</LinearLayout>

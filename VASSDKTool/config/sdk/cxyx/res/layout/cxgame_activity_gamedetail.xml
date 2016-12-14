@@ -1,0 +1,232 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rela_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cxgame_white" >
+
+    <RelativeLayout
+        android:id="@+id/rela_title"
+        style="@style/cxgame_ActionBarStyle" >
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:clickable="true"
+            android:drawableLeft="@drawable/cxgame_back_selector"
+            android:gravity="center_vertical"
+            android:text="@string/cx_back"
+            android:textColor="@color/cxgame_white"
+            android:textSize="@dimen/cxgame_font_16" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/cxgame_ActionBar_centertext_style"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rela_title" >
+
+        <ScrollView
+            android:id="@+id/body_layout" 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:fadingEdge="none">
+            
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                
+                <RelativeLayout 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+                    
+                    <ImageView 
+                        android:id="@+id/iv_icon"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/cxgame_icon_default"/>
+                    
+                    <Button 
+                        android:id="@+id/btn_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="15dp"
+                        android:textColor="@color/cxgame_white"
+                        android:textSize="@dimen/cxgame_font_16"
+                        android:background="@drawable/cxgame_download_bg"
+                        android:text="@string/cxgame_btn_download"
+                        android:layout_centerVertical="true"/>
+                    
+                    <LinearLayout
+                        android:id="@+id/lin_info" 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/iv_icon"
+                        android:layout_toLeftOf="@+id/btn_status">
+                        
+                        
+                        <TextView 
+                            android:id="@+id/tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#666666"
+                            android:singleLine="true"
+                            android:textSize="@dimen/cxgame_font_20"/>
+                        
+                        <TextView 
+                            android:id="@+id/tv_version_size"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#999999"
+                            android:textSize="@dimen/cxgame_font_14"
+                            android:singleLine="true"
+                            android:layout_marginTop="5dp"/>
+                        
+                        <TextView 
+                            android:id="@+id/tv_download_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#999999"
+                            android:layout_marginTop="5dp"
+                            android:singleLine="true"
+                            android:textSize="@dimen/cxgame_font_14"/>
+                        
+                    </LinearLayout>
+                    
+                </RelativeLayout>
+                
+                <View 
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/cxgame_default_line_color"/>
+                
+                <com.cxgame.center.widget.HorizontialListView 
+                    android:id="@+id/lv_gallary"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="15dp"/>
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#F5F5F5"
+                    android:text="@string/cxgame_gameintro"
+                    android:textColor="#666666"
+                    android:paddingLeft="15dp"
+                    android:textSize="@dimen/cxgame_font_18"
+                    android:gravity="center_vertical"/>
+                
+                <TextView 
+                    android:id="@+id/tv_intro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:textSize="@dimen/cxgame_font_16"
+                    android:textColor="#666666"/>
+                
+                <TextView 
+                    android:id="@+id/tv_extend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/cxgame_extend"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/cxgame_font_14"
+                    android:drawableRight="@drawable/cxgame_fold"
+                    android:layout_gravity="center_horizontal"/>
+                
+                
+                <TextView
+                    android:id="@+id/tv_gift_show" 
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#F5F5F5"
+                    android:text="@string/cxgame_game_gift"
+                    android:textColor="#666666"
+                    android:paddingLeft="15dp"
+                    android:textSize="@dimen/cxgame_font_18"
+                    android:gravity="center_vertical"/>
+                
+                <com.cxgame.center.widget.AutomaticListView 
+                    android:id="@+id/lv_gift"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cacheColorHint="#00000000"
+                    android:divider="#e5e5e5"
+                    android:dividerHeight="1dp"
+                    android:scrollbars="none"
+                    android:fadingEdge="none"/>
+                
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#F5F5F5"
+                    android:text="@string/cxgame_related_info"
+                    android:textColor="#666666"
+                    android:paddingLeft="15dp"
+                    android:textSize="@dimen/cxgame_font_18"
+                    android:gravity="center_vertical"/>
+                
+                <com.cxgame.center.widget.AutomaticListView 
+                    android:id="@+id/lv_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cacheColorHint="#00000000"
+                    android:divider="#e5e5e5"
+                    android:dividerHeight="1dp"
+                    android:scrollbars="none"
+                    android:fadingEdge="none"/>
+                
+                
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/lin_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dip"
+            android:background="#EFEFEF"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/loading_icon_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dip"
+                android:text="@string/cxgame_loading_title"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@color/cxgame_text_gray" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<permissionConfig>
+	<!-- TODO SDK接入必须权限模块 START -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- 登录上报时需要带设备名称, 通过蓝牙模块来获取设备名称 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- TODO SDK接入 必须权限模块 END -->
+	</permissionConfig>
+	<applicationConfig>
+		<!-- TODO SDK接入 QQ接入配置 START -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- TODO SDK接入 QQ接入配置 END -->
+
+
+        <!-- TODO SDK接入 微信接入配置 START -->
+        
+        <activity
+            android:name="com.tencent.tmgp.jtjszhzz.wxapi.WXEntryActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:label="WXEntryActivity"
+            android:launchMode="singleTop"
+            android:taskAffinity="com.tencent.tmgp.jtjszhzz.diff" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="{WXAPPID}" />
+            </intent-filter>
+        </activity>
+        
+        <!-- TODO SDK接入 微信接入配置 END -->
+	</applicationConfig>
+</manifest>
