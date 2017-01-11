@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gamecat_vouchers_expired_left"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_coupon_par"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100"
+                android:textColor="#ffffff"
+                android:textSize="36sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_toRightOf="@+id/tv_coupon_par"
+                android:text="喵点"
+                android:textColor="#ffffff"
+                android:textSize="9sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_coupon_par"
+                android:text="游戏代金劵"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gamecat_vouchers_available_right"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="有效期"
+                android:textColor="#cccccc"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_lose_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_top"
+                android:text="2016-10-18"
+                android:textColor="#cccccc" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_lose_time"
+                android:layout_marginTop="15dp"
+                android:text="未使用"
+                android:textColor="#cccccc" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

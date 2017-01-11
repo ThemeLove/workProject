@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_game_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="18dp"
+        android:text="天龙八部"
+        android:textColor="#333333"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_props_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="18dp"
+        android:layout_toRightOf="@+id/tv_game_name"
+        android:text="元宝"
+        android:textColor="#333333"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_game_name"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="6dp"
+        android:text="2016-09-06 10:34:20"
+        android:textColor="#999999"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_coupon_par"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="12sp"
+        android:layout_marginTop="18dp"
+        android:text="60.00元"
+        android:textColor="#333333"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_coupon_par"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="6dp"
+        android:text="支付宝"
+        android:textColor="#999999"
+        android:textSize="12sp" />
+</RelativeLayout>

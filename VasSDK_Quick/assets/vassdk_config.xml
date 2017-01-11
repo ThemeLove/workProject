@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<config>
+    <param name="MAIN_ACTIVITY_NAME" value="com.example.demo.VasSDK_QuickMainActivity"/>
+    <param name="VAS_DEBUG" value="true"/>
+    <param name="VAS_GAMEID" value="1"/>
+    <param name="VAS_PLATFORMID" value="2"/>
+    <param name="VAS_CHANNELID" value="22"/>
+    <param name="VAS_SUBCHANNEL_ID" value="33"/>
+    <param name="PRODUCTCODE" value="80451709928071470796094188031120"/>
+    <param name="PRODUCTKEY" value="16624623"/>
+    <param name="VAS_SUBCHANNEL_ID" value="33"/>
+    <plugins>
+	    <plugin name="com.vas.quicksdk.plugin.QuickUserPlugin" type="1" />
+	    <plugin name="com.vas.quicksdk.plugin.QuickPayPlugin"  type="2"/>
+	    <plugin name="com.vas.quicksdk.plugin.QuickSettingPlugin"  type="3"/>
+	</plugins>
+	<applications>
+		 <application name="com.vas.quicksdk.plugin.QKApplication"/>
+    </applications>
+</config>

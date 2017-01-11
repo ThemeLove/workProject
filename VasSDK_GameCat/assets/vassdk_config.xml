@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<config>
+<!-- <param name="AESKEY" value="eW91eGltYW8xMzAwMDFsdA=="/>测试 -->
+<param name="AESKEY" value="eW91eGltYW8xMzAwMDF4cw==" /><!-- 线上 -->
+<param name="DEBUG" value="true" />
+<param name="GAMEID" value="pptv_sanguobawangdalu_2" />
+<param name="VAS_GAMEID" value="1001" />
+<param name="VAS_PLATFORMID" value="1" />
+<param name="VAS_SUBPLATFORMID" value="0" />
+<param name="VAS_CHANNELID" value="22" />
+<param name="VAS_SUBCHANNEL_ID" value="33" />
+<plugins>
+<plugin name="com.vas.gamecat.plugin.GameCatUserPlugin" type="1" />
+<plugin name="com.vas.gamecat.plugin.GameCatPayPlugin"  type="2"/>
+<plugin name="com.vas.gamecat.plugin.GameCatSettingPlugin"  type="3"/>
+</plugins>
+</config>

@@ -165,10 +165,10 @@ public class Main
             }
 
             // 闪屏
-            // if (gameChannel.isSplash()) {
-            // System.out.println("添加闪屏图片");
-            // addSplashImg(tempPath, sdkPath);
-            // }
+             if (gameChannel.isSplash()) {
+             System.out.println("添加闪屏图片");
+             addSplashImg(tempPath, sdkPath);
+             }
 
             // 合并角标
             if (gameChannel.getIcon() != null)
@@ -398,11 +398,15 @@ public class Main
                     }
                     
                     System.out.println("角标 size = " + size + ",iconMarkPath = " + iconMarkPath);
+                    System.out.println("iconFile.getPath() " + iconFile.getPath());
                     //将角标图片压缩
-                    Thumbnails.of(iconMark.getPath()).size(size, size).keepAspectRatio(true).toFile(iconMark.getPath());
+//                    Thumbnails.of(iconMark.getPath()).size(size, size).keepAspectRatio(true).toFile(iconMark.getPath());
+                    //将icon图片压缩
+//                    Thumbnails.of(iconFile.getPath()).size(size, size).keepAspectRatio(true).toFile(iconFile.getPath());
                     //添加角标
                     Thumbnails.of(iconFile.getPath()).size(size, size).watermark(positions, ImageIO.read(iconMark), 1f).toFile(
                             iconFile.getPath());
+                    Thread.sleep(100);//不加延时，hdpi有时角标水印没有加上
                 }
             }
         }
@@ -590,7 +594,8 @@ public class Main
 
                         splashActivity = activity.createCopy();
                         // 替换成渠道的闪屏名称
-                        splashActivity.attribute("name").setValue("com.vas.quicksdk.SplashActivity");
+//                        splashActivity.attribute("name").setValue("com.vas.quicksdk.SplashActivity");
+                        splashActivity.attribute("name").setValue("com.vas.vassdk.VasSdkSplashActivity");
 
                         // 移除启动元素
                         if (intentFilter.elements().size() == 2)
@@ -623,8 +628,12 @@ public class Main
         writer.close();
 
         String smaliPath = tempPath + File.separator + "smali";
+        //如果使用quick打包
+//        String splashSmaliPath = smaliPath + File.separator + "com" + File.separator + "vas" + File.separator
+//                + "quicksdk" + File.separator + "SplashActivity.smali";
+        //如果是VasSDK单接
         String splashSmaliPath = smaliPath + File.separator + "com" + File.separator + "vas" + File.separator
-                + "quicksdk" + File.separator + "SplashActivity.smali";
+                + "vassdk" + File.separator + "VasSdkSplashActivity.smali";
         File splashSmali = new File(splashSmaliPath);
         FileUtil.replaceFileContent("\\{VasSDK_Game_Activity\\}", oldMainActivityName, splashSmali);
     }

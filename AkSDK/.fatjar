@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Thu Dec 03 17:00:23 CST 2015
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=true
+jarname=E\:\\AkSDK\\AkSDK\\AkSDK_fat.jar
+manifest.mergeall=true
+manifest.mainclass=main.aksdk
+manifest.file=<createnew>
+jarname.isextern=true
+onejar.expand=
+excludes=<po|AkSDK>
+includes=

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_gv"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/gamecat_recharge_white"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10元"
+            android:textColor="@color/color_37363B"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/tv_meow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100喵点"
+            android:textColor="@color/gamecat_color_cccccc"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_money"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/gamecat_recharge_white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/et_money"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            android:background="@color/color_FFFFFF"
+            android:gravity="center"
+            android:hint="自定义金额"
+            android:inputType="numberDecimal"
+            android:maxLength="7"
+            android:padding="5dp"
+            android:textColorHint="@color/gamecat_color_37363b"
+            android:textCursorDrawable="@color/color_cccccc"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</RelativeLayout>
