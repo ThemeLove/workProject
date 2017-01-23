@@ -1,9 +1,7 @@
 package com.vas.gamecat.plugin;
 
 import android.app.Activity;
-import android.util.Log;
 
-import com.example.demo.VasSDK_GameCatMainActivity;
 import com.vas.vassdk.VasSDKConfig;
 import com.vas.vassdk.plugin.ISettingPlugin;
 
@@ -19,28 +17,24 @@ public class GameCatSettingPlugin implements ISettingPlugin
     @Override
     public void setDebug(boolean debug)
     {
-        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void setIsLandScape(boolean isLandScape)
     {
-        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void setShowExitDialog(boolean showExitDialog)
     {
-        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void exit()
     {
-        // TODO Auto-generated method stub
         
     }
 
@@ -62,29 +56,25 @@ public class GameCatSettingPlugin implements ISettingPlugin
     @Override
     public String getExtrasConfig(String paramString)
     {
-        // TODO Auto-generated method stub
-        return "getExtrasConfig";
+        return "";
     }
 
     @Override
     public boolean isFunctionSupported(int paramInt)
     {
-        // TODO Auto-generated method stub
         return false;
     }
 
     @Override
     public String callFunction(int paramInt)
     {
-        // TODO Auto-generated method stub
-        return "callFunction";
+        return "";
     }
 
     @Override
     public boolean isSDKShowExitDialog()
     {
-        // TODO Auto-generated method stub
-        return false;
+        return false;//单接渠道sdk的时候，渠道有sdk退出框，返回true;
     }
 
 }

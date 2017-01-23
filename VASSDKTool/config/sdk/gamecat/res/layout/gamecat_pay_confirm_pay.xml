@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:padding="15dp"
                 android:src="@drawable/gamecatpay_close" />
 
             <TextView
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/title"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:orientation="vertical">
 
             <TextView
@@ -64,7 +64,7 @@
                 android:id="@+id/tv_money"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:gravity="center"
                 android:text="￥30"
                 android:textColor="@color/color_37363B"
@@ -75,7 +75,7 @@
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="0.5dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:background="@color/color_E5E5E5" />
 
             <GridView
@@ -93,7 +93,7 @@
             <Button
                 android:id="@+id/confirm_pay_button"
                 style="@style/gamecatpay_button"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:text="确认支付" />
 
         </LinearLayout>

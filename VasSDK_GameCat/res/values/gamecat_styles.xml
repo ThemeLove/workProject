@@ -59,9 +59,9 @@
         <item name="android:layout_height">40dp</item>
         <item name="android:background">@drawable/btn_gray_selector</item>
         <item name="android:textSize">17dp</item>
-        <item name="android:layout_marginBottom">15dp</item>
-        <item name="android:layout_marginLeft">12dp</item>
-        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
         <item name="android:textColor">@color/color_FFFFFF</item>
     </style>
 

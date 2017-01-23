@@ -8,7 +8,9 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.text.TextUtils;
 
+import com.gamecat.common.callback.CallBackUtil;
 import com.gamecat.floatwindow.FloatWindowService;
+import com.gamecat.pay.fragment.ConfirmPayFragment;
 import com.gamecat.sdk.GameCatSDK;
 import com.gamecat.sdk.GameCatSDKListener;
 import com.vas.vassdk.VasLoadingDialog;
@@ -26,6 +28,7 @@ import com.yolanda.nohttp.rest.OnResponseListener;
 import com.yolanda.nohttp.rest.Request;
 import com.yolanda.nohttp.rest.Response;
 import com.yolanda.nohttp.rest.StringRequest;
+import com.zwxpay.android.h5_library.manager.CheckOderManager;
 
 public class GCSDK
 {
@@ -67,7 +70,6 @@ public class GCSDK
             @Override
             public boolean onBackPressed()
             {
-                // TODO Auto-generated method stub
                 return true;
             }
             
@@ -79,6 +81,31 @@ public class GCSDK
                 if (FloatWindowService.getInstance() != null && mIsDisplayFloatWindow) {
                     FloatWindowService.getInstance().showSmallWindow();
                 }
+                
+//                //添加微信支付监听
+//                if (ConfirmPayFragment.mIsWeiXinPay && !TextUtils.isEmpty(ConfirmPayFragment.mPrepayId)) {
+//                    mActivity.getWindow().getDecorView().postDelayed(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            new CheckOderManager().checkState(mActivity, ConfirmPayFragment.mPrepayId, new CheckOderManager.QueryPayListener() {
+//                                @Override
+//                                public void getPayState(String payState) {
+//                                    VASLogUtil.d("weixin payState : " + payState);
+//                                    //返回支付状态，做对应的UI和业务操作
+//                                    if ("SUCCESS".equalsIgnoreCase(payState)) {
+//                                        CallBackUtil.onSuccess();
+//                                    } else {
+//                                        CallBackUtil.onFail();
+//                                    }
+//                                    //把支付标记还原
+//                                    ConfirmPayFragment.mIsWeiXinPay = false;
+//                                }
+//                            });
+//                        }
+//                    }, 1000);
+//                }
+                
+                
             }
             
             
@@ -96,11 +123,7 @@ public class GCSDK
             public void onDestroy()
             {
                 super.onDestroy();
-                if (mIsDisplayFloatWindow) {
-                    FloatWindowService.stopService(mActivity);
-                    mIsDisplayFloatWindow = false;
-                }
-                
+                closeFloatWindow();
             }
             
             
@@ -112,24 +135,23 @@ public class GCSDK
         GameCatSDK.setEnvironment(mActivity, mGameId, 1, aesKey);
         //渠道sdk没有初始化成功回调，默认给初始化成功回调
         VasSDK.getInstance().getVasInitCallback().onSuccess();
-        //监听token失效
-        GameCatSDK.sdkCancelListener(new GameCatSDKListener()
-        {
-            
+        //登录失效或者注销监听
+        GameCatSDK.sdkCancelListener(new GameCatSDKListener() {
             @Override
-            public void onSuccess(JSONObject resultJson)
-            {
-                VASLogUtil.d("sdkCancelListener onSuccess" + resultJson.toString());
-//                VasSDK.getInstance().getVasLogoutCallback().onSuccess();
+            public void onSuccess(final JSONObject message) {
+                VASLogUtil.d("logout : message = " + message.toString());
+                VasSDK.getInstance().getVasLogoutCallback().onSuccess();
+                closeFloatWindow();
             }
-            
+
             @Override
-            public void onFail(String message)
-            {
-//                VasSDK.getInstance().getVasLogoutCallback().onFailed(message, "");
+            public void onFail(String message) {
+                VasSDK.getInstance().getVasLogoutCallback().onFailed(message, "");
             }
         });
     }
+    
+    
     
     
     public void login(){
@@ -140,6 +162,7 @@ public class GCSDK
             @Override
             public void onSuccess(JSONObject resultJson)
             {
+                VASLogUtil.d("login : resultJson = " + resultJson);
                 mUid = resultJson.optString("openId");
                 mAccount = resultJson.optString("userName");
                 if(TextUtils.isEmpty(mAccount)){
@@ -150,7 +173,7 @@ public class GCSDK
                 paramUserInfo.setUid(mUid);
                 paramUserInfo.setUserName(mAccount);
                 VasSDK.getInstance().getVasLoginCallback().onSuccess(paramUserInfo);
-                FloatWindowService.startService(mActivity);
+                FloatWindowService.startService(mActivity,true);
                 mIsDisplayFloatWindow = true;
             }
             
@@ -166,7 +189,8 @@ public class GCSDK
     
     
     public void logout(){
-        
+        //用户注销接口
+        GameCatSDK.Logout();
     }
     
     
@@ -285,8 +309,14 @@ public class GCSDK
     
     public void setGameRoleInfo(VasRoleInfo paramGameRoleInfo, boolean paramBoolean){
         
-        
-        
+    }
+    
+    
+    private void closeFloatWindow(){
+        if (mIsDisplayFloatWindow) {
+            FloatWindowService.stopService(mActivity);
+            mIsDisplayFloatWindow = false;
+        }
     }
     
     

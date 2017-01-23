@@ -5,6 +5,7 @@ import com.vas.vassdk.util.VasSDKUtil;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Window;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
@@ -24,6 +25,7 @@ public class VasSdkSplashActivity extends Activity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         LayoutParams mainLayoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         mainLayout = new RelativeLayout(this);
         RelativeLayout.LayoutParams splashIvLayoutParams = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT,

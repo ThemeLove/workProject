@@ -7,8 +7,8 @@
 <param name="VAS_GAMEID" value="1001" />
 <param name="VAS_PLATFORMID" value="1" />
 <param name="VAS_SUBPLATFORMID" value="0" />
-<param name="VAS_CHANNELID" value="22" />
-<param name="VAS_SUBCHANNEL_ID" value="33" />
+<param name="VAS_CHANNELID" value="1" />
+<param name="VAS_SUBCHANNEL_ID" value="1" />
 <plugins>
 <plugin name="com.vas.gamecat.plugin.GameCatUserPlugin" type="1" />
 <plugin name="com.vas.gamecat.plugin.GameCatPayPlugin"  type="2"/>

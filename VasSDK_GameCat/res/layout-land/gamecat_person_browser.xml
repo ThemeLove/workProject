@@ -28,11 +28,23 @@
 
     </LinearLayout>
 
-    <WebView
-        android:id="@+id/webview"
+    <RelativeLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="6" />
+        android:layout_weight="6">
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ViewStub
+            android:id="@+id/view_stub_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/gamecat_progress_dialog" />
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/id_text_view_invisible"

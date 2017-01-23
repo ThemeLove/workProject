@@ -10,7 +10,7 @@
     <string name="gamecat_get_verification">"获取验证码"</string>
     <string name="gamecat_wrong_verification">"*验证码错误"</string>
     <string name="gamecat_ok">"完成"</string>
-    <string name="gamecat_unknown_wrong">"网络出错，轻触屏幕重新加载..."</string>
+    <string name="gamecat_unknown_wrong">"网络出错，轻触屏幕重新加载…"</string>
 
 
 </resources>

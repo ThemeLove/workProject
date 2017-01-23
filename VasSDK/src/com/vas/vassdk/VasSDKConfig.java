@@ -188,6 +188,11 @@ public class VasSDKConfig
 
     public void setDebug(boolean debug)
     {
+        if(debug){
+            VAS_DEBUG = "true";
+        }else{
+            VAS_DEBUG = "false";
+        }
         this.mDebug = debug;
     }
 

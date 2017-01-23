@@ -5,6 +5,7 @@ import java.util.List;
 import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.support.multidex.MultiDex;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -17,7 +18,6 @@ public class VasApplication extends Application
 
     private static final String DEFAULT_PKG_NAME = "com.vas.vassdk";
 
-    private static final String PROXY_NAME = "VAS_APPLICATION_PROXY_NAME";
 
     private IApplicationListener listener;
 
@@ -37,6 +37,7 @@ public class VasApplication extends Application
     public void attachBaseContext(Context base)
     {
         super.attachBaseContext(base);
+        MultiDex.install(this);
         VasSDK.getInstance().initAllConfigs(base);
         
         this.listener = initProxyApplication();

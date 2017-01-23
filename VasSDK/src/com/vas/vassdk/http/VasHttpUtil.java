@@ -1,7 +1,15 @@
 package com.vas.vassdk.http;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
 import android.app.Application;
 
+import com.vas.vassdk.VasSDK;
+import com.vas.vassdk.VasSDKConfig;
+import com.vas.vassdk.util.DeviceUtil;
+import com.vas.vassdk.util.VASLogUtil;
 import com.yolanda.nohttp.Logger;
 import com.yolanda.nohttp.NoHttp;
 import com.yolanda.nohttp.rest.OnResponseListener;
@@ -52,6 +60,15 @@ public class VasHttpUtil
     @SuppressWarnings({"unchecked", "rawtypes"})
     public <T> void add(int what, Request<T> request, OnResponseListener listener)
     {
+        request.addHeader("PLATFORM", "android");
+        request.addHeader("SDKVERSION", "1.0.0");
+        request.addHeader("CID", VasSDKConfig.VAS_CHANNELID);
+        request.addHeader("CCID", VasSDKConfig.VAS_SUBCHANNEL_ID);
+        request.addHeader("GID", VasSDKConfig.VAS_GAMEID);
+        request.addHeader("DEVICEINFO", android.os.Build.MODEL);
+        request.addHeader("UUID", DeviceUtil.getDeviceUuid(VasSDK.getInstance().getActivity()).toString());
+        request.addHeader("BRAND", android.os.Build.MANUFACTURER);
+        request.addHeader("NETTYPE", DeviceUtil.getNetType(VasSDK.getInstance().getActivity()) + "");
         request.setCancelSign(what);
         queue.add(what, request, listener);
     }
@@ -75,12 +92,20 @@ public class VasHttpUtil
     }
 
 
-//    String url = "http://api.nohttp.net/upload";
-//
-//    Request<String> request = new StringRequest(url, RequestMethod.POST)
-//        .add("id", 123)
-//        .add("name",  "yanzhenjie")
-//        .add("desc", "abc");
+    @SuppressWarnings("rawtypes")
+    public <T> void addHeader(Request<T> request,HashMap<String,String> headMap){
+        if(headMap == null){
+            return;
+        }
+        for(Iterator iter = headMap.entrySet().iterator();iter.hasNext();){
+            Map.Entry element = (Map.Entry)iter.next();
+            String strKey = (String) element.getKey();
+            String strValue = (String) element.getValue();
+            request.addHeader(strKey, strValue);
+            VASLogUtil.d("header : " + strKey+"/"+strValue);
+          }
+        
+    }
     
     
 

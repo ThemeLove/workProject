@@ -17,6 +17,14 @@
         android:layout_below="@+id/id_text_view_invisible"
         android:layout_weight="6" />
 
+
+    <ViewStub
+        android:id="@+id/view_stub_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:layout="@layout/gamecat_progress_dialog"/>
+
     <LinearLayout
         android:id="@+id/ll_unknown"
         android:layout_width="match_parent"

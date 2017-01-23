@@ -25,12 +25,15 @@ import org.dom4j.io.XMLWriter;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.ObjectOutputStream;
+import java.io.PrintStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Key;
@@ -62,6 +65,8 @@ public class Main
     public static OutputFormat xmlFormat;
 
     public static List<GameChannel> gameChannelList;
+
+    public static String mainActivityName = "";
 
     public static void main(String[] args) throws Exception
     {
@@ -116,12 +121,21 @@ public class Main
             System.exit(0);
             return;
         }
-
+        
         // 清空work目录
         System.out.println("程序初始化");
         String workPath = BASE_PATH + File.separator + "work";
         FileUtil.delete(workPath);
         new File(workPath).mkdir();
+        
+        /////////////////////////////////////////
+        //将控制台输出写入文件
+//        File f=new File(workPath + File.separator + "out.txt");  
+//        f.createNewFile();
+//        FileOutputStream fileOutputStream = new FileOutputStream(f);  
+//        PrintStream printStream = new PrintStream(fileOutputStream);  
+//        System.setOut(printStream);
+        /////////////////////////////////////////
 
         String bakPath = workPath + File.separator + "bak";
         String apktoolPath = BASE_PATH + File.separator + "apktool";
@@ -273,11 +287,10 @@ public class Main
 
             String publicXmlPath = tempPath + File.separator + "res" + File.separator + "values" + File.separator
                     + "public.xml";
+            //TODO 添加分dex方法
+            mutiSmali();
             
-//            //删除nomal文件
-//            deleteVasConfigNomal(tempPath + File.separator + "assets" + File.separator + "vassdk_config_nomal.xml");
             
-
             // 打包
             System.out.println("APK打包");
             String tempApkPath = outPath + File.separator + "temp.apk";
@@ -324,6 +337,35 @@ public class Main
         }
 
         System.out.println("打包程序执行完成");
+
+    }
+
+    /**
+     * 执行分dex方法
+     */
+    private static void mutiSmali()
+    {
+
+        try
+        {
+            String smalipyPath = "D:\\workspace_eclipse_javaee\\VASSDKTool\\apktool\\smali.py";
+            Process pr = Runtime.getRuntime().exec("C:\\Python27\\python.exe " + smalipyPath);
+            BufferedReader in = new BufferedReader(new InputStreamReader(pr.getInputStream()));
+            String line;
+            while ((line = in.readLine()) != null)
+            {
+                System.out.println(line);
+            }
+            in.close();
+            pr.waitFor();
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        
+        System.out.println("分dex完成");
 
     }
 
@@ -396,17 +438,19 @@ public class Main
                     {
                         positions = Positions.BOTTOM_LEFT;
                     }
-                    
+
                     System.out.println("角标 size = " + size + ",iconMarkPath = " + iconMarkPath);
                     System.out.println("iconFile.getPath() " + iconFile.getPath());
-                    //将角标图片压缩
-//                    Thumbnails.of(iconMark.getPath()).size(size, size).keepAspectRatio(true).toFile(iconMark.getPath());
-                    //将icon图片压缩
-//                    Thumbnails.of(iconFile.getPath()).size(size, size).keepAspectRatio(true).toFile(iconFile.getPath());
-                    //添加角标
+                    // 将角标图片压缩
+                    // Thumbnails.of(iconMark.getPath()).size(size,
+                    // size).keepAspectRatio(true).toFile(iconMark.getPath());
+                    // 将icon图片压缩
+                    // Thumbnails.of(iconFile.getPath()).size(size,
+                    // size).keepAspectRatio(true).toFile(iconFile.getPath());
+                    // 添加角标
                     Thumbnails.of(iconFile.getPath()).size(size, size).watermark(positions, ImageIO.read(iconMark), 1f).toFile(
                             iconFile.getPath());
-                    Thread.sleep(100);//不加延时，hdpi有时角标水印没有加上
+                    Thread.sleep(200);// 不加延时，hdpi有时角标水印没有加上
                 }
             }
         }
@@ -455,6 +499,14 @@ public class Main
                 FileUtil.copyDirectiory(fromPath, toPath);
             }
         }
+    }
+
+    /**
+     * @param tempLibPath
+     */
+    private static void listTempLibFile(String tempLibPath)
+    {
+
     }
 
     // 合并AndroidManifest
@@ -585,6 +637,10 @@ public class Main
 
                     if (main != null && launcher != null)
                     {
+
+                        mainActivityName = activity.attribute("name").getValue(); // 获取启动Activity的名字
+                        System.out.println("mainActivityName : " + mainActivityName);
+
                         // 获取旧启动的Activity名称，用于替换闪屏
                         oldMainActivityName = activity.attributeValue("name");
                         if (oldMainActivityName.startsWith("."))
@@ -592,10 +648,10 @@ public class Main
                             oldMainActivityName = packageName + oldMainActivityName;
                         }
 
-                        splashActivity = activity.createCopy();
+//                        splashActivity = activity.createCopy();
                         // 替换成渠道的闪屏名称
-//                        splashActivity.attribute("name").setValue("com.vas.quicksdk.SplashActivity");
-                        splashActivity.attribute("name").setValue("com.vas.vassdk.VasSdkSplashActivity");
+                        // splashActivity.attribute("name").setValue("com.vas.quicksdk.SplashActivity");
+//                        splashActivity.attribute("name").setValue("com.vas.vassdk.VasSdkSplashActivity");
 
                         // 移除启动元素
                         if (intentFilter.elements().size() == 2)
@@ -613,29 +669,53 @@ public class Main
                 }
             }
         }
-
+        
+//        if (splashActivity != null)
+//        {
+//            Element intentFilter = splashActivity.element("intent-filter");
+//            intentFilter.clearContent();
+//            intentFilter.add(main);
+//            intentFilter.add(launcher);
+//            application.add(splashActivity);
+//        }
+        
+        /***************************************/
+        out: for (Element activity : activitys)
+        {
+           String name = activity.attributeValue("name"); 
+           if("com.vas.vassdk.VasSdkSplashActivity".equals(name)){
+               splashActivity = activity.createCopy();
+               break out;
+           }
+        }
+        
         if (splashActivity != null)
         {
-            Element intentFilter = splashActivity.element("intent-filter");
-            intentFilter.clearContent();
-            intentFilter.add(main);
-            intentFilter.add(launcher);
-            application.add(splashActivity);
+            Element intentFilter = splashActivity.addElement("intent-filter");
+            if(intentFilter !=null){
+                intentFilter.clearContent();
+                intentFilter.add(main);
+                intentFilter.add(launcher);
+                application.add(splashActivity);
+            }
         }
+        /***************************************/
 
         XMLWriter writer = new XMLWriter(new FileWriter(new File(xmlPath)), xmlFormat);
         writer.write(document);
         writer.close();
 
-        String smaliPath = tempPath + File.separator + "smali";
-        //如果使用quick打包
+//        String smaliPath = tempPath + File.separator + "smali";
+//        // 如果使用quick打包
+//        // String splashSmaliPath = smaliPath + File.separator + "com" +
+//        // File.separator + "vas" + File.separator
+//        // + "quicksdk" + File.separator + "SplashActivity.smali";
+//        // 如果是VasSDK单接
 //        String splashSmaliPath = smaliPath + File.separator + "com" + File.separator + "vas" + File.separator
-//                + "quicksdk" + File.separator + "SplashActivity.smali";
-        //如果是VasSDK单接
-        String splashSmaliPath = smaliPath + File.separator + "com" + File.separator + "vas" + File.separator
-                + "vassdk" + File.separator + "VasSdkSplashActivity.smali";
-        File splashSmali = new File(splashSmaliPath);
-        FileUtil.replaceFileContent("\\{VasSDK_Game_Activity\\}", oldMainActivityName, splashSmali);
+//                + "vassdk" + File.separator + "VasSdkSplashActivity.smali";
+//        File splashSmali = new File(splashSmaliPath);
+//        //替换闪屏VasSdkSplashActivity里面startactivity名称
+//        FileUtil.replaceFileContent("\\{VasSDK_Game_Activity\\}", oldMainActivityName, splashSmali);
     }
 
     // 重命名包名
@@ -665,15 +745,28 @@ public class Main
 
         if (gameChannel.getSuffix() == null)
         {// 打包的时候注意修改包名
-        // newPackageVal = "com.tencent.tmgp.syby"; //TODO (神域霸业的包名，应用宝平台)
-            newPackageVal = "com.tencent.tmgp.jtjszhzz"; // TODO
-                                                         // (家庭教师指环之战的包名，应用宝平台)
-            // newPackageVal = "com.tencent.tmgp.xmzbtx"; //TODO
-            // (仙魔争霸的包名，应用宝平台)
+
         }
         else
         {
-            newPackageVal = oldPackageVal + gameChannel.getSuffix(); // 新包名
+            String suffix = gameChannel.getSuffix();
+            if (oldPackageVal.endsWith(".pptv"))
+            {// 如果包名最后为.pptv
+                if (suffix.equalsIgnoreCase(".pptv"))
+                {
+                    newPackageVal = oldPackageVal; // 新包名
+                }
+                else
+                {
+                    int lastIndexOf = oldPackageVal.lastIndexOf(".");
+                    newPackageVal = oldPackageVal.substring(0, lastIndexOf) + suffix;
+                }
+            }
+            else
+            {
+                newPackageVal = oldPackageVal + suffix; // 新包名
+            }
+
         }
 
         File xml = new File(xmlPath);
@@ -736,7 +829,7 @@ public class Main
         {
             addParamElement(rootElement, "VAS_PLATFORMID", game.getPlatpormId());
         }
-        
+
         if (game.getSubPlatformId() != null)
         {
             addParamElement(rootElement, "VAS_SUBPLATFORMID", game.getSubPlatformId());
@@ -759,7 +852,9 @@ public class Main
 
         if (game.getGameMainName() != null)
         {
-            addParamElement(rootElement, "MAIN_ACTIVITY_NAME", game.getGameMainName());
+            // addParamElement(rootElement, "MAIN_ACTIVITY_NAME",
+            // game.getGameMainName());
+            addParamElement(rootElement, "MAIN_ACTIVITY_NAME", mainActivityName);
         }
 
         if (game.getDebug() != null)
@@ -812,16 +907,17 @@ public class Main
         XMLWriter xmlWriter = new XMLWriter(new FileWriter(configNomalXmlPath), xmlFormat);
         xmlWriter.write(document);
         xmlWriter.flush();
-        //关闭流
+        // 关闭流
         xmlWriter.close();
-        
-        createEncryptConfigXml(assetsPath,configNomalXmlPath);
+
+        createEncryptConfigXml(assetsPath, configNomalXmlPath);
     }
-    
+
     /**
      * 将vassdk_config.xml进行加密
      */
-    private static void createEncryptConfigXml(String assetsPath,String configNomalXmlPath){
+    private static void createEncryptConfigXml(String assetsPath, String configNomalXmlPath)
+    {
         String configXmlPath = assetsPath + File.separator + "vassdk_config.xml";
         KeyGenerator kg = null;
         FileOutputStream f = null;
@@ -844,10 +940,9 @@ public class Main
             Cipher cipher = Cipher.getInstance("DESede");
             // 输入流
             cipher.init(Cipher.ENCRYPT_MODE, key);
-            in = new BufferedInputStream(new FileInputStream(configNomalXmlPath));//读取nomal文件进行加密
+            in = new BufferedInputStream(new FileInputStream(configNomalXmlPath));// 读取nomal文件进行加密
             // 输出流
-            out = new CipherOutputStream(new BufferedOutputStream(
-                    new FileOutputStream(configXmlPath)), cipher);
+            out = new CipherOutputStream(new BufferedOutputStream(new FileOutputStream(configXmlPath)), cipher);
             int i;
             do
             {
@@ -860,7 +955,9 @@ public class Main
         catch (Exception e)
         {
             System.out.println("创建加密vassdk_config.xml失败");
-        }finally{
+        }
+        finally
+        {
             try
             {
                 if (f != null)
@@ -883,7 +980,7 @@ public class Main
                     out.close();
                     out = null;
                 }
-   
+
                 deleteVasConfigNomal(configNomalXmlPath);
 
             }
@@ -891,28 +988,28 @@ public class Main
             {
                 e2.printStackTrace();
             }
-            
-            
+
         }
-        
+
     }
-    
-    
-    private static void deleteVasConfigNomal(String xmlPath){
-        //加密完成删除vassdk_config_nomal.xml
+
+    private static void deleteVasConfigNomal(String xmlPath)
+    {
+        // 加密完成删除vassdk_config_nomal.xml
         File configNomalFile = new File(xmlPath);
-        if(configNomalFile.exists()){
+        if (configNomalFile.exists())
+        {
             System.out.println("路径：" + xmlPath);
             System.out.println("configNomalFile 存在");
             boolean delete = configNomalFile.delete();
-            if(!delete){
+            if (!delete)
+            {
                 System.gc();
                 configNomalFile.delete();
             }
             System.out.println("configNomalFile delete : " + delete);
         }
     }
-    
 
     private static void addParamElement(Element rootElement, String name, String value)
     {

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<config>
+<param name="DEBUG" value="true" />
+<param name="APPID" value="107352" />
+<param name="APPKEY" value="YGRD7YZMGT2PXS4B" />
+<param name="RATE" value="10" />
+<param name="VAS_GAMEID" value="1" />
+<param name="VAS_PLATFORMID" value="5" />
+<param name="VAS_SUBPLATFORMID" value="0" />
+<param name="VAS_CHANNELID" value="1" />
+<param name="VAS_SUBCHANNEL_ID" value="1" />
+<plugins>
+<plugin name="com.vas.gp.plugin.GPUserPlugin" type="1" />
+<plugin name="com.vas.gp.plugin.GPPayPlugin"  type="2"/>
+<plugin name="com.vas.gp.plugin.GPSettingPlugin"  type="3"/>
+</plugins>
+</config>

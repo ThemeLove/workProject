@@ -402,17 +402,31 @@ public class VasSDK
         VASLogUtil.d("subPlatformId = " + VasSetting.getInstance().getSubPlatformId());
         return VasSetting.getInstance().getSubPlatformId();
     }
-    
+    /**
+     * 运行游戏自定义参数配置在xml文件中，根据一定的规则，在打包的时候进行改变
+     * @param extrasConfig
+     * @return
+     */
     public String getExtrasConfig(String extrasConfig){
         VASLogUtil.d("getExtrasConfig");
         return VasSetting.getInstance().getExtrasConfig(extrasConfig);
     }
     
+    /**
+     * 是否支持指定方法
+     * @param supported
+     * @return
+     */
     public boolean isFunctionSupported(int supported){
         VASLogUtil.d("isFunctionSupported");
         return VasSetting.getInstance().isFunctionSupported(supported);
     }
     
+    /**
+     * 调用指定方法
+     * @param function
+     * @return
+     */
     public String callFunction(int function){
         VASLogUtil.d("callFunction");
         return VasSetting.getInstance().callFunction(function);
