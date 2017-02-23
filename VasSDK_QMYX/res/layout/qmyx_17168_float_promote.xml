@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:background="@drawable/qmyx_17168_icon_popup">
+
+    <TextView
+        android:id="@+id/tv__title"
+        android:layout_toLeftOf="@+id/ib_btn_right"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:textSize="@dimen/qmyx_17168_text_size_30"
+        android:textColor="@color/qmyx_17168_white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageButton
+        android:id="@+id/ib_btn_right"
+        android:padding="8dp"
+        android:src="@drawable/qmyx_17168_icon_shut_down_float"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>

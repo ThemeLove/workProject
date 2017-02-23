@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="90dip"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/image"
+        android:src="@drawable/default_error"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:layout_marginTop="10dip"
+        android:layout_marginRight="7dip"
+        android:layout_marginLeft="7dip"/>
+
+    <ImageView
+        android:id="@+id/mDeleteView_niuniu_view_listitem"
+        android:layout_gravity="top|right"
+        android:layout_marginTop="3.5dp"
+        android:layout_marginRight="1.5dp"
+        android:layout_width="20dip"
+        android:layout_height="20dip"
+        android:src="@drawable/niuniu_delete_selected_image"
+        android:layout_alignParentRight="true"/>
+
+        <TextView
+            android:id="@+id/niuniu_txv_add_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_below="@+id/image"
+            android:text="添加图片\n最多5张"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

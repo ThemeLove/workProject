@@ -156,7 +156,7 @@ public class GCSDK
     
     public void login(){
         
-        GameCatSDK.Login(mActivity, false, new GameCatSDKListener()
+        GameCatSDK.Login(mActivity, true, new GameCatSDKListener()
         {
             
             @Override

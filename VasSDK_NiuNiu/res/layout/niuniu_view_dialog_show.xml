@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="300dip"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="300dip"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/niuniu_rel_top"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="3dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/niuniu_title_screenshot_dialog"
+            android:gravity="center_horizontal"
+            android:textSize="18sp"
+            android:textColor="@color/niuniu_light_black"
+            android:background="@drawable/niuniu_connertop_bg"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dip"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"></View>
+
+        <TextView
+            android:id="@+id/niuniu_dialog_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/niuniu_text_about_fast_game_tip"
+            android:background="@color/niuniu_color_white"
+            android:textColor="#666"
+            android:padding="15dp"
+            android:textSize="14sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dip"
+            android:layout_marginTop="1dp">
+            <Button
+                android:id="@+id/niuniu_dialog_btn_cannel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/niuniu_text_login_with_account"
+                android:textSize="15sp"
+                android:layout_marginRight="0.25dp"
+                android:background="@drawable/niuniu_conner_bottomleft_bg"
+                android:textColor="@drawable/niuniu_dialog_btn_text_color"/>
+            <Button
+                android:id="@+id/niuniu_dialog_btn_sure"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/niuniu_text_start_game_fast"
+                android:textSize="15sp"
+                android:layout_marginLeft="0.25dp"
+                android:background="@drawable/niuniu_conner_bottomright_bg"
+                android:textColor="@drawable/niuniu_dialog_btn_text_color"/>
+        </LinearLayout>
+
+</LinearLayout>
+
+</LinearLayout>

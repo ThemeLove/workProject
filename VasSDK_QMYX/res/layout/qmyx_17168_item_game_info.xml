@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="104dp"
+                android:background="@color/qmyx_17168_white">
+
+    <ImageView
+        android:id="@+id/iv_game_info_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/tv_game_info_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@+id/iv_game_info_icon"
+        android:textColor="@color/qmyx_17168_deep_black"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tv_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="12dp"
+        android:text="更多"
+        android:textColor="@color/qmyx_17168_blue"
+        android:textSize="15sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignLeft="@+id/tv_game_info_name"
+        android:layout_below="@+id/tv_game_info_name"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_game_info_one"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:background="@drawable/qmyx_17168_selector_white_listen_click"
+            android:singleLine="true"
+            android:textColor="@color/qmyx_17168_light_black"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/tv_game_info_two"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:background="@drawable/qmyx_17168_selector_white_listen_click"
+            android:singleLine="true"
+            android:textColor="@color/qmyx_17168_light_black"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/qmyx_17168_light_grey"/>
+</RelativeLayout>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/qmyx_17168_white_corner_background">
+
+        <include
+            android:id="@+id/header_nav"
+            layout="@layout/qmyx_17168_top_nav_layout"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/rl_service"
+            android:layout_below="@+id/header_nav"
+            android:background="@color/qmyx_17168_background_color"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/qmyx_17168_shape_divider_horizontal"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/qmyx_17168_white">
+
+                    <TextView
+                        android:id="@+id/tv_pack_code_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:text="激  活  码"
+                        android:textColor="@color/qmyx_17168_light_black"
+                        android:textSize="@dimen/qmyx_17168_text_size_30"/>
+
+                    <TextView
+                        android:id="@+id/tv_pack_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@+id/tv_pack_code_title"
+                        android:textColor="@color/qmyx_17168_origin"
+                        android:textSize="@dimen/qmyx_17168_text_size_32"
+                        tools:text="fdsfsdfdsfsd"/>
+
+                    <TextView
+                        android:id="@+id/tv_copy"
+                        android:layout_width="55dp"
+                        android:layout_height="27dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/qmyx_17168_selector_shape_hollow_orange_listen_click_10_radius"
+                        android:gravity="center"
+                        android:text="复制"
+                        android:textColor="@color/qmyx_17168_origin"
+                        android:textSize="@dimen/qmyx_17168_text_size_30"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/qmyx_17168_white"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="礼包内容"
+                        android:textColor="@color/qmyx_17168_light_grey_2"
+                        android:textSize="@dimen/qmyx_17168_text_size_28"/>
+
+                    <TextView
+                        android:id="@+id/tv_pack_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:lineSpacingExtra="4dp"
+                        android:textColor="@color/qmyx_17168_light_black"
+                        android:textSize="@dimen/qmyx_17168_text_size_30"
+                        tools:text="晶钻*200、金币*10W、魔幻券*2晶钻*200、金币*10W、魔幻券*2晶钻*200、金币*10W、魔幻券*2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@color/qmyx_17168_white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="有效期限"
+                        android:textColor="@color/qmyx_17168_light_grey_2"
+                        android:textSize="@dimen/qmyx_17168_text_size_30"/>
+
+                    <TextView
+                        android:id="@+id/tv_expired_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="@color/qmyx_17168_light_black"
+                        android:textSize="@dimen/qmyx_17168_text_size_30"
+                        tools:text="截止至2016-041-04"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/qmyx_17168_white"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="使用方法"
+                        android:textColor="@color/qmyx_17168_light_grey_2"
+                        android:textSize="@dimen/qmyx_17168_text_size_30"/>
+
+                    <TextView
+                        android:id="@+id/tv_access_way"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:lineSpacingExtra="4dp"
+                        android:textColor="@color/qmyx_17168_light_black"
+                        android:textSize="@dimen/qmyx_17168_text_size_30"
+                        tools:text="1.点击右上[菜单]图标。2.在窗口内点击[礼包码]按钮。3.在兑换窗口输入礼包码，点击[兑换礼包]"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/rl_service"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_service"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:gravity="center_vertical"
+                android:text="@string/qmyx_17168_service"/>
+
+            <RelativeLayout
+                android:layout_width="120dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tv_service"
+                android:background="@drawable/qmyx_17168_bg_button_service">
+
+                <TextView
+                    android:id="@+id/tv_qq_server"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:drawableLeft="@drawable/qmyx_17168_customer_qq"
+                    android:drawablePadding="10dp"
+                    android:paddingLeft="2dp"
+                    android:singleLine="true"
+                    android:text="@string/qmyx_17168_service_qq"
+                    android:textColor="@color/qmyx_17168_white"
+                    android:textSize="@dimen/qmyx_17168_text_size_28"/>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

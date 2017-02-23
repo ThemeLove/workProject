@@ -132,6 +132,7 @@ public class PPTVSDK
                 paramUserInfo.setUserName(mAccount);
                 paramUserInfo.setToken(mToken);
                 VasSDK.getInstance().getVasLoginCallback().onSuccess(paramUserInfo);
+                PptvVasAgent.showFloatingView(mActivity);
             }
 
             @Override
@@ -144,11 +145,17 @@ public class PPTVSDK
 
     public void logout()
     {
-
+        VasSDK.getInstance().getVasLogoutCallback().onSuccess();
+        PptvVasAgent.releseFloatViewWindow();
     }
 
     public void pay(final VasOrderInfo orderinfo, final VasRoleInfo roleInfo)
     {
+        if(orderinfo == null || roleInfo == null){
+            VasSDK.getInstance().getVasPayCallback().onFailed(orderinfo.getCpOrderId(), "请查看支付参数", "");
+            return;
+        }
+        
         if (TextUtils.isEmpty(mUid))
         {
             login();
@@ -258,7 +265,8 @@ public class PPTVSDK
                     @Override
                     public void onPayWait(PayResult arg0)
                     {
-
+                        VasSDK.getInstance().getVasPayCallback().onFailed(orderinfo.getCpOrderId(),
+                                arg0.getMessage(), "");
                     }
 
                     @Override
@@ -271,7 +279,7 @@ public class PPTVSDK
                     @Override
                     public void onPayFinish()
                     {
-
+                        VasSDK.getInstance().getVasPayCallback().onCancel("");
                     }
 
                     @Override

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.vassdk_dianyou"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="21" />
+    
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name="com.vas.vassdk.VasApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name">
+        <activity
+            android:name=".VasSDK_DianYouMainActivity"
+            android:configChanges="keyboardHidden|navigation|orientation|screenSize"
+            android:screenOrientation="landscape"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 联运SDK相关配置开始 -->
+		<meta-data android:name="com.dianyou.game.api.GAME_ID"
+			android:value="ormThYe5g98=" />
+		<meta-data android:name="com.dianyou.game.api.APP_KEY"
+			android:value="0589983ddf451036" />
+		<meta-data android:name="com.dianyou.game.APP_SECRET"
+			android:value="804ad1f4f25159ecc8a55259cb83977d0eefa539c302c4fd" />
+
+		<!-- 点游支付中心 -->
+		<activity android:name="com.dianyou.pay.DYPayActivity"
+			android:configChanges="keyboardHidden|navigation|orientation|screenSize"
+			android:exported="false" android:launchMode="singleTop"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+		<activity android:name="com.dianyou.pay.DYControlMethodActivity"
+			android:configChanges="keyboardHidden|navigation|orientation|screenSize"
+			android:exported="false" android:launchMode="singleTop"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+		<activity
+			android:name="com.ipaynow.wechatpay.plugin.inner_plugin.wechat_plugin.activity.WeChatNotifyActivity"
+			android:configChanges="orientation|keyboardHidden|keyboard|smallestScreenSize|locale|screenLayout"
+			android:screenOrientation="behind" android:theme="@android:style/Theme.Translucent" />
+		<activity android:name="com.alipay.sdk.app.H5PayActivity"
+			android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+			android:exported="false" android:screenOrientation="behind"
+			android:windowSoftInputMode="adjustResize|stateHidden" />
+		<!-- end -->
+    </application>
+
+</manifest>

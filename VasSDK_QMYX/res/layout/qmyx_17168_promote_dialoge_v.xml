@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/qmyx_17168_bg_dialog_background_gray"
+        android:layout_margin="15dp">
+
+        <RelativeLayout
+            android:id="@+id/header_nav"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/qmyx_17168_shape_bar">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:text="标题标题"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:maxEms="10"
+                android:singleLine="true"
+                android:textColor="@color/qmyx_17168_white"
+                android:textSize="@dimen/qmyx_17168_text_size_36"/>
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:src="@drawable/qmyx_17168_icon_close_white"
+                />
+
+        </RelativeLayout>
+
+        <WebView
+            android:id="@+id/web_view"
+            android:layout_marginTop="@dimen/qmyx_17168_text_size_20"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tv_confirm"
+            android:layout_below="@+id/header_nav"/>
+
+        <ProgressBar
+            android:id="@+id/pb"
+            android:visibility="gone"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            />
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:background="@drawable/qmyx_17168_shape_botton_corners"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/qmyx_17168_get_it"
+            android:textColor="@color/qmyx_17168_origin"
+            android:textSize="@dimen/qmyx_17168_text_size_32"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"/>
+
+
+    </RelativeLayout>
+</RelativeLayout>

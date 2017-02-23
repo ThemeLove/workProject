@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/niuniu_color_white"
+    android:id="@+id/niuniu_main_background">
+	<include
+        android:id="@+id/niuniu_rel_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/niuniu_view_titlebar"
+        />
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_weight="1"
+	    >
+	    <ProgressBar 
+	        android:id="@+id/niuniu_pgb_loading"
+			android:layout_alignParentTop="true" 
+			style="?android:attr/progressBarStyleHorizontal"
+			android:layout_width="fill_parent" 
+			android:layout_height="8dip"
+			android:max="100" 
+			android:progress="0" 
+			/>
+	    <WebView
+	        android:id="@+id/niuniu_web_container"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:background="@color/niuniu_color_white"
+		    />
+	</LinearLayout>
+</LinearLayout>

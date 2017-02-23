@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="40dip"
+    android:descendantFocusability="blocksDescendants"
+    android:addStatesFromChildren="true"
+    android:background="@null"
+    >
+
+    <ImageView
+        android:id="@+id/niuniu_imv_user_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/niuniu2_menu_icon_person"
+        />
+
+    <TextView
+        android:id="@+id/mContentView_niuniu_view_listitem"
+        android:layout_toRightOf="@+id/niuniu_imv_user_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/niuniu_dark_black"
+        android:textSize="16sp"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="30dip"
+        />
+
+    <ImageView
+        android:id="@+id/mIconView_niuniu_view_listitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/niuniu_menu_icon_listitem"
+        />
+
+    <TextView
+        android:id="@+id/mInfoView_niuniu_view_listitem"
+        android:layout_width="wrap_content"
+        android:layout_height="40dip"
+        android:textColor="@color/niuniu_light_black"
+        android:textSize="14sp"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:layout_marginRight="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        />
+    <ImageButton
+        android:id="@+id/mDeleteView_niuniu_view_listitem"
+        android:layout_width="wrap_content"
+        android:layout_height="35dip"
+        android:src="@drawable/niuniu_menu_btn_close_on"
+        android:background="@null"
+        android:paddingRight="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        />
+
+    <View
+        android:id="@+id/mSlideView_niuniu_view_listitem"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip"
+        android:background="@color/niuniu_edt_hint_color"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="1dip"
+        android:layout_marginRight="1dip"/>
+</RelativeLayout>

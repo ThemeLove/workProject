@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/niuniu_rel_top"
+        layout="@layout/niuniu_view_titlebar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/niuniu_rel_top"
+        android:background="@drawable/niuniu_menu_bg_main"
+        android:fadingEdge="none"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/niuniu_lin_to_bind_phone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginTop="10dip">
+
+                    <!-- 手机号码输入框 -->
+                    <TableRow android:layout_marginTop="0dip">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dip"
+                            android:background="@drawable/niuniu_lin_input_white_bg"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dip"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="50dip"
+                                    android:layout_marginRight="3dip"
+                                    android:layout_marginLeft="10dip"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/niuniu_text_guest_nickname"
+                                    android:textColor="@color/niuniu_text_color_choose_way" />
+
+                                <TextView
+                                    android:id="@+id/niuniu_txv_guest_nickname"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="50dip"
+                                    android:layout_marginRight="5dip"
+                                    android:gravity="center_vertical"
+                                    android:maxLength="15"
+                                    android:text="我是游客"
+                                    android:textColor="@color/niuniu_text_color_choose_way" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="20dip"
+                                    android:paddingLeft="3dip"
+                                    android:paddingRight="3dip"
+                                    android:text="游客身份"
+                                    android:gravity="center"
+                                    android:textColor="@color/niuniu_color_white"
+                                    android:background="@drawable/niuniu_conner_orange_bg"
+                                    android:textSize="12sp"/>
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/niuniu_btn_logout_guest"
+                                android:layout_width="65dip"
+                                android:layout_height="28dip"
+                                android:layout_gravity="center_vertical|right"
+                                android:background="@drawable/niuniu_conner_btn_get_verify_again_bg"
+                                android:text="@string/niuniu_btn_logout_guest"
+                                android:textColor="@color/niuniu_color_white"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="11dip"
+                                android:layout_marginRight="10dip"
+                                android:textSize="12sp"/>
+                        </RelativeLayout>
+                    </TableRow>
+
+                    <!-- 手机号码输入框 -->
+                    <TableRow android:layout_marginTop="20dip">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="56dip"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/niuniu_editview_common"
+                                android:background="@drawable/niuniu_lin_input_white_bg"
+                                android:layout_width="match_parent"
+                                android:layout_height="56dip"
+                                android:paddingLeft="15dip"
+                                android:text="@string/niuniu_text_please_input_phone_uwant_to_bind"
+                                android:textColor="@color/niuniu_text_color_choose_way"
+                                android:inputType="phone"
+                                android:maxLength="30" />
+                        </LinearLayout>
+                    </TableRow>
+
+                    <!-- 手机号码输入框 -->
+                    <TableRow android:layout_marginTop="0dip">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="56dip"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <com.niuniu.android.sdk.widget.NiuniuGameClearEditText
+                                android:id="@+id/mAccountView_niuniu_act_bind_safe_phone"
+                                style="@style/niuniu_editview_common"
+                                android:background="@drawable/niuniu_lin_input_white_bg"
+                                android:layout_width="match_parent"
+                                android:layout_height="56dip"
+                                android:drawableLeft="@drawable/niuniu_edit_imv_phone"
+                                android:drawablePadding="10dip"
+                                android:paddingLeft="15dip"
+                                android:hint="@string/niuniu_plesae_input_phone"
+                                android:textColorHint="@color/niuniu_edt_hint_color"
+                                android:inputType="phone"
+                                android:maxLength="30"
+                                android:textSize="14sp"/>
+                        </LinearLayout>
+                    </TableRow>
+
+
+                    <!-- 登陆密码框 -->
+                    <TableRow android:layout_marginTop="0dip">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="56dip"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <com.niuniu.android.sdk.widget.NiuniuGameClearEditText
+                                android:id="@+id/mPasswordView_niuniu_act_bind_safe_phone_password"
+                                style="@style/niuniu_editview_common"
+                                android:background="@drawable/niuniu_lin_input_white_bg"
+                                android:layout_width="match_parent"
+                                android:layout_height="56dip"
+                                android:drawableLeft="@drawable/niuniu_menu_icon_password"
+                                android:drawablePadding="10dip"
+                                android:paddingLeft="15dip"
+                                android:hint="@string/niuniu_menu_text_login_password"
+                                android:textColorHint="@color/niuniu_edt_hint_color"
+                                android:maxLength="12"
+                                android:password="true"
+                                android:imeOptions="actionDone"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </TableRow>
+
+                    <!-- 短信验证码 -->
+                    <TableRow android:layout_marginTop="0dip">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="56dip"
+                            android:layout_span="2"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:background="@drawable/niuniu_lin_input_white_bg"
+                            android:gravity="center_vertical">
+
+                            <com.niuniu.android.sdk.widget.NiuniuGameClearEditText
+                                android:id="@+id/mMessageView_niuniu_act_bind_safe_phone_textmessage"
+                                style="@style/niuniu_editview_common"
+                                android:background="@null"
+                                android:layout_width="match_parent"
+                                android:layout_height="56dip"
+                                android:layout_marginRight="15dip"
+                                android:paddingLeft="7dip"
+                                android:layout_weight="0.3"
+                                android:drawableLeft="@drawable/niuniu_menu_icon_message"
+                                android:drawablePadding="10dip"
+                                android:hint="@string/niuniu_please_input_verify_msg"
+                                android:textColorHint="@color/niuniu_edt_hint_color"
+                                android:inputType="number"
+                                android:maxLength="12"
+                                android:textSize="14sp" />
+
+                            <Button
+                                android:id="@+id/mMessageBtn_niuniu_act_bind_safe_phone_request"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dip"
+                                android:layout_gravity="right|center_vertical"
+                                android:layout_weight="0.7"
+                                android:background="@drawable/niuniu_btn_get_verify_bg"
+                                android:text="@string/niuniu_btn_send_message_verify"
+                                android:textColor="@color/niuniu_color_white"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+                    </TableRow>
+
+
+                    <TextView
+                        android:id="@+id/mTextView_niuniu_act_bind_safe_phone_textview_tip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dip"
+                        android:layout_marginLeft="15dip"
+                        android:text="手机账号不为空啊"
+                        android:textColor="@color/niuniu_warn_text_color"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:visibility="gone"/>
+
+                    <!-- 语音验证码 -->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dip"
+                            android:textColor="@color/niuniu_notice_kefu_color"
+                            android:text="@string/niuniu_text_tip_nomessage" />
+
+                        <TextView
+                            android:id="@+id/niuniu_txv_get_yuyin_verify_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/niuniu_text_get_yuyin_verify"
+                            android:textColor="@color/niuniu_notice_text_color" />
+                    </LinearLayout>
+
+
+                    <!-- 确定按钮 -->
+                    <TableRow android:layout_marginTop="13dip">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/mCommitView_niuniu_act_bind_safe_phone_confirm"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dip"
+                                android:layout_marginLeft="15dip"
+                                android:layout_marginRight="15dip"
+                                android:background="@drawable/niuniu_login_btn"
+                                android:text="@string/niuniu_btn_ensure_update"
+                                android:textSize="18sp"
+                                android:textColor="@color/niuniu_color_white" />
+                        </LinearLayout>
+                    </TableRow>
+
+
+                    <TextView
+                        android:id="@+id/niuniu_txv_contact_kefu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dip"
+                        android:text="@string/niuniu_text_account_caution"
+                        android:gravity="center"
+                        android:textSize="13sp" />
+
+                </TableLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/niuniu_lin_has_bind_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="30dip"
+                android:padding="5dip"
+                android:visibility="gone">
+                <!-- 绑定成功：上边的提示 -->
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dip"
+                    android:src="@drawable/niuniu_imv_do_success"/>
+
+
+                <TextView
+                    android:id="@+id/mCommitView_niuniu_act_bind_safe_phone_success_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/niuniu_text_update_successed"
+                    android:textColor="@color/niuniu_warn_text_color"
+                    android:gravity="center"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/mCommitView_niuniu_act_bind_safe_phone_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/niuniu_text_update_success"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:layout_marginTop="5dip"
+                    android:textColor="@color/niuniu_btn_weibo_grey_cj" />
+
+                <TextView
+                    android:id="@+id/mCommitView_niuniu_act_bind_safe_phone_success_timer_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="5dip"
+                    android:text="@string/niuniu_btn_bind_phone_success_timer_text"
+                    android:textColor="@color/niuniu_btn_weibo_grey_cj" />
+
+
+                <Button
+                    android:id="@+id/mCommitView_niuniu_act_bind_safe_phone_success"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dip"
+                    android:layout_marginTop="20dip"
+                    android:background="@drawable/niuniu_login_btn"
+                    android:text="@string/niuniu_btn_bind_phone_success"
+                    android:textColor="@color/niuniu_color_white"
+                    android:textSize="18sp"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="450dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/qmyx_17168_bg_dialog_background">
+
+            <ImageView
+                android:src="@drawable/qmyx_17168_launcher"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:layout_marginLeft="15dp"
+                android:text="user_name"
+                android:textColor="@color/qmyx_17168_deep_grey"
+                android:textSize="@dimen/qmyx_17168_text_size_30"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="正在登录..."
+                />
+
+            <TextView
+                android:id="@+id/btn_change_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="切换帐号"
+                android:textColor="@color/qmyx_17168_origin"
+                android:textSize="@dimen/qmyx_17168_text_size_30"/>
+    </LinearLayout>
+</RelativeLayout>

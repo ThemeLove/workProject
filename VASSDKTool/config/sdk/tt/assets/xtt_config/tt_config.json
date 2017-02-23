@@ -1,0 +1,18 @@
+{
+  "base": {
+    "content": {
+      "name": "content.apk",
+      "version": "001",
+      "downloadUrl": "http://3333",
+      "md5": "xxxxx",
+      "enter": "com.wett.cooperation.content.DefaultSDKApi",
+      "assetsPath": "xapk/",
+      "packageId": "com.wett.cooperation.content",
+      "hasSoLib": false,
+      "hasRes": false,
+      "hasCode": false,
+      "isBase": true
+    }
+  }
+}
+

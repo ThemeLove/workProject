@@ -1,5 +1,6 @@
 package com.example.vassdk_pptv;
 
+import java.util.TreeMap;
 import java.util.UUID;
 
 import android.app.Activity;
@@ -7,6 +8,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,6 +28,13 @@ import com.vas.vassdk.callback.VasLoginCallback;
 import com.vas.vassdk.callback.VasLogoutCallback;
 import com.vas.vassdk.callback.VasPayCallback;
 import com.vas.vassdk.callback.VasSwitchAccountCallback;
+import com.vas.vassdk.http.VasHttpUtil;
+import com.vas.vassdk.util.VasMD5Util;
+import com.yolanda.nohttp.RequestMethod;
+import com.yolanda.nohttp.rest.OnResponseListener;
+import com.yolanda.nohttp.rest.Request;
+import com.yolanda.nohttp.rest.Response;
+import com.yolanda.nohttp.rest.StringRequest;
 
 public class VasSDK_PPTVMainActivity extends Activity
 {
@@ -117,7 +126,7 @@ public class VasSDK_PPTVMainActivity extends Activity
                 Log.i("xxxx", "mainactivity getSubPlatformId = " + VasSDK.getInstance().getSubPlatformId());
                 Log.i("xxxx", "mainactivity getExtrasConfig = " + VasSDK.getInstance().getExtrasConfig(""));
                 Log.i("xxxx", "mainactivity callFunction = " + VasSDK.getInstance().callFunction(0));
-                
+                checkLogin(paramUserInfo.getUid(), paramUserInfo.getUserName(), paramUserInfo.getToken(), paramUserInfo.getExtra());
             }
 
             @Override
@@ -430,6 +439,71 @@ public class VasSDK_PPTVMainActivity extends Activity
                         System.exit(0);
                     }
                 }).setNegativeButton("取消", null).show();
+    }
+    
+    
+    ////test
+    private void checkLogin(String uid,String userName,String token,String ext){
+        
+        String time = System.currentTimeMillis() + "";
+        
+        Request<String> request = new StringRequest("http://game.g.pptv.com/api/sdk/integration/check_user_info.php", RequestMethod.POST);
+        TreeMap<String, String> treeMap = new TreeMap<String, String>();
+        
+        treeMap.put("token", token);
+        treeMap.put("user_id", uid);
+        treeMap.put("username", userName);
+        if(!TextUtils.isEmpty(ext)){
+            treeMap.put("ext", ext);
+        }
+        treeMap.put("time", time);
+        treeMap.put("gid", VasSDKConfig.VAS_GAMEID);
+        
+        Log.i("xxxx", "打印：" + VasSDKConfig.VAS_GAMEID);
+        
+        treeMap.put("platform", VasSDKConfig.VAS_PLATFORMID);
+        treeMap.put("sub_platform", VasSDKConfig.VAS_SUBPLATFORMID);
+//        String sign = new VasMD5Util().MD5EncryptString(treeMap, "51d18dc3e04da20fbcb187da4d8a1a16");//gid=1
+        String sign = new VasMD5Util().MD5EncryptString(treeMap, "6a86fe899a96e91b5c7a54864f0212e4");//gid=1017
+        request.add(treeMap);
+        request.add("sign", sign.toLowerCase());
+        VasHttpUtil.getInstance().add(2, request, new OnResponseListener<String>(){
+
+            @Override
+            public void onFailed(int arg0, String arg1, Object arg2, Exception arg3, int arg4, long arg5)
+            {
+                // TODO Auto-generated method stub
+                
+            }
+
+            @Override
+            public void onFinish(int arg0)
+            {
+                // TODO Auto-generated method stub
+                
+            }
+
+            @Override
+            public void onStart(int arg0)
+            {
+                // TODO Auto-generated method stub
+                
+            }
+
+            @Override
+            public void onSucceed(int arg0, Response<String> response)
+            {
+                // TODO Auto-generated method stub
+                if (response.getHeaders().getResponseCode() == 200)
+                {// 请求成功。
+                    String result = response.get();
+                    Log.i("xxxx", result);
+                }
+            }
+            
+        });
+        
+        
     }
     
 

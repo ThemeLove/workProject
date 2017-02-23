@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 空心 -->
+    <solid android:color="@android:color/transparent"/>
+    <!-- 边框 -->
+    <stroke
+        android:width="1px"
+        android:color="@color/qmyx_17168_origin"/>
+    <!-- 圆角 -->
+    <corners android:radius="6px"/>
+</shape>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <solid android:color="@color/pptvvas5_welcome_btn_gray_light" /> 
+    <corners android:radius="@dimen/pptvvas_textview_radius"/>
+    <stroke  
+        android:width="0dip"  
+        android:color="@color/pptvvas5_welcome_btn_gray_light" />
+	<gradient 
+	    android:startColor="@color/pptvvas5_welcome_btn_gray_light"
+	    android:endColor="@color/pptvvas5_welcome_btn_gray_light"
+	    />
+    
+
+</shape>

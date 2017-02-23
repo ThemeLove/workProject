@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:id="@+id/niuniu_main_background">
+    
+	<include 
+        android:id="@+id/niuniu_rel_top"
+        layout="@layout/niuniu_view_titlebar"/>
+	
+	<WebView
+	    android:id="@+id/niuniu_web_container"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:background="@color/niuniu_color_white"
+		android:layout_below="@id/niuniu_rel_top"		
+		/>
+	
+
+
+	<!-- sdk版本信息 -->
+	<TextView 
+	    android:id="@+id/niuniu_web_text_version"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/niuniu_menu_bg_shadow_border"
+	    android:textColor="@color/niuniu_color_white"
+	   	android:textSize="12sp"
+	   	android:gravity="center_vertical|center_horizontal"
+	   	android:paddingLeft="5dip"
+	   	android:paddingRight="5dip"
+	   	android:layout_alignParentRight="true"
+	   	android:layout_alignParentBottom="true"
+	   	android:visibility="invisible"
+	    />
+
+	<!--<Button-->
+		<!--android:id="@+id/test"-->
+		<!--android:layout_width="match_parent"-->
+		<!--android:layout_height="wrap_content"-->
+		<!--android:text="测试一下"-->
+		<!--android:layout_alignParentBottom="true"/>-->
+	
+</RelativeLayout>

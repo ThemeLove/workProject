@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_margin="15dp"
+        android:background="@drawable/qmyx_17168_bg_dialog_background_gray"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_nav"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/qmyx_17168_shape_bar">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="个人"
+                android:textColor="@color/qmyx_17168_white"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:src="@drawable/qmyx_17168_icon_close_white"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_account"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_below="@+id/rl_nav"
+            android:background="@color/qmyx_17168_white"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <com.haobangnet.gamesdk.view.widget.CircleImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/qmyx_17168_launcher"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_nickname_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_toRightOf="@+id/iv_avatar">
+
+                <TextView
+                    android:id="@+id/tv_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="17168"
+                    android:textSize="18sp"/>
+
+                <ImageView
+                    android:id="@+id/iv_vip_level_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="4dp"
+                    android:layout_toRightOf="@+id/tv_nickname"
+                    android:src="@drawable/qmyx_17168_icon_vip_0"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_phone_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_nickname_level"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_toRightOf="@+id/iv_avatar"
+                android:text="手机号："
+                android:textSize="14sp"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_account"
+            android:src="@drawable/qmyx_17168_shape_divider_horizontal"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_account"
+            android:layout_marginTop="15dp"
+            android:background="@color/qmyx_17168_white"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <TextView
+                    android:id="@+id/tv_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:drawableLeft="@drawable/icon_the_account_balance"
+                    android:drawablePadding="16dp"
+                    android:text="账号余额："
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/btn_recharge"
+                    android:layout_width="55dp"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/qmyx_17168_selector_shape_hollow"
+                    android:gravity="center"
+                    android:text="充值"
+                    android:textColor="@color/qmyx_17168_origin"
+                    android:textSize="14sp"/>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_nav"
+                android:src="@drawable/qmyx_17168_shape_divider_horizontal"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <TextView
+                    android:id="@+id/tv_red_packet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:drawableLeft="@drawable/icon_available_red_envelopes"
+                    android:drawablePadding="16dp"
+                    android:text="可用红包："
+                    android:textSize="15sp"/>
+
+                <RelativeLayout
+                    android:id="@+id/btn_scan_red_pack"
+                    android:layout_width="55dp"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/qmyx_17168_selector_shape_hollow">
+
+                    <ImageView
+                        android:id="@+id/iv_badge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:padding="2dp"
+                        android:src="@drawable/qmyx_17168_icon_sdk_float_prompt"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="查看"
+                        android:textColor="@color/qmyx_17168_origin"
+                        android:textSize="14sp"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_nav"
+                android:src="@drawable/qmyx_17168_shape_divider_horizontal"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <TextView
+                    android:id="@+id/tv_vip_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:drawableLeft="@drawable/qmyx_17168_icon_userinfo_vip"
+                    android:drawablePadding="16dp"
+                    android:text="VIP等级："
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/tv_vip_level_scan_html"
+                    android:layout_width="55dp"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/qmyx_17168_selector_shape_hollow"
+                    android:gravity="center"
+                    android:text="查看"
+                    android:textColor="@color/qmyx_17168_origin"
+                    android:textSize="14sp"/>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_nav"
+                android:src="@drawable/qmyx_17168_shape_divider_horizontal"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:drawableLeft="@drawable/icon_automatic_login"
+                    android:drawablePadding="16dp"
+                    android:text="自动登录游戏"
+                    android:textSize="15sp"/>
+
+                <com.haobangnet.gamesdk.view.widget.SwitchButton
+                    android:id="@+id/sbt_auto_login"
+                    android:layout_width="38dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:clickable="true"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rl_service"
+            android:src="@drawable/qmyx_17168_shape_divider_horizontal"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_service"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/qmyx_17168_shape_bar_white_bottom"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/tv_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="@string/qmyx_17168_service"/>
+
+            <RelativeLayout
+                android:layout_width="120dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tv_service"
+                android:background="@drawable/qmyx_17168_bg_button_service">
+
+                <TextView
+                    android:id="@+id/tv_qq_server"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:singleLine="true"
+                    android:drawableLeft="@drawable/qmyx_17168_customer_qq"
+                    android:drawablePadding="10dp"
+                    android:paddingLeft="2dp"
+                    android:text="@string/qmyx_17168_service_qq"
+                    android:textColor="@color/qmyx_17168_white"
+                    android:textSize="@dimen/qmyx_17168_text_size_28"/>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_load_state"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#fff"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+</RelativeLayout>

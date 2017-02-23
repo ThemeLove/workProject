@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<config>
+
+<param name="APPID" value="1039" />
+<param name="APPKEY" value="76d680d5fa9350644750c9a5121edfd0" />
+<param name="VAS_ORIENTATION" value="0" /><!-- 0横屏 1竖屏 -->
+<param name="VAS_GAMEID" value="1" />
+<param name="VAS_PLATFORMID" value="7" />
+<param name="VAS_SUBPLATFORMID" value="0" />
+<param name="VAS_CHANNELID" value="1" />
+<param name="VAS_SUBCHANNEL_ID" value="1" />
+<plugins>
+<plugin name="com.vas.nn.plugin.NiuNiuUserPlugin" type="1" />
+<plugin name="com.vas.nn.plugin.NiuNiuPayPlugin"  type="2"/>
+<plugin name="com.vas.nn.plugin.NiuNiuSettingPlugin"  type="3"/>
+</plugins>
+</config>

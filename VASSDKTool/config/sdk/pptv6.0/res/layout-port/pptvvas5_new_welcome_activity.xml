@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- <RelativeLayout -->
+
+    <com.pptv.vassdk.ui.widget.BackRelativeLayout
+        android:id="@+id/pptvvas_backframe_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <com.pptv.vassdk.ui.widget.PPTVDTextView
+            android:id="@+id/unread_info_txt"
+            android:layout_width="match_parent"
+            android:layout_height="45px"
+            android:layout_marginTop="@dimen/pptvvas_topbar_two_height_portrait"
+            android:background="@drawable/pptvvas4_info_show_bg"
+            android:gravity="center"
+            android:textColor="#7C7C7E"
+            android:textSize="32px"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/unread_info_txt"
+            android:layout_marginBottom="@dimen/pptvvas_bottombar_height"
+            android:layout_marginLeft="90px"
+            android:layout_marginRight="90px"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/pptvvas_newlay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="170px"
+                    android:orientation="horizontal" >
+
+                    <com.pptv.vassdk.ui.widget.MyWelcomeBtn
+                        android:id="@+id/pptvvas_welfare_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <com.pptv.vassdk.ui.widget.MyWelcomeBtn
+                        android:id="@+id/pptvvas_gift_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5px"
+                        android:layout_weight="1" />
+
+                    <com.pptv.vassdk.ui.widget.MyWelcomeBtn
+                        android:id="@+id/pptvvas_cashcoupon_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5px"
+                        android:layout_weight="1" />
+                </LinearLayout>
+                <!-- 正式账号的三个条目 -->
+                <LinearLayout
+                    android:id="@+id/pptvvas_account_lin"
+                    android:layout_width="match_parent"
+                    android:layout_height="170px"
+                    android:layout_marginTop="5px"
+                    android:visibility="gone"
+                    android:orientation="horizontal" >
+
+                    <com.pptv.vassdk.ui.widget.MyWelcomeBtn
+                        android:id="@+id/pptvvas_setting_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <com.pptv.vassdk.ui.widget.MyWelcomeBtn
+                        android:id="@+id/pptvvas_feedback_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5px"
+                        android:layout_weight="1" />
+
+                    <com.pptv.vassdk.ui.widget.MyWelcomeBtn
+                        android:id="@+id/pptvvas_switchaccount_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5px"
+                        android:layout_weight="1" />
+                </LinearLayout>
+                <!-- 游客的三个条目 -->
+                <LinearLayout
+                    android:id="@+id/pptvvas_guest_lin"
+                    android:layout_width="match_parent"
+                    android:layout_height="170px"
+                    android:layout_marginTop="5px"
+                    android:orientation="horizontal" >
+
+                    <com.pptv.vassdk.ui.widget.MyWelcomeBtn
+                        android:id="@+id/pptvvas_accountlogin_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <com.pptv.vassdk.ui.widget.MyWelcomeBtn
+                        android:id="@+id/pptvvas_accountregister_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5px"
+                        android:layout_weight="1" />
+
+                    <com.pptv.vassdk.ui.widget.MyWelcomeBtn
+                        android:id="@+id/pptvvas_guestfeedback_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5px"
+                        android:layout_weight="1" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.pptv.vassdk.ui.widget.PPTVDButton
+                android:id="@+id/pptvvas_startgame_btn"
+                android:layout_width="match_parent"
+                android:layout_height="160px"
+                android:layout_marginTop="40px"
+                android:background="@drawable/pptvvas5_startgame" />
+        </LinearLayout>
+    </com.pptv.vassdk.ui.widget.BackRelativeLayout>
+    <!-- </RelativeLayout> -->
+
+</LinearLayout>

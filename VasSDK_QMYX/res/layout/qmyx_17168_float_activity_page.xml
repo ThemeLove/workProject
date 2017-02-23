@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/qmyx_17168_bg_dialog_background_gray"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/header_nav"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/qmyx_17168_shape_bar">
+
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:maxEms="10"
+                android:text="活动"
+                android:textColor="@color/qmyx_17168_white"
+                android:textSize="@dimen/qmyx_17168_text_size_36"/>
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:src="@drawable/qmyx_17168_icon_close_white"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/qmyx_17168_bg_dialog_background">
+
+            <ProgressBar
+                android:id="@+id/pb_download"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_centerHorizontal="true"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="2dp"
+                android:progressDrawable="@drawable/qmyx_17168_color_progressbar"/>
+
+            <TextView
+                android:id="@+id/loadingTextView"
+                android:layout_below="@+id/pb_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:text="加载中……"
+                android:textColor="@color/qmyx_17168_deep_black"
+                android:textSize="18dp"/>
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="8dp"
+            android:layout_below="@+id/header_nav"
+            android:background="@drawable/qmyx_17168_bg_dialog_background">
+
+            <LinearLayout
+                android:id="@+id/ll_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

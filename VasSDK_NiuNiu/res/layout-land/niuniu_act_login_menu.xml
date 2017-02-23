@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/niuniu_main_background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/niuniu_transparent_window_bg"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/niuniu_rel_top"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- 登录框 -->
+
+
+        <LinearLayout
+            android:layout_width="400dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:background="#FEFEFE"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/niuniu_lin_login_with_password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dip"
+                    android:layout_marginTop="10dip">
+
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/niuniu2_login_title_imv"></ImageView>
+
+                    <ImageButton
+                        android:id="@+id/mCloseView_niuniu_view_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dip"
+                        android:layout_marginTop="5dip"
+                        android:background="@drawable/niuniu_btn_close_bg" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginRight="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/niuniu_lin_act_login"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dip"
+                        android:layout_marginRight="30dip"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/niuniu_lin_input_account"
+                            android:layout_width="match_parent"
+                            android:layout_height="46dip"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/niuniu2_input_edittext"
+                            android:orientation="horizontal"
+                            android:paddingBottom="1dip"
+                            android:paddingLeft="0dip"
+                            android:paddingTop="1dip">
+
+                            <com.niuniu.android.sdk.widget.NiuniuGameClearEditText
+                                android:id="@+id/mAccountView_niuniu_act_login_menu"
+                                style="@style/niuniu_editview_common_nobackground"
+                                android:layout_width="wrap_content"
+                                android:layout_height="44dip"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="9"
+                                android:background="@null"
+                                android:drawableLeft="@drawable/niuniu2_menu_icon_person"
+                                android:drawablePadding="10dip"
+                                android:hint="@string/niuniu_plesae_input_phone_or_nickname"
+                                android:maxLength="20"
+                                android:paddingLeft="10dip"
+                                android:textColorHint="@color/niuniu_edt_hint_color" />
+
+                            <ImageButton
+                                android:id="@+id/mForegetPasswordView_niuniu_act_login_menu_test"
+                                android:layout_width="wrap_content"
+                                android:layout_height="46dip"
+                                android:layout_weight="0"
+                                android:background="@null"
+                                android:padding="10dip"
+                                android:src="@drawable/niuniu_menu_bg_btn_xiala_cj" />
+                        </LinearLayout>
+
+                        <com.niuniu.android.sdk.widget.NiuniuGameClearEditText
+                            android:id="@+id/niuniu_edt_input_password"
+                            style="@style/niuniu_editview_common_nobackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="46dip"
+                            android:layout_marginTop="5dip"
+                            android:background="@drawable/niuniu_input_bg"
+                            android:drawableLeft="@drawable/niuniu2_menu_icon_password"
+                            android:drawablePadding="10dip"
+                            android:digits="@string/niuniu_text_only_input_digits"
+                            android:hint="@string/niuniu_text_edt_tip_password"
+                            android:inputType="textPassword"
+                            android:maxLength="12"
+                            android:layout_weight="1"
+                            android:paddingLeft="14dip"
+                            android:textColorHint="@color/niuniu_edt_hint_color" />
+
+
+                        <Button
+                            android:id="@+id/mLoginView_niuniu_act_login_menu"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dip"
+                            android:layout_marginBottom="15dip"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dip"
+                            android:layout_marginTop="20dip"
+                            android:background="@drawable/niuniu2_login_btn_unforce_bg"
+                            android:text="@string/niuniu_btn_get_into_game"
+                            android:textColor="@color/niuniu_color_white"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <ScrollView
+                        android:id="@+id/mScrollerView_niuniu_act_login_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="130dip"
+                        android:layout_marginTop="58dip"
+                        android:layout_alignRight="@+id/niuniu_lin_act_login"
+                        android:layout_alignLeft="@+id/niuniu_lin_act_login"
+                        android:background="@drawable/niuniu_view_user_list_bg"
+                        android:fadingEdge="none"
+                        android:paddingLeft="0dip"
+                        android:paddingRight="0dip"
+                        android:scrollbars="none"
+                        android:visibility="gone">
+
+                        <com.niuniu.android.sdk.widget.NiuniuGameUserListView
+                            android:id="@+id/mUserListView_niuniu_act_login_menu"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dip"
+                            android:background="@null" />
+                    </ScrollView>
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/niuniu_color_silver" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dip"
+                    android:layout_marginLeft="30dip"
+                    android:layout_marginRight="30dip"
+                    android:layout_marginTop="15dip">
+
+                    <TextView
+                        android:id="@+id/niuniu_txv_forget_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"
+                        android:text="@string/niuniu_btn_forget_password"
+                        android:textColor="#4894BF" />
+
+                    <TextView
+                        android:id="@+id/niuniu_txv_goto_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dip"
+                        android:text="@string/niuniu_btn_goto_register_now"
+                        android:textColor="#333333" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/niuniu_lin_login_with_verifycode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dip"
+                    android:layout_marginTop="10dip">
+
+                    <ImageButton
+                        android:id="@+id/niuniu_btn_goback"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="#00000000"
+                        android:padding="12dip"
+                        android:src="@drawable/niuniu_btn_goback" />
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/niuniu2_login_title_imv"></ImageView>
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dip"
+                    android:layout_marginTop="5dip"
+                    android:background="@color/niuniu_color_silver" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+
+                    <com.niuniu.android.sdk.widget.NiuniuGameClearEditText
+                        android:id="@+id/niuniu_edt_input_login_phone"
+                        style="@style/niuniu_editview_common"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dip"
+                        android:layout_marginTop="5dip"
+                        android:background="@drawable/niuniu_edt_bg"
+                        android:digits="@string/niuniu_text_input_only_number"
+                        android:drawableLeft="@drawable/niuniu2_edit_imv_phone"
+                        android:drawablePadding="9dip"
+                        android:hint="@string/niuniu_plesae_input_phone"
+                        android:maxLength="30"
+                        android:inputType="phone"
+                        android:paddingLeft="17dip"
+                        android:textColorHint="@color/niuniu_edt_hint_color" />
+
+
+                    <LinearLayout
+                        android:id="@+id/niuniu_lin_login_input_verifycode"
+                        style="@style/niuniu_editview_common"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dip"
+                        android:layout_marginTop="5dip"
+                        android:background="@drawable/niuniu_edt_bg"
+                        android:orientation="horizontal"
+                        android:paddingLeft="10dip">
+
+                        <com.niuniu.android.sdk.widget.NiuniuGameClearEditText
+                            android:id="@+id/niuniu_edt_input_login_verify_code"
+                            style="@style/niuniu_editview_common_nobackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dip"
+                            android:layout_marginRight="5dip"
+                            android:layout_weight="0.3"
+                            android:drawableLeft="@drawable/niuniu2_menu_icon_message"
+                            android:drawablePadding="5dip"
+                            android:hint="@string/niuniu_please_input_verify_msg"
+                            android:maxLength="12"
+                            android:inputType="number"
+                            android:textColorHint="@color/niuniu_edt_hint_color" />
+
+                        <Button
+                            android:id="@+id/niuniu_login_btn_get_verify_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="34dip"
+                            android:layout_gravity="right|center"
+                            android:layout_weight="0.7"
+                            android:background="@drawable/niuniu_btn_get_verify_bg"
+                            android:text="@string/niuniu_btn_send_message_verify"
+                            android:textColor="@color/niuniu_color_white"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/niuniu_txv_input_login_verifycode_tip"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dip"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/niuniu_title_bar_color"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/niuniu_btn_login_with_verifycode"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dip"
+                    android:layout_marginLeft="35dip"
+                    android:layout_marginRight="35dip"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/niuniu2_login_btn_unforce_bg"
+                    android:text="@string/niuniu_btn_login"
+                    android:textColor="@color/niuniu_color_white"
+                    android:textSize="20sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/niuniu_lin_login_verifycode_agreement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dip">
+
+                    <CheckBox
+                        android:id="@+id/mAgreeView_niuniu_act_login_menu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:button="@drawable/niuniu_chb_check"
+                        android:checked="true"
+                        android:paddingLeft="5dip"
+                        android:textColor="@color/niuniu_text_color_agreement"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/mProtocolView_niuniu_act_login_menu_agreement"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dip"
+                        android:layout_gravity="left"
+                        android:background="@null"
+                        android:text="@string/niuniu_btn_protocal_niuniu_deal"
+                        android:textColor="@color/niuniu_notice_title_color"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/niuniu_lin_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="38dip">
+
+                    <ImageButton
+                        android:id="@+id/niuniu_btn_goback_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="#00000000"
+                        android:padding="12dip"
+                        android:src="@drawable/niuniu_btn_goback_register" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/niuniu_btn_signup"
+                        android:textColor="#BD3F37"
+                        android:textSize="20sp"></TextView>
+
+
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/niuniu_color_silver" />
+
+                <LinearLayout
+                    android:id="@+id/niuniu_lin_register_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dip"
+                    android:layout_marginRight="50dip"
+                    android:layout_marginTop="10dip"
+                    android:background="@drawable/niuniu_login_input_type"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/niuniu_txv_register_with_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dip"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="@string/niuniu_btn_goto_register_by_phone"
+                        android:textColor="@color/niuniu_color_black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/niuniu_txv_register_quickly"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dip"
+                        android:layout_weight="1"
+                        android:background="@drawable/niuniu_btn_red_color_off"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="@string/niuniu_btn_goto_register_quickly"
+                        android:textColor="@color/niuniu_color_white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/niuniu_lin_register_by_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="30dip"
+                    android:layout_marginRight="30dip"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.niuniu.android.sdk.widget.NiuniuGameClearEditText
+                        android:id="@+id/niuniu_edt_input_register_phone"
+                        style="@style/niuniu_editview_common"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dip"
+                        android:layout_marginTop="5dip"
+                        android:background="@drawable/niuniu_input_bg"
+                        android:digits="@string/niuniu_text_input_only_number"
+                        android:drawableLeft="@drawable/niuniu2_edit_imv_phone"
+                        android:drawablePadding="11dip"
+                        android:hint="@string/niuniu_plesae_input_phone"
+                        android:maxLength="11"
+                        android:inputType="phone"
+                        android:paddingLeft="14dip"
+                        android:textColorHint="@color/niuniu_edt_hint_color"
+                        android:textSize="14sp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/niuniu_liin_register_input_verifycode"
+                        style="@style/niuniu_editview_common"
+                        android:layout_width="match_parent"
+                        android:layout_height="38dip"
+                        android:layout_marginTop="5dip"
+                        android:background="@drawable/niuniu_input_bg"
+                        android:orientation="horizontal"
+                        android:paddingLeft="1dip">
+
+                        <com.niuniu.android.sdk.widget.NiuniuGameClearEditText
+                            android:id="@+id/niuniu_edt_input_register_verify_code"
+                            style="@style/niuniu_editview_common_nobackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="37dip"
+                            android:layout_marginRight="5dip"
+                            android:layout_weight="0.3"
+                            android:drawableLeft="@drawable/niuniu2_menu_icon_message"
+                            android:drawablePadding="6dip"
+                            android:hint="@string/niuniu_please_input_verify_msg"
+                            android:maxLength="12"
+                            android:inputType="number"
+                            android:paddingLeft="10dip"
+                            android:textColorHint="@color/niuniu_edt_hint_color"
+                            android:textSize="14sp" />
+
+                        <Button
+                            android:id="@+id/niuniu_register_btn_get_verify_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="28dip"
+                            android:layout_gravity="right|center"
+                            android:layout_weight="0.7"
+                            android:background="@drawable/niuniu_btn_get_verify_bg"
+                            android:text="@string/niuniu_btn_send_message_verify"
+                            android:textColor="@color/niuniu_color_white"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <com.niuniu.android.sdk.widget.NiuniuGameClearEditText
+                        android:id="@+id/niuniu_edt_register_input_pwd"
+                        style="@style/niuniu_editview_common_nobackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="37dip"
+                        android:layout_marginBottom="4dip"
+                        android:layout_marginTop="5dip"
+                        android:background="@drawable/niuniu_input_bg"
+                        android:digits="@string/niuniu_text_only_input_digits"
+                        android:drawableLeft="@drawable/niuniu2_menu_icon_password1"
+                        android:drawablePadding="7dip"
+                        android:hint="@string/niuniu_text_set_tip_password"
+                        android:inputType="textPassword"
+                        android:maxLength="12"
+                        android:paddingLeft="13dip"
+                        android:textColorHint="@color/niuniu_edt_hint_color"
+                        android:textSize="14sp" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/niuniu_lin_register_by_guest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="50dip"
+                    android:layout_marginRight="50dip"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/niuniu_edt_input_register_guest"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dip"
+                        android:layout_marginTop="0dip"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:enabled="false"
+                        android:text="一键注册,便捷游戏"
+                        android:textColor="@color/niuniu_text_color_normal"/>
+
+                    <com.niuniu.android.sdk.widget.NiuniuGameClearEditText
+                        android:id="@+id/niuniu_edt_register_input_guest_pwd"
+                        style="@style/niuniu_editview_common_nobackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dip"
+                        android:layout_marginBottom="4dip"
+                        android:layout_marginTop="15dip"
+                        android:background="@drawable/niuniu_input_bg"
+                        android:digits="@string/niuniu_text_only_input_digits"
+                        android:drawableLeft="@drawable/niuniu2_menu_icon_password"
+                        android:drawablePadding="10dip"
+                        android:hint="@string/niuniu_text_set_tip_password"
+                        android:inputType="textPassword"
+                        android:maxLength="12"
+                        android:paddingLeft="14dip"
+                        android:textColorHint="@color/niuniu_edt_hint_color" />
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/niuniu_txv_register_input_pwd_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dip"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="0dp"
+                    android:text=""
+                    android:textColor="@color/niuniu_title_bar_color"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/niuniu_btn_register_and_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dip"
+                    android:layout_marginLeft="60dip"
+                    android:layout_marginRight="60dip"
+                    android:layout_marginTop="5dip"
+                    android:background="@drawable/niuniu_btn_red_color_on"
+                    android:text="@string/niuniu_btn_register_and_login"
+                    android:textColor="@color/niuniu_notice_body_bg"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:id="@+id/niuniu_lin_agreement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dip">
+
+                    <CheckBox
+                        android:id="@+id/mAgreeView_niuniu_act_register_menu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:button="@drawable/niuniu_chb_check"
+                        android:checked="true"
+                        android:paddingLeft="5dip"
+                        android:textColor="@color/niuniu_text_color_agreement"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/mProtocolView_niuniu_act_register_menu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dip"
+                        android:layout_gravity="left"
+                        android:layout_toRightOf="@id/mAgreeView_niuniu_act_login_menu"
+                        android:background="@null"
+                        android:text="@string/niuniu_btn_protocal_niuniu_deal"
+                        android:textColor="@color/niuniu_notice_title_color"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/niuniu_lin_guest_register_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dip">
+
+                    <ImageButton
+                        android:id="@+id/niuniu_btn_goback_register_result"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="#00000000"
+                        android:padding="12dip"
+                        android:src="@drawable/niuniu_btn_goback_register" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/niuniu_text_register_sucess"
+                        android:textColor="#BD3F37"
+                        android:textSize="20sp"></TextView>
+
+
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/niuniu_color_silver" />
+
+                <LinearLayout
+                    android:id="@+id/niuniu_lin_register_guest_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dip"
+                    android:layout_marginRight="30dip"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginTop="15dip"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/niuniu_edt_input_register_guest_account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dip"
+                        android:paddingTop="3dip"
+                        android:paddingBottom="3dip"
+                        android:background="#F5F5F5"
+                        android:drawablePadding="11dip"
+                        android:paddingLeft="14dip"
+                        android:paddingRight="14dip"
+                        android:text="您的账号：44444444"
+                        android:gravity="center"
+                        android:textColor="@color/niuniu_light_black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/niuniu_edt_register_guest_pwd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dip"
+                        android:layout_marginTop="5dip"
+                        android:background="#F5F5F5"
+                        android:text="您的密码：545645646"
+                        android:gravity="center"
+                        android:paddingLeft="14dip"
+                        android:paddingRight="14dip"
+                        android:paddingTop="3dip"
+                        android:paddingBottom="3dip"
+                        android:textColor="@color/niuniu_light_black"
+                        android:textSize="18sp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="10dip"
+                        android:textColor="#BD3F37"
+                        android:textSize="12sp"
+                        android:background="@drawable/niuniu_register_result_tip_imv"
+                        android:text="@string/niuniu_text_please_remember_account"/>
+
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/niuniu_color_silver" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dip">
+
+
+                    <Button
+                        android:id="@+id/niuniu_goto_bind"
+                        android:layout_width="0dip"
+                        android:layout_height="34dip"
+                        android:layout_marginLeft="0dip"
+                        android:layout_marginRight="20dip"
+                        android:layout_marginTop="5dip"
+                        android:background="@drawable/niuniu_btn_get_verify_bg"
+                        android:text="@string/niuniu_btn_goto_bind_phone"
+                        android:textColor="@color/niuniu_notice_body_bg"
+                        android:textSize="18sp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/niuniu_goto_game"
+                        android:layout_width="0dip"
+                        android:layout_height="34dip"
+                        android:layout_marginLeft="20dip"
+                        android:layout_marginRight="0dip"
+                        android:layout_marginTop="5dip"
+                        android:background="@drawable/niuniu_btn_red_color_off"
+                        android:text="@string/niuniu_btn_login"
+                        android:textColor="@color/niuniu_notice_body_bg"
+                        android:textSize="18sp"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

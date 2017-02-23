@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/niuniu_main_background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <include
+        android:id="@+id/niuniu_rel_top"
+        layout="@layout/niuniu_view_titlebar"/>
+
+    <ScrollView
+        android:layout_below="@+id/niuniu_rel_top"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#F5F5F5"
+        android:fadingEdge="none"
+        android:scrollbars="none"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="40dip">
+
+
+            <!-- 菜单 -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:background="@color/niuniu_color_white">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dip"
+                    android:background="@color/niuniu_color_silver" />
+
+
+                <!-- 昵称 -->
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/niuniu_color_white">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:id="@+id/niuniu_txv_nickname"
+                        android:drawableLeft="@drawable/niuniu_imv_account_yonghu"
+                        android:drawablePadding="19dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="20dip"
+                        android:textColor="@color/niuniu_light_black"
+                        android:layout_gravity="left|center_vertical"
+                        android:gravity="left|center_vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dip"
+                        android:maxLength="20"
+                        android:text="用户名：aaaaaa"/>
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dip"
+                    android:background="@color/niuniu_color_silver" />
+
+
+                <RelativeLayout
+                    android:id="@+id/niuniu_rel_niu_coin"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:paddingLeft="22dip"
+                    android:gravity="center_vertical"
+                    android:background="@color/niuniu_color_white">
+
+                    <ImageView
+                        android:id="@+id/niuniu_imv_niu_coin"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/niuniu_imv_niu_coin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/niuniu_txv_niu_coin"
+                        android:layout_marginLeft="17dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/niuniu_light_black"
+                        android:layout_toRightOf="@id/niuniu_imv_niu_coin"
+                        android:layout_centerVertical="true"
+                        android:text="@string/niuniu_imv_niu_coin_rest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/niuniu_txv_niu_coin_rest"
+                        android:layout_marginRight="5dp"
+                        android:layout_toRightOf="@id/niuniu_txv_niu_coin"
+                        android:textSize="14sp"
+                        android:text="正在加载"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:textColor="@color/niuniu2_text_tip"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"/>
+
+                    <Button
+                        android:id="@+id/niuniu_btn_niu_coin_to_voucher"
+                        android:layout_width="60dip"
+                        android:layout_height="28dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dip"
+                        android:textSize="12sp"
+                        android:gravity="center"
+                        android:background="@drawable/niuniu_btn_coin_to_voucher"
+                        android:text="@string/niuniu_title_voucher"
+                        android:textColor="@color/niuniu_color_orange"
+                        android:visibility="gone"/>
+
+                    <ImageView
+                        android:layout_marginRight="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/niuniu_menu_icon_arrow_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                </RelativeLayout>
+
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dip"
+                    android:background="@color/niuniu_color_silver" />
+                <RelativeLayout
+                    android:id="@+id/niuniu_rel_safe_phone"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/niuniu_color_white">
+
+                    <ImageView
+                        android:id="@+id/niuniu_imv_safe_phone_bind_label"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/niuniu_imv_account_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"/>
+
+                    <TextView
+                        android:id="@+id/niuniu_txv_safe_phone_bind_label"
+                        android:layout_marginLeft="17dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/niuniu_text_color_agreement"
+                        android:layout_toRightOf="@id/niuniu_imv_safe_phone_bind_label"
+                        android:layout_centerVertical="true"
+                        android:text="@string/niuniu_text_safe_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/niuniu_txv_safe_phone_bind"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentRight="true"
+                        android:textSize="14sp"
+                        android:textColor="@color/niuniu_color_orange"
+                        android:layout_centerVertical="true"
+                        android:gravity="right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""/>
+
+
+                </RelativeLayout>
+
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dip"
+                    android:background="@color/niuniu_color_silver" />
+
+                <RelativeLayout
+                    android:id="@+id/niuniu_rel_change_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/niuniu_color_white">
+                    <ImageView
+                        android:id="@+id/niuniu_imv_change_password"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/niuniu_imv_account_pwd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"/>
+
+                    <TextView
+                        android:id="@+id/niuniu_txv_change_password"
+                        android:layout_marginLeft="17dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/niuniu_text_color_agreement"
+                        android:layout_centerVertical="true"
+                        android:text="@string/niuniu_menu_text_change_password"
+                        android:layout_toRightOf="@+id/niuniu_imv_change_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                    <ImageView
+                        android:layout_marginRight="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/niuniu_menu_icon_arrow_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dip"
+                    android:background="@color/niuniu_color_silver" />
+
+                <RelativeLayout
+                    android:id="@+id/niuniu_rel_payrecord"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/niuniu_color_white">
+                    <ImageView
+                        android:id="@+id/niuniu_imv_record"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/niuniu_imv_account_pay_record"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"/>
+                    <TextView
+                        android:layout_marginLeft="17dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/niuniu_text_color_agreement"
+                        android:layout_centerVertical="true"
+                        android:text="@string/niuniu_text_payrecord"
+                        android:layout_toRightOf="@+id/niuniu_imv_record"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_marginRight="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/niuniu_menu_icon_arrow_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dip"
+                    android:background="@color/niuniu_color_silver" />
+
+
+                <RelativeLayout
+                    android:id="@+id/niuniu_rel_about_us"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/niuniu_color_white">
+                    <ImageView
+                        android:id="@+id/niuniu_imv_about_us"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/niuniu_imv_account_about_us"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"/>
+                    <TextView
+                        android:layout_marginLeft="17dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/niuniu_text_color_agreement"
+                        android:layout_centerVertical="true"
+                        android:text="@string/niuniu_text_about_us"
+                        android:layout_toRightOf="@+id/niuniu_imv_about_us"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_marginRight="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/niuniu_menu_icon_arrow_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dip"
+                    android:background="@color/niuniu_color_silver" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/niuniu_do_logout"
+                android:layout_width="match_parent"
+                android:layout_height="44dip"
+                android:layout_marginTop="25dp"
+                android:background="@color/niuniu_color_white">
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dip"
+                    android:textSize="16sp"
+                    android:text="@string/niuniu_btn_logout"
+                    android:gravity="center"
+                    android:textColor="@color/niuniu_warn_text_color" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

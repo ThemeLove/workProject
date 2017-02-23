@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:id="@+id/niuniu_main_background"
+    android:background="@color/niuniu_transparent_window_bg"
+    >
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="1dip"
+        android:layout_marginRight="1dip"
+        android:layout_marginTop="1dip"
+        android:layout_marginBottom="1dip"
+        >
+    
+        <LinearLayout 
+            android:layout_width="fill_parent"
+    		android:layout_height="fill_parent"
+    		android:orientation="vertical"
+            >
+	        
+			<include
+		        android:id="@+id/niuniu_rel_top"
+		        layout="@layout/niuniu_view_titlebar"/>
+			
+			<WebView
+			    android:id="@+id/niuniu_web_container"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:background="#fcfe90">
+			</WebView>
+	
+		</LinearLayout>
+	</RelativeLayout>
+</RelativeLayout>

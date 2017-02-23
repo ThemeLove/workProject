@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<config>
+<param name="VAS_ORIENTATION" value="2" /><!-- 1为竖屏 2为横屏 -->
+<param name="VAS_GAMEID" value="1" />
+<param name="VAS_PLATFORMID" value="4" />
+<param name="VAS_SUBPLATFORMID" value="0" />
+<param name="VAS_CHANNELID" value="1" />
+<param name="VAS_SUBCHANNEL_ID" value="1" />
+<plugins>
+	<plugin name="com.vas.tt.plugin.TTUserPlugin" type="1" />
+	<plugin name="com.vas.tt.plugin.TTPayPlugin"  type="2"/>
+	<plugin name="com.vas.tt.plugin.TTSettingPlugin"  type="3"/>
+</plugins>
+
+</config>

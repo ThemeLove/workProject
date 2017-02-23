@@ -288,7 +288,7 @@ public class Main
             String publicXmlPath = tempPath + File.separator + "res" + File.separator + "values" + File.separator
                     + "public.xml";
             //TODO 添加分dex方法
-            mutiSmali();
+//            mutiSmali();
             
             
             // 打包
@@ -416,10 +416,15 @@ public class Main
                     size = 144;
                     iconMarkPath += "drawable-xxhdpi" + File.separator + gameChannel.getIcon() + ".png";
                 }
+                else if (file.getName().indexOf("drawable-xxxhdpi") != -1)
+                {
+                    size = 512;
+                    iconMarkPath += "drawable-xxxhdpi" + File.separator + gameChannel.getIcon() + ".png";
+                }
                 else
-                { // 默认为drawable-mdpi
-                    size = 48;
-                    iconMarkPath += "drawable-mdpi" + File.separator + gameChannel.getIcon() + ".png";
+                { // 默认为drawable-xxhdpi
+                    size = 144;
+                    iconMarkPath += "drawable-xxhdpi" + File.separator + gameChannel.getIcon() + ".png";
                 }
 
                 File iconMark = new File(iconMarkPath);
@@ -442,8 +447,8 @@ public class Main
                     System.out.println("角标 size = " + size + ",iconMarkPath = " + iconMarkPath);
                     System.out.println("iconFile.getPath() " + iconFile.getPath());
                     // 将角标图片压缩
-                    // Thumbnails.of(iconMark.getPath()).size(size,
-                    // size).keepAspectRatio(true).toFile(iconMark.getPath());
+//                     Thumbnails.of(iconMark.getPath()).size(size,
+//                     size).keepAspectRatio(true).toFile(iconMark.getPath());
                     // 将icon图片压缩
                     // Thumbnails.of(iconFile.getPath()).size(size,
                     // size).keepAspectRatio(true).toFile(iconFile.getPath());
@@ -618,12 +623,12 @@ public class Main
         System.out.println("activitys == " + activitys.size());
         out: for (Element activity : activitys)
         { // 遍历找到启动的Activity
-            Element intentFilter = activity.element("intent-filter");
+            Element intentFilter = activity.element("intent-filter");//没有循环main这个一定要放在第一个intent-filter里面
             if (intentFilter != null)
             {
                 for (Element filter : intentFilter.elements())
                 {
-                    System.out.println(filter.getName() + filter.attributeValue("name"));
+                    System.out.println(filter.getName() + ":" + filter.attributeValue("name"));
                     if ("action".equals(filter.getName())
                             && "android.intent.action.MAIN".equals(filter.attributeValue("name")))
                     {
@@ -634,7 +639,8 @@ public class Main
                     {
                         launcher = filter.createCopy();
                     }
-
+                    System.out.println("main : " + main);
+                    System.out.println("launcher : " + launcher);
                     if (main != null && launcher != null)
                     {
 
@@ -760,6 +766,7 @@ public class Main
                 {
                     int lastIndexOf = oldPackageVal.lastIndexOf(".");
                     newPackageVal = oldPackageVal.substring(0, lastIndexOf) + suffix;
+//                    newPackageVal = oldPackageVal + suffix;//直接拼，不截取
                 }
             }
             else
@@ -850,12 +857,12 @@ public class Main
             addParamElement(rootElement, "AK_STATISTIC_URL", game.getStatisticUrl());
         }
 
-        if (game.getGameMainName() != null)
-        {
+//        if (game.getGameMainName() != null)
+//        {
             // addParamElement(rootElement, "MAIN_ACTIVITY_NAME",
             // game.getGameMainName());
             addParamElement(rootElement, "MAIN_ACTIVITY_NAME", mainActivityName);
-        }
+//        }
 
         if (game.getDebug() != null)
         {
