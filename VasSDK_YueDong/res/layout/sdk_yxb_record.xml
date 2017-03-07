@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_yxb"
+        android:layout_width="280.0dip"
+        android:layout_height="240dip"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@color/content_bg" >
+
+        <RelativeLayout
+            android:id="@+id/ti_yxb_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/title_bg"
+            android:padding="10.0dip" >
+
+            <LinearLayout
+                android:id="@+id/ll_yxb_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:background="@drawable/dialog_back" />
+
+                <TextView
+                    android:id="@+id/tv_yxb_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey_text_bg"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_yxb_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:textColor="@color/light_white"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:id="@+id/iv_yxb_close"
+                android:layout_width="25.0dip"
+                android:layout_height="25.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/sdk_delet" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_score_warning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ti_yxb_title_layout"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:layout_marginTop="10.0dip"
+            android:text="当前游戏专用积分"
+            android:textColor="@color/title_bg"
+            android:textSize="12dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_currentgame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_score_warning"
+            android:layout_marginBottom="10.0dip"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:layout_marginTop="5.0dip" >
+
+            <ImageView
+                android:id="@+id/iv_yxb_icon"
+                android:layout_width="45.0dip"
+                android:layout_height="45.0dip"
+                android:background="@drawable/default_icon"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:id="@+id/ll_yxb_record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5.0dip"
+                android:layout_marginRight="5.0dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:singleLine="true"
+                    android:textColor="@color/red_text_bty"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/tv_yxb_record"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="5.0dip"
+                    android:textColor="@color/red_text_bty"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_yxbinfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5.0dip"
+                android:layout_marginRight="5.0dip"
+                android:layout_toLeftOf="@id/ll_yxb_record"
+                android:layout_toRightOf="@id/iv_yxb_icon"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tv_game_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:singleLine="true"
+                    android:textColor="@color/title_bg"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/tv_game_store"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="5.0dip"
+                    android:textColor="@color/red_text_bty"
+                    android:textSize="12dp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rl_currentgame_layout"
+            android:layout_marginBottom="10.0dip"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginRight="15.0dip"
+            android:background="@drawable/common_white_bg"
+            android:orientation="vertical" >
+
+            <com.game.sdk.xlistview.XListView
+                android:id="@+id/lv_yxb_record"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:divider="@color/tranparent"
+                android:listSelector="@color/tranparent"
+                android:overScrollMode="never"
+                android:scrollbarThumbHorizontal="@color/tranparent"
+                android:scrollbarThumbVertical="@color/tranparent" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="320dp"
+        android:layout_height="328dp"
+        android:background="@drawable/qmyx_17168_bg_dialog_background">
+
+        <include
+            android:id="@+id/header_nav"
+            layout="@layout/qmyx_17168_top_nav_layout_normal"/>
+
+        <RelativeLayout
+            android:id="@+id/ll_phone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/header_nav"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/qmyx_17168_shape_bg_input">
+
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:drawableLeft="@drawable/qmyx_17168_icon_mobile_phone_account"
+                android:drawablePadding="18dp"
+                android:hint="请输入中国大陆手机号"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:paddingLeft="18dp"
+                android:singleLine="true"
+                android:textColor="@color/qmyx_17168_deep_black"
+                android:textColorHint="@color/qmyx_17168_default_grey"
+                android:textSize="@dimen/qmyx_17168_text_size_30"/>
+
+            <ImageView
+                android:id="@+id/iv_phone_num_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/qmyx_17168_icon_registered_undo"
+                android:visibility="invisible"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_psw"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/ll_phone"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/qmyx_17168_shape_bg_input">
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:drawableLeft="@drawable/qmyx_17168_icon_password"
+                android:drawablePadding="18dp"
+                android:hint="密码"
+                android:paddingLeft="18dp"
+                android:password="true"
+                android:singleLine="true"
+                android:textColor="@color/qmyx_17168_deep_black"
+                android:textColorHint="@color/qmyx_17168_default_grey"
+                android:textSize="@dimen/qmyx_17168_text_size_30"/>
+
+            <CheckBox
+                android:id="@+id/btn_psw_show"
+                android:layout_width="wrap_content"
+                android:layout_height="13dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/qmyx_17168_selector_visible"
+                android:button="@null"
+                />
+
+            <ImageView
+                android:id="@+id/iv_psw_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/btn_psw_show"
+                android:src="@drawable/qmyx_17168_icon_registered_undo"
+                android:visibility="invisible"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_invitation"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/ll_psw"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/qmyx_17168_shape_bg_input">
+
+            <EditText
+                android:id="@+id/et_invitation_code"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:drawableLeft="@drawable/qmyx_17168_icon_invite"
+                android:drawablePadding="18dp"
+                android:hint="邀请码"
+                android:paddingLeft="18dp"
+                android:singleLine="true"
+                android:textColor="@color/qmyx_17168_deep_black"
+                android:textColorHint="@color/qmyx_17168_default_grey"
+                android:textSize="@dimen/qmyx_17168_text_size_30"/>
+
+            <ImageView
+                android:id="@+id/iv_invitation_code_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/qmyx_17168_icon_registered_undo"
+                android:visibility="invisible"/>
+        </RelativeLayout>
+
+        <!--<EditText
+            android:id="@+id/et_invitation_code"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/ll_phone"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/qmyx_17168_shape_bg_input"
+            android:drawableLeft="@drawable/qmyx_17168_icon_invite"
+            android:drawablePadding="18dp"
+            android:hint="邀请码"
+            android:paddingLeft="18dp"
+            android:singleLine="true"
+            android:textColor="@color/qmyx_17168_deep_black"
+            android:textColorHint="@color/qmyx_17168_default_grey"
+            android:textSize="@dimen/qmyx_17168_text_size_30"/>-->
+
+        <LinearLayout
+            android:id="@+id/ll_verification"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/ll_invitation"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_verification_code"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/qmyx_17168_shape_bg_input"
+                android:drawableLeft="@drawable/qmyx_17168_icon_verification_code"
+                android:drawablePadding="18dp"
+                android:hint="验证码"
+                android:inputType="number"
+                android:paddingLeft="18dp"
+                android:singleLine="true"
+                android:textColor="@color/qmyx_17168_deep_black"
+                android:textColorHint="@color/qmyx_17168_default_grey"
+                android:textSize="@dimen/qmyx_17168_text_size_30"/>
+
+            <TextView
+                android:id="@+id/btn_getVerify"
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/qmyx_17168_selector_shape_hollow_orange_listen_click_6_radius"
+                android:gravity="center"
+                android:text="@string/qmyx_17168_get_verification"
+                android:textColor="@color/qmyx_17168_origin"
+                android:textSize="@dimen/qmyx_17168_text_size_24"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_register"
+            style="@style/qmyx_17168_style_buttom_confirm"
+            android:layout_alignParentBottom="false"
+            android:layout_below="@+id/ll_verification"
+            android:layout_marginTop="15dp"
+            android:text="@string/qmyx_17168_register"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_register"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_user_protocol"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:background="@drawable/qmyx_17168_user_protocol_selected"
+                android:button="@null"
+                android:checked="true"/>
+
+            <TextView
+                android:id="@+id/tv_agree"
+                style="@style/qmyx_17168_style_grey_text"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/cb_user_protocol"
+                android:text="@string/qmyx_17168_read_and_agree"/>
+
+            <TextView
+                android:id="@+id/tv_user_protocol"
+                style="@style/qmyx_17168_style_blue_text"
+                android:layout_toRightOf="@id/tv_agree"
+                android:gravity="center_vertical"
+                android:text="@string/qmyx_17168_user_protocol"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

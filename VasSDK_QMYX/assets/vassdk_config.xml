@@ -1,11 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <config>
 
-<param name="VAS_GAMEID" value="1" />
-<param name="VAS_PLATFORMID" value="" />
+<param name="VAS_DEBUG" value="true" />
+<param name="VAS_GAMEID" value="1021" />
+<param name="VAS_PLATFORMID" value="9" />
 <param name="VAS_SUBPLATFORMID" value="0" />
 <param name="VAS_CHANNELID" value="1" />
 <param name="VAS_SUBCHANNEL_ID" value="1" />
+<param name="VAS_LOGINKEY" value="81ba51c81a8051abb1745a8d6cc98718" />
 <plugins>
 <plugin name="com.vas.qmyx.plugin.QMYXUserPlugin" type="1" />
 <plugin name="com.vas.qmyx.plugin.QMYXPayPlugin"  type="2"/>

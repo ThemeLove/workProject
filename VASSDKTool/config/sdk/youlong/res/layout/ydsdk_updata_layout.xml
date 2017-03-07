@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="272.5dp"
+              android:layout_height="342.5dp"
+              android:background="@drawable/ydsdk_updata_background"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="150dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:id="@+id/yd_updata_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:textColor="#555555"
+                android:textSize="16dp"/>
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="92.5dp">
+
+        <TextView
+            android:id="@+id/yd_updata_download"
+            android:layout_width="169dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ydsdk_updata_bt"
+            android:visibility="visible"/>
+
+
+        <ImageView
+            android:id="@+id/yd_updata_loading_img"
+            android:layout_width="220dp"
+            android:layout_height="25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/updata_loading"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/yd_updata_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/yd_updata_loading_img"
+            android:layout_alignLeft="@+id/yd_updata_loading_img"
+            android:layout_alignStart="@+id/yd_updata_loading_img"
+            android:layout_marginLeft="7dp"
+            android:text="268kb/s"
+            android:textColor="#FA863E"
+            android:textSize="11sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/yd_updata_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/yd_updata_loading_img"
+            android:layout_alignEnd="@+id/yd_updata_loading_img"
+            android:layout_alignRight="@+id/yd_updata_loading_img"
+            android:layout_marginRight="7dp"
+            android:text="186M"
+            android:textColor="#747474"
+            android:textSize="11sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/yd_updata_real"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/yd_updata_loading_img"
+            android:layout_toLeftOf="@+id/yd_updata_sum"
+            android:layout_toStartOf="@+id/yd_updata_sum"
+            android:text="15M/"
+            android:textColor="#FA863E"
+            android:textSize="11sp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -24,6 +24,8 @@ import com.vas.vassdk.plugin.VasPay;
 import com.vas.vassdk.plugin.VasSetting;
 import com.vas.vassdk.plugin.VasUser;
 import com.vas.vassdk.util.VASLogUtil;
+import com.vas.vassdk.util.VasSDKUtil;
+import com.vas.vassdk.util.VasStatisticUtil;
 
 public class VasSDK
 {
@@ -87,6 +89,13 @@ public class VasSDK
         VasUser.getInstance().init();
         VasPay.getInstance().init();
         VasSetting.getInstance().init();
+        VASLogUtil.d("init");
+        boolean isFisrt = VasSDKUtil.isFirstActive(activity);
+        if(isFisrt){
+            VasStatisticUtil.sendStatistic("", VasStatisticUtil.FIRST_ACTIVE);
+        }else{
+            VasStatisticUtil.sendStatistic("", VasStatisticUtil.ACTIVE);
+        }
     }
 
     public Activity getActivity()

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ungame.android.sdk.widget.EditTextObserverLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/ungame_view_title_default"/>
+
+    <LinearLayout
+        android:background="@drawable/ungame_common_act_bg_white_light"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.ungame.android.sdk.loadretry.BasicEmptyView
+            android:id="@+id/ungame_bev_content_recharge"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:scrollbars="none"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="15dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="@string/ungame_lale_recharge_money_slect"
+                        style="@style/ungame_user_text_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <com.ungame.android.sdk.widget.NonScrollGridView
+                        android:id="@+id/ungame_gv_recharge_list"
+                        android:listSelector="@android:color/transparent"
+                        android:cacheColorHint="@android:color/transparent"
+                        android:layout_marginTop="10dp"
+                        android:horizontalSpacing="5dp"
+                        android:verticalSpacing="5dp"
+                        android:scrollbars="none"
+                        android:numColumns="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:id="@+id/ungame_lin_user_input"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/ungame_edit_common_bg"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp">
+
+                        <TextView
+                            android:drawablePadding="5dp"
+                            android:drawableLeft="@drawable/ungame_ic_recharge_other"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/ungame_lale_recharge_money_other"
+                            android:textSize="12sp"
+                            android:textColor="@color/ungame_balck_text_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/ungame_lale_recharge_money_unit"
+                            android:textSize="12sp"
+                            android:textColor="@color/ungame_gray_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:layout_gravity="center_vertical"
+                            android:text="："
+                            android:textSize="12sp"
+                            android:textColor="@color/ungame_balck_text_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <EditText
+                            android:maxLength="5"
+                            android:id="@+id/umgame_edt_recharge_input_money"
+                            android:inputType="numberDecimal"
+                            android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
+                            android:textSize="12sp"
+                            android:textColor="@color/ungame_red"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/ungame_lale_recharge_money_other1"
+                            style="@style/ungame_user_text_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/umgame_txv_recharge_input_gold"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/ungame_red"
+                            android:textSize="14sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="@string/ungame_lale_recharge_golde_unit"
+                            android:layout_gravity="center_vertical"
+                            style="@style/ungame_user_text_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <com.ungame.android.sdk.widget.RoundButton
+                        android:text="@string/ungame_lale_recharge_right_now"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/ungame_txv_go_recharge"
+                        android:layout_height="38dp"
+                        android:textColor="@android:color/white"
+                        android:layout_width="match_parent"
+                        android:clickable="true"
+                        android:enabled="true"
+                        app:btnCornerRadius="10dp"
+                        app:btnPressedRatio="0.8"
+                        app:btnSolidColor="@color/ungame_red"/>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </com.ungame.android.sdk.loadretry.BasicEmptyView>
+
+    </LinearLayout>
+
+
+</com.ungame.android.sdk.widget.EditTextObserverLayout>

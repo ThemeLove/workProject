@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ungame.android.sdk.widget.EditTextObserverLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/ungame_view_title_default"/>
+
+    <LinearLayout
+        android:background="@drawable/ungame_common_act_bg"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ungame_edit_common_bg"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/ungame_balck_text_default"
+                android:text="@string/ungame_lable_change_passwd_old"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ungame_ic_edit_passwd_black"
+                android:layout_gravity="center_vertical"
+                android:maxLength="20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.ungame.android.sdk.widget.UngameClearEditText
+                android:id="@+id/ungame_edt_old_passwd"
+                style="@style/ungame_user_edit_input"
+                android:layout_marginLeft="10dp"
+                android:inputType="textPassword"
+                android:background="@android:color/transparent"
+                android:hint="@string/ungame_hint_input_old_passwd"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ungame_edit_common_bg"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/ungame_balck_text_default"
+                android:text="@string/ungame_lable_change_passwd_new"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ungame_ic_edit_passwd"
+                android:layout_gravity="center_vertical"
+                android:maxLength="20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.ungame.android.sdk.widget.UngameClearEditText
+                android:id="@+id/ungame_edt_new_passwd"
+                style="@style/ungame_user_edit_input"
+                android:layout_marginLeft="10dp"
+                android:inputType="textPassword"
+                android:background="@android:color/transparent"
+                android:hint="@string/ungame_hint_input_new_passwd"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ungame_edit_common_bg"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/ungame_balck_text_default"
+                android:text="@string/ungame_lable_change_passwd_new_again"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ungame_ic_edit_passwd"
+                android:layout_gravity="center_vertical"
+                android:maxLength="20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.ungame.android.sdk.widget.UngameClearEditText
+                android:id="@+id/ungame_edt_new_passwd_again"
+                style="@style/ungame_user_edit_input"
+                android:layout_marginLeft="10dp"
+                android:inputType="textPassword"
+                android:background="@android:color/transparent"
+                android:hint="@string/ungame_hint_input_new_passwd_agin"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <com.ungame.android.sdk.widget.RoundButton
+            android:text="@android:string/ok"
+            android:layout_marginTop="10dp"
+            android:id="@+id/ungame_txv_go_change_passwd"
+            android:layout_height="38dp"
+            android:textColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:enabled="true"
+            app:btnCornerRadius="10dp"
+            app:btnPressedRatio="0.8"
+            app:btnSolidColor="@color/ungame_red"/>
+
+
+    </LinearLayout>
+
+</com.ungame.android.sdk.widget.EditTextObserverLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.game.sdk.ui.MyGridView
+        android:id="@+id/gv_myscroe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_white"
+        android:fadingEdge="none"
+        android:gravity="center"
+        android:listSelector="@color/tranparent"
+        android:numColumns="2"
+        android:scrollbarThumbVertical="@color/tranparent"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="5.0dip" />
+
+</RelativeLayout>

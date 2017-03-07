@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.ungame.android.sdk.widget.EditTextObserverLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ungame_lin_login_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ungame_coner_white_light_bg"
+    android:orientation="vertical"
+    android:paddingTop="25dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="153dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ungame_login_logo" />
+
+            <LinearLayout
+                android:id="@+id/ungame_lin_user_input"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/ungame_edit_common_bg"
+                android:orientation="horizontal">
+
+                <com.ungame.android.sdk.widget.UngameClearEditText
+                    android:id="@+id/ungame_edt_user"
+                    style="@style/ungame_user_edit_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:drawableLeft="@drawable/ungame_ic_edit_user"
+                    android:hint="@string/ungame_hint_login_accout" />
+
+                <ImageView
+                    android:id="@+id/ungame_imv_user_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp"
+                    android:src="@drawable/ungame_arrow_down" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ungame_edit_common_bg"
+                android:orientation="horizontal">
+
+                <com.ungame.android.sdk.widget.UngameClearEditText
+                    android:id="@+id/ungame_edt_passwd"
+                    style="@style/ungame_user_edit_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@android:color/transparent"
+                    android:drawableLeft="@drawable/ungame_ic_edit_passwd"
+                    android:hint="@string/ungame_hint_login_password"
+                    android:inputType="textPassword"
+                    android:maxLength="20" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <CheckBox
+                    android:id="@+id/ungame_cb_remenber_passwd"
+                    style="@style/ungame_user_text_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:button="@drawable/ungame_check_red"
+                    android:checked="true"
+                    android:gravity="center_vertical"
+                    android:text="@string/ungame_lable_login_remember_passwd" />
+
+                <CheckBox
+                    android:id="@+id/ungame_cb_auto_login"
+                    style="@style/ungame_user_text_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@null"
+                    android:button="@drawable/ungame_check_red"
+                    android:checked="true"
+                    android:text="@string/ungame_lable_login_auto_login" />
+
+            </RelativeLayout>
+
+            <com.ungame.android.sdk.widget.RoundButton
+                android:id="@+id/ungame_txv_go_login"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:enabled="true"
+                android:text="@string/ungame_lable_login_login"
+                android:textColor="@android:color/white"
+                app:btnCornerRadius="10dp"
+                app:btnPressedRatio="0.8"
+                app:btnSolidColor="@color/ungame_red" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ungame_txv_register_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/ungame_lable_login_mobile_regiest"
+                    android:textColor="@color/ungame_black_light"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#d1d1d1" />
+
+                <TextView
+                    android:id="@+id/ungame_txv_register_quick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/ungame_lable_login_quick_regiest"
+                    android:textColor="@color/ungame_black_light"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#d1d1d1" />
+
+                <TextView
+                    android:id="@+id/ungame_txv_forget_passwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="@string/ungame_lable_login_forget_password"
+                    android:textColor="@color/ungame_black_light"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</com.ungame.android.sdk.widget.EditTextObserverLayout>
+

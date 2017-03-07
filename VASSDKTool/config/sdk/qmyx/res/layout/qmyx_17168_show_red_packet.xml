@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="35dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/qmyx_17168_bg_dialog_background">
+
+        <RelativeLayout
+            android:id="@+id/header_nav"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/qmyx_17168_shape_bar">
+
+            <ImageView
+                android:id="@+id/btn_left"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="30dp"
+                android:src="@drawable/qmyx_17168_icon_return_back"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:maxEms="10"
+                android:text="我的红包"
+                android:textColor="@color/qmyx_17168_white"
+                android:textSize="@dimen/qmyx_17168_text_size_36"/>
+
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:src="@drawable/qmyx_17168_icon_close_white"
+                />
+
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/lv_red_packet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/header_nav"
+            android:divider="#E5ffffff"
+            android:dividerHeight="10dp"
+            android:listSelector="@android:color/transparent"
+            android:overScrollMode="never">
+        </ListView>
+    </RelativeLayout>
+
+</LinearLayout>

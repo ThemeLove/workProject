@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#33B3B3B3">
+
+        <LinearLayout
+            android:id="@+id/upload_loading_llay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/upload_loading_bg"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/upload_loading_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/upload_loading"
+                android:adjustViewBounds="true"/>
+            <TextView
+                android:id="@+id/upload_loading_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="15sp"
+                android:textColor="#ffffff"
+                android:text="加载中..."/>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

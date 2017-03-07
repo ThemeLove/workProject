@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<config>
+<param name="ORIENTATION" value="0" /> <!-- 0横屏  1竖屏 -->
+<param name="" value="" />
+<param name="VAS_GAMEID" value="1" />
+<param name="VAS_PLATFORMID" value="14" />
+<param name="VAS_SUBPLATFORMID" value="0" />
+<param name="VAS_CHANNELID" value="1" />
+<param name="VAS_SUBCHANNEL_ID" value="1" />
+<plugins>
+<plugin name="com.vas.yxf.plugin.YxfUserPlugin" type="1" />
+<plugin name="com.vas.yxf.plugin.YxfPayPlugin"  type="2"/>
+<plugin name="com.vas.yxf.plugin.YxfSettingPlugin"  type="3"/>
+</plugins>
+</config>

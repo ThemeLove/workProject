@@ -126,7 +126,7 @@ public class VasSDK_NNMainActivity extends Activity
                 Log.i("xxxx", "mainactivity getSubPlatformId = " + VasSDK.getInstance().getSubPlatformId());
                 Log.i("xxxx", "mainactivity getExtrasConfig = " + VasSDK.getInstance().getExtrasConfig(""));
                 Log.i("xxxx", "mainactivity callFunction = " + VasSDK.getInstance().callFunction(0));
-                checkLogin(paramUserInfo.getUid(), paramUserInfo.getUserName(), paramUserInfo.getToken(), paramUserInfo.getExtra());
+//                checkLogin(paramUserInfo.getUid(), paramUserInfo.getUserName(), paramUserInfo.getToken(), paramUserInfo.getExtra());
             }
 
             @Override
@@ -326,7 +326,7 @@ public class VasSDK_NNMainActivity extends Activity
         orderInfo.setCount(10);// 购买数量，如购买"10钻石"则传10
         // orderInfo.setCount(1);// 购买数量，如购买"月卡"则传1
         orderInfo.setAmount(1); // 总金额（单位为元）
-        orderInfo.setGoodsId("101"); // 产品ID，用来识别购买的产品
+        orderInfo.setGoodsId("1"); // 产品ID，用来识别购买的产品
         orderInfo.setGoodsDesc("商品描述");//必传
         orderInfo.setExtrasParams("透传参数"); // 透传参数，游戏自定义的参数
         orderInfo.setCallbackUrl("");//回调地址
@@ -463,8 +463,7 @@ public class VasSDK_NNMainActivity extends Activity
         
         treeMap.put("platform", VasSDKConfig.VAS_PLATFORMID);
         treeMap.put("sub_platform", VasSDKConfig.VAS_SUBPLATFORMID);
-//        String sign = new VasMD5Util().MD5EncryptString(treeMap, "51d18dc3e04da20fbcb187da4d8a1a16");//gid=1
-        String sign = new VasMD5Util().MD5EncryptString(treeMap, "6a86fe899a96e91b5c7a54864f0212e4");//gid=1017
+        String sign = new VasMD5Util().MD5EncryptString(treeMap, "51d18dc3e04da20fbcb187da4d8a1a16");//gid=1
         request.add(treeMap);
         request.add("sign", sign.toLowerCase());
         VasHttpUtil.getInstance().add(2, request, new OnResponseListener<String>(){

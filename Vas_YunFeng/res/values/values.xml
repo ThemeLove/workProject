@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ungame_balck_text_default">#3a3a3a</color>
+    <color name="ungame_balck_tran">#cc000000</color>
+    <color name="ungame_black_light">#666666</color>
+    <color name="ungame_blue">#2f92e7</color>
+    <color name="ungame_blue_dark">#338ee1</color>
+    <color name="ungame_gray_1">#838383</color>
+    <color name="ungame_gray_2">#999999</color>
+    <color name="ungame_gray_3">#f5f5f5</color>
+    <color name="ungame_gray_line">#dfdfdf</color>
+    <color name="ungame_gray_line2">#b3b3b3</color>
+    <color name="ungame_gray_text_hint_default">#9a9a9a</color>
+    <color name="ungame_red">#e34441</color>
+    <color name="ungame_red_light">#fff3f3</color>
+    <declare-styleable name="BaseEmptyView"><attr format="boolean" name="fadeAnimation"/></declare-styleable>
+    <declare-styleable name="BasicEmptyView"><attr format="dimension" name="textPadding"/><attr format="integer" name="textSizeSP"/><attr format="string" name="emptyText"/><attr format="string" name="errorText"/></declare-styleable>
+    <declare-styleable name="CircleImageView"><attr format="dimension" name="border_width"/><attr format="color" name="border_color"/><attr format="color" name="shadow_color"/><attr format="dimension" name="shadow_width"/></declare-styleable>
+    <declare-styleable name="CustomEmptyView"><attr format="reference" name="emptyLayout"/><attr format="reference" name="errorLayout"/><attr format="reference" name="loadingLayout"/></declare-styleable>
+    <declare-styleable name="RoundAngleFrameLayout"><attr format="dimension" name="radius"/><attr format="dimension" name="topLeftRadius"/><attr format="dimension" name="topRightRadius"/><attr format="dimension" name="bottomLeftRadius"/><attr format="dimension" name="bottomRightRadius"/></declare-styleable>
+    <declare-styleable name="RoundButton"><attr format="color" name="btnSolidColor"/><attr format="color" name="btnStrokeColor"/><attr format="dimension" name="btnStrokeWidth"/><attr format="dimension" name="btnStrokeDashWidth"/><attr format="dimension" name="btnStrokeDashGap"/><attr format="dimension" name="btnCornerRadius">
+            <enum name="stadium" value="-1"/>
+        </attr><attr format="float" name="btnPressedRatio"/></declare-styleable>
+    <dimen name="ungame_title_height">48dp</dimen>
+    <item name="hierarchy" type="id"/>
+    <item name="isexpand" type="id"/>
+    <item name="tag_first" type="id"/>
+    <item name="tag_four" type="id"/>
+    <item name="tag_second" type="id"/>
+    <item name="tag_third" type="id"/>
+    <string name="loading">努力加载中,请稍后...</string>
+    <string name="tandy_ch">TANDY_CH</string>
+    <string name="tandy_pid">TANDY_PID</string>
+    <string name="tandy_project_name">TANDY_PROJECT_NAME</string>
+    <string name="tandy_pv">TANDY_PV</string>
+    <string name="ungame_dialog_send_smscode_message">验证码信息可能有延迟，确定返回</string>
+    <string name="ungame_dialog_send_smscode_title">提示</string>
+    <string name="ungame_hint_input_new_passwd">6-20位的字母或数字</string>
+    <string name="ungame_hint_input_new_passwd_agin">和新密码一致</string>
+    <string name="ungame_hint_input_old_passwd">请输入原密码</string>
+    <string name="ungame_hint_login_accout">请输入你的账号/手机号</string>
+    <string name="ungame_hint_login_password">请输入密码</string>
+    <string name="ungame_hint_register_accout">请输入你的账号</string>
+    <string name="ungame_hint_register_input_mobile">请输入手机号</string>
+    <string name="ungame_hint_register_passwd">请输入6-20位的字母或数字</string>
+    <string name="ungame_hint_register_smscode">短信验证码</string>
+    <string name="ungame_lable_change_passwd_new">新密码</string>
+    <string name="ungame_lable_change_passwd_new_again">确认密码</string>
+    <string name="ungame_lable_change_passwd_old">原密码</string>
+    <string name="ungame_lable_forget_passwd_ok">确定</string>
+    <string name="ungame_lable_forget_passwd_service_contact">客服QQ：3004200421</string>
+    <string name="ungame_lable_forget_passwd_unbind_mobile">未绑定手机的用户请联系客服：</string>
+    <string name="ungame_lable_forget_password">忘记密码</string>
+    <string name="ungame_lable_login_auto_login">自动登录</string>
+    <string name="ungame_lable_login_forget_password">忘记密码</string>
+    <string name="ungame_lable_login_login">登录</string>
+    <string name="ungame_lable_login_mobile_regiest">手机号注册</string>
+    <string name="ungame_lable_login_quick_regiest">一键注册</string>
+    <string name="ungame_lable_login_remember_passwd">记住密码</string>
+    <string name="ungame_lable_pay_right_now">立即支付</string>
+    <string name="ungame_lable_pay_success">购买成功</string>
+    <string name="ungame_lable_register_get_smscode">获取验证码</string>
+    <string name="ungame_lable_register_now">立即注册</string>
+    <string name="ungame_lable_register_smscode_time_left">剩余%d秒</string>
+    <string name="ungame_lable_register_success_accout">账号：%s</string>
+    <string name="ungame_lable_register_success_i_known">知道了</string>
+    <string name="ungame_lable_register_success_register">第%d位注册用户</string>
+    <string name="ungame_lable_register_success_save_to_photo">保存到相册</string>
+    <string name="ungame_lable_register_success_text">该账号可用于登录所有应用37376账号系统的游戏，为保证您的账号安全，请尽快绑定手机。</string>
+    <string name="ungame_lable_request_error">加载失败，点击重试</string>
+    <string name="ungame_lable_request_no_network">无法连接到网络，请稍后重试</string>
+    <string name="ungame_lable_retry">重试</string>
+    <string name="ungame_lable_select_header_from_photo">从相册选择</string>
+    <string name="ungame_lable_user_gold">余额：%s 乐币</string>
+    <string name="ungame_lable_voucher_no_restrict_value">无金额限制</string>
+    <string name="ungame_lable_voucher_restrict_value">（满%s元可用）</string>
+    <string name="ungame_lable_your_mobile">您的手机号：</string>
+    <string name="ungame_lale_recharge_again">继续充值</string>
+    <string name="ungame_lale_recharge_back_game">返回游戏</string>
+    <string name="ungame_lale_recharge_golde_unit">乐币</string>
+    <string name="ungame_lale_recharge_money">%1$s元(%2$d乐币)</string>
+    <string name="ungame_lale_recharge_money_other">其他金额</string>
+    <string name="ungame_lale_recharge_money_other1">充值平台币：</string>
+    <string name="ungame_lale_recharge_money_slect">请选择金额：</string>
+    <string name="ungame_lale_recharge_money_unit">（单位：元）</string>
+    <string name="ungame_lale_recharge_right_now">立即充值</string>
+    <string name="ungame_lale_recharge_success">充值成功</string>
+    <string name="ungame_permission_button_cancle">取消</string>
+    <string name="ungame_permission_button_setting">设置</string>
+    <string name="ungame_permission_read_phone_state">执行此操作需要读取手机状态权限</string>
+    <string name="ungame_permission_read_write_external_storge">执行此操作需要读写存储卡权限</string>
+    <string name="ungame_permission_read_write_external_storge_and_read_phone_state">执行此操作需要读取手机状态、读写存储卡权限</string>
+    <string name="ungame_permission_retry">权限已打开，点击重试</string>
+    <string name="ungame_permisssion_msg_settings_dialog">权限关闭，不能正常使用App。是否去设置里面打开</string>
+    <string name="ungame_permisssion_title_settings_dialog">去设置打开权限</string>
+    <string name="ungame_register_auto_accout_tips">已经帮您预分配账号，您可以重新设置，6-20位数字、字母、下划线，以字母开头</string>
+    <string name="ungame_register_auto_accout_tips_prefix">已经帮您预分配账号</string>
+    <string name="ungame_register_auto_agree">注册即表示同意</string>
+    <string name="ungame_register_auto_agree_suffix">《用户协议》</string>
+    <string name="ungame_title_bind_change_mobile">更换手机号</string>
+    <string name="ungame_title_bind_mobile">手机号绑定</string>
+    <string name="ungame_title_change_passwd">修改密码</string>
+    <string name="ungame_title_notice">公告</string>
+    <string name="ungame_title_pay_center">支付中心</string>
+    <string name="ungame_title_recharge_info">充值</string>
+    <string name="ungame_title_recharge_method">请选择支付方式</string>
+    <string name="ungame_title_recharge_success">充值乐币</string>
+    <string name="ungame_title_register_auto">一键注册</string>
+    <string name="ungame_title_register_mobile">手机号注册</string>
+    <string name="ungame_title_register_success">恭喜您成功注册</string>
+    <string name="ungame_title_unbind_mobile">身份验证</string>
+    <string name="ungame_toast_account_cannot_empty">账号不能为空</string>
+    <string name="ungame_toast_account_length_error">账号长度在6-20位之间</string>
+    <string name="ungame_toast_account_not_legal">账号格式不正确</string>
+    <string name="ungame_toast_bind_mobile_fail">绑定手机号失败</string>
+    <string name="ungame_toast_change_face_url">上传头像失败</string>
+    <string name="ungame_toast_change_passwd_error">修改密码失败</string>
+    <string name="ungame_toast_check_change_phone_fail">身份验证失败</string>
+    <string name="ungame_toast_copy_success">复制成功</string>
+    <string name="ungame_toast_get_smscode_fail">获取验证码失败</string>
+    <string name="ungame_toast_mobile_format_error">请正确输入手机号码</string>
+    <string name="ungame_toast_network_cannot_connect">当前网络不可用，请检查你的网络设置</string>
+    <string name="ungame_toast_network_request_error">请求网络出错</string>
+    <string name="ungame_toast_new_again_passwd_cannot_empty">确认密码不能为空</string>
+    <string name="ungame_toast_new_passwd_cannot_empty">新密码不能为空</string>
+    <string name="ungame_toast_new_passwd_cannot_match">新密码不一致</string>
+    <string name="ungame_toast_not_media_mounted">请检查存储卡是否挂载</string>
+    <string name="ungame_toast_old_passwd_cannot_empty">原密码不能为空</string>
+    <string name="ungame_toast_passwd_cannot_empty">密码不能为空</string>
+    <string name="ungame_toast_passwd_length_error">密码长度在6-20位之间</string>
+    <string name="ungame_toast_passwd_not_legal">密码必须由 由字母（区分大小写）、数字组成</string>
+    <string name="ungame_toast_recharge_cancle">支付取消</string>
+    <string name="ungame_toast_recharge_cannot_empty">请输入正确金额</string>
+    <string name="ungame_toast_recharge_fail">支付失败</string>
+    <string name="ungame_toast_recharge_max">每次最多只能充值5万元</string>
+    <string name="ungame_toast_smscode_cannot_empty">验证码不能为空</string>
+    <string name="ungame_toast_view_save_to_photo">截图已保存到相册</string>
+    <string name="ungame_unbind_mobile_smscode_tips">为了您的账号安全，需验证已绑定的手机，点击“获取验证码”获取验证短信</string>
+    <style name="Animation.Bottom.Rising" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/ungame_slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/ungame_slide_out_bottom</item>
+    </style>
+    <style name="Theme.Light.NoTitle.Dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="Theme.Light.NoTitle.NoShadow.Dialog" parent="Theme.Light.NoTitle.Dialog">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="UngameTheme.ActivityDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowMinWidthMajor">80%</item>
+        <item name="android:windowMinWidthMinor">80%</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+    <style name="UngameTheme.ActivityDialog1" parent="android:style/Theme.Dialog"/>
+    <style name="UngameTheme.ActivityDialogCanTouch" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="UngameTheme.Transparent" parent="android:Theme.Holo.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+    <style name="ungame_progress_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="ungame_progress_style" parent="@android:style/Widget.ProgressBar.Large">
+        <item name="android:minWidth">34dip</item>
+        <item name="android:maxWidth">34dip</item>
+        <item name="android:minHeight">6dip</item>
+        <item name="android:maxHeight">6dip</item>
+    </style>
+    <style name="ungame_user_edit_input">
+        <item name="android:textColorHint">@color/ungame_gray_text_hint_default</item>
+        <item name="android:textColor">@color/ungame_balck_text_default</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:drawablePadding">5dp</item>
+    </style>
+    <style name="ungame_user_text_default">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/ungame_balck_text_default</item>
+    </style>
+</resources>

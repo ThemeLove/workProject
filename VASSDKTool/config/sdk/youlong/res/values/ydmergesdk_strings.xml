@@ -1,0 +1,12 @@
+<resources>
+    <string name="hello">这里是游戏界面</string>
+    <string name="loginSdk">登　录</string>
+    <string name="paySdk">充　值</string>
+    <string name="login_title">美峰登录</string>
+    <string name="titleBar_left_button">返回</string>
+    <string name="titleBar_right_button">关闭</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="smc_tip_1">正在启用安全支付服务</string>
+    <string name="smc_tip_2">正在建立安全网络连接</string>
+    <string name="smc_tip_3">努力加载中，请稍候…</string>
+</resources>

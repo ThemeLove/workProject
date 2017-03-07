@@ -463,8 +463,7 @@ public class VasSDK_PPTVMainActivity extends Activity
         
         treeMap.put("platform", VasSDKConfig.VAS_PLATFORMID);
         treeMap.put("sub_platform", VasSDKConfig.VAS_SUBPLATFORMID);
-//        String sign = new VasMD5Util().MD5EncryptString(treeMap, "51d18dc3e04da20fbcb187da4d8a1a16");//gid=1
-        String sign = new VasMD5Util().MD5EncryptString(treeMap, "6a86fe899a96e91b5c7a54864f0212e4");//gid=1017
+        String sign = new VasMD5Util().MD5EncryptString(treeMap, "51d18dc3e04da20fbcb187da4d8a1a16");//gid=1
         request.add(treeMap);
         request.add("sign", sign.toLowerCase());
         VasHttpUtil.getInstance().add(2, request, new OnResponseListener<String>(){

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="255dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/qmyx_17168_bg_dialog_background"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/header_nav"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/qmyx_17168_shape_bar_normal">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:background="@color/qmyx_17168_light_grey"/>
+
+            <ImageView
+                android:id="@+id/btn_left"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="30dp"
+                android:src="@drawable/qmyx_17168_icon_gray_return"/>
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/btn_smslogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="短信登录"
+                        android:textColor="@color/qmyx_17168_origin"
+                        android:textSize="@dimen/qmyx_17168_text_size_32"/>
+
+                    <View
+                        android:id="@+id/v_bottom_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/qmyx_17168_origin"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/btn_accountlogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="密码登录"
+                        android:textColor="@color/qmyx_17168_light_black"
+                        android:textSize="@dimen/qmyx_17168_text_size_32"/>
+
+                    <View
+                        android:id="@+id/v_bottom_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:layout_alignParentBottom="true"
+                        />
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_other_login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+</RelativeLayout>

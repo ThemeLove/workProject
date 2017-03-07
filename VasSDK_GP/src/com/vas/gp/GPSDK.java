@@ -28,6 +28,7 @@ import com.vas.vassdk.bean.VasUserInfo;
 import com.vas.vassdk.http.VasHttpUtil;
 import com.vas.vassdk.util.VASLogUtil;
 import com.vas.vassdk.util.VasMD5Util;
+import com.vas.vassdk.util.VasStatisticUtil;
 import com.yolanda.nohttp.RequestMethod;
 import com.yolanda.nohttp.rest.OnResponseListener;
 import com.yolanda.nohttp.rest.Request;
@@ -226,6 +227,7 @@ public class GPSDK
                             mUserInfo.setUserName(mAccount);
                             VasSDK.getInstance().getVasLoginCallback().onSuccess(mUserInfo);
                             VASLogUtil.d("login suc : " + "channelName=" + GPApiFactory.getGPApi().getChannelName());
+                            VasStatisticUtil.sendStatistic(mUid, VasStatisticUtil.LOGIN);
                             break;
                     }
                 }
@@ -445,6 +447,7 @@ public class GPSDK
             GPApiFactory.getGPApi().createPlayerInfo(gpsdkPlayerInfo, mGPUploadPlayerInfoObsv);
         }else{
             GPApiFactory.getGPApi().uploadPlayerInfo(gpsdkPlayerInfo, mGPUploadPlayerInfoObsv);
+            VasStatisticUtil.sendStatistic(mUid, VasStatisticUtil.ENTERGAME);
         }
     }
     

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/content_bg" >
+
+    <TextView
+        android:id="@+id/tv_score_warning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ti_notice_title_layout"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginRight="10.0dip"
+        android:layout_marginTop="10.0dip"
+        android:text="当前游戏专用积分"
+        android:textColor="@color/title_bg"
+        android:textSize="12dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_currentgame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_score_warning"
+        android:layout_marginBottom="10.0dip"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginRight="10.0dip"
+        android:layout_marginTop="5.0dip" >
+
+        <ImageView
+            android:id="@+id/iv_game_icon"
+            android:layout_width="45.0dip"
+            android:layout_height="45.0dip"
+            android:background="@drawable/default_icon"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:id="@+id/ll_game_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5.0dip"
+            android:layout_marginRight="5.0dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:singleLine="true"
+                android:textColor="@color/red_text_bty"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/tv_game_record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="5.0dip"
+                android:text="使用记录"
+                android:textColor="@color/red_text_bty"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_gameinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5.0dip"
+            android:layout_marginRight="5.0dip"
+            android:layout_toLeftOf="@id/ll_game_record"
+            android:layout_toRightOf="@id/iv_game_icon"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_game_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:singleLine="true"
+                android:text="乱斗堂2"
+                android:textColor="@color/title_bg"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tv_game_store"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="5.0dip"
+                android:text="专用积分： 100"
+                android:textColor="@color/red_text_bty"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_currentgame_layout"
+        android:background="@color/light_white"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10.0dip"
+            android:text="其他游戏专用积分"
+            android:textColor="@color/title_bg"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+</RelativeLayout>

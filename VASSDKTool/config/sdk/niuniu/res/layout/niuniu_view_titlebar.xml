@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50dip"
+    android:background="@drawable/niuniu_menu_bg_titlebar"
+    >
+    
+    <ImageView
+        android:id="@+id/mLeftView_niuniu_view_titlebar"
+        android:layout_width="44dip"
+        android:layout_height="35dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/niuniu_btn_title_left_icon"
+        android:padding="6dip"
+        />
+    
+    <TextView 
+        android:id="@+id/mTextView_niuniu_view_titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textSize="18sp"
+        android:textColor="@color/niuniu_color_white"
+        style="@style/niuniu_text_shadow"
+        />
+    
+	<Button 
+        android:id="@+id/mRightView_niuniu_view_titlebar"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        style="@style/niuniu_btn_titlebar_nav"
+        android:layout_marginRight="0dip"
+        android:paddingRight="0dip"
+        />
+	
+</RelativeLayout>

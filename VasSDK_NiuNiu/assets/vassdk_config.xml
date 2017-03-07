@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <config>
-
+<param name="VAS_LOGINKEY" value="51d18dc3e04da20fbcb187da4d8a1a16" />
 <param name="APPID" value="1039" />
 <param name="APPKEY" value="76d680d5fa9350644750c9a5121edfd0" />
 <param name="VAS_ORIENTATION" value="0" /><!-- 0横屏 1竖屏 -->

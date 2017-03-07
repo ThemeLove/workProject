@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_login"
+        android:layout_width="280.0dip"
+        android:layout_height="240dip"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@color/content_bg" >
+
+        <RelativeLayout
+            android:id="@+id/ti_notice_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/title_bg"
+            android:padding="10.0dip" >
+
+            <LinearLayout
+                android:id="@+id/ll_notice_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10.0dip"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:background="@drawable/dialog_back" />
+
+                <TextView
+                    android:id="@+id/tv_notice_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="返回"
+                    android:textColor="@color/grey_text_bg"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_notice_close"
+                android:layout_width="25.0dip"
+                android:layout_height="25.0dip"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/sdk_delet" />
+
+            <TextView
+                android:id="@+id/tv_notic_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10.0dip"
+                android:layout_toLeftOf="@id/img_notice_close"
+                android:layout_toRightOf="@id/ll_notice_back"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:textColor="@color/light_white"
+                android:textSize="18dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/btn_goin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10.0dip"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginRight="15.0dip"
+            android:layout_marginTop="10.0dip"
+            android:background="@drawable/common_comfirm_selector"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/light_white"
+            android:textSize="16dp" />
+
+        <ScrollView
+            android:id="@+id/sv_notice_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btn_goin"
+            android:layout_below="@+id/ti_notice_title_layout"
+            android:layout_marginTop="10dp"
+            android:overScrollMode="never"
+            android:scrollbarThumbVertical="@color/tranparent" >
+
+            <TextView
+                android:id="@+id/tv_notice_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/title_bg"
+                android:textSize="14dp" />
+        </ScrollView>
+    </RelativeLayout>
+
+</RelativeLayout>

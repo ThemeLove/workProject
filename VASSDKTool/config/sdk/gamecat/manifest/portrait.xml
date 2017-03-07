@@ -38,6 +38,7 @@
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
             android:screenOrientation="behind"
+            android:launchMode="singleTask"
             android:theme="@android:style/Theme.Translucent" />
         <activity
             android:name="com.gamecat.personal.activity.PersonalActivity"

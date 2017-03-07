@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <RelativeLayout
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerVertical="true"
+	    android:layout_centerHorizontal="true"
+	    >
+	    <ImageView
+		    android:id="@+id/niuniu_image__window_ads"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:scaleType="fitXY"
+			android:layout_centerVertical="true"
+    		android:layout_centerHorizontal="true"
+    		android:padding="5dip"
+			/>
+		    <RelativeLayout
+		        android:id="@+id/niuniu_bgdialog_window_ads"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+		    	android:layout_alignTop="@id/niuniu_image__window_ads"
+		    	android:layout_alignRight="@id/niuniu_image__window_ads"
+		    	android:layout_alignBottom="@id/niuniu_image__window_ads"
+		    	android:layout_alignLeft="@id/niuniu_image__window_ads"
+			    android:background="@drawable/niuniu_bg_winad"
+			    >
+			    <!-- 关闭按钮 -->
+			    <ImageButton  
+					android:id="@+id/niuniu_btn_close_window_ads"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content" 
+				    android:background="@drawable/niuniu_btn_close_window"
+				    android:layout_alignParentRight="true"
+				    />
+			</RelativeLayout>
+    </RelativeLayout>
+    
+</RelativeLayout>

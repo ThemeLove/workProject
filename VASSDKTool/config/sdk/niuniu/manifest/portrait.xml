@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<permissionConfig>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.UPDATE_DEVICE_STATS"/>
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"/>
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+	</permissionConfig>
+
+	<applicationConfig>
+    <activity android:name="com.alipay.sdk.app.H5PayActivity" android:screenOrientation="behind"/>
+    <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.niuniu.android.sdk.activity.NiuniuGameAcountCenterActivity"/>
+    <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.niuniu.android.sdk.activity.NiuniuGameLoginActivity" android:theme="@style/NiuniuTheme.Transparent2"/>
+    <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.niuniu.android.sdk.activity.NiuniuGameVoucherActivity"/>
+    <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.niuniu.android.sdk.activity.NiuniuGameShowWebViewActivity"/>
+    <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.niuniu.android.sdk.activity.NiuniuGameBindBlogActivity"/>
+    <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.niuniu.android.sdk.activity.NiuniuGameRetrievePasswordActivity"/>
+    <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.niuniu.android.sdk.activity.NiuniuGameSelectImageActivity" android:theme="@style/NiuniuTheme.Transparent2"/>
+    <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.niuniu.android.sdk.activity.NiuniuGameForgetPasswordActivity"/>
+    <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.niuniu.android.sdk.activity.NiuniuGameChangePasswordActivity"/>
+    <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.niuniu.android.sdk.activity.NiuniuGameResetPasswordActivity"/>
+    <activity android:name="com.niuniu.android.sdk.activity.NiuniuGameWindowAdsActivity" android:theme="@style/NiuniuTheme.Transparent"/>
+    <activity android:name="com.niuniu.android.sdk.activity.NiuniuGameGridMenuActivity" android:theme="@style/NiuniuTheme.Transparent2"/>
+    <activity android:name="com.niuniu.android.sdk.activity.NiuniuGameNoticeActivity" android:theme="@style/NiuniuTheme.Transparent2"/>
+    <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.niuniu.android.sdk.activity.NiuniuGameBindSafePhoneActivity"/>
+    <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.niuniu.android.sdk.image.MultiImageSelectorActivity"/>
+    <activity android:name="com.niuniu.android.sdk.activity.NiuniuGameShareActivity" android:theme="@style/NiuniuTheme.Transparent2"/>
+    <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.niuniu.android.sdk.activity.NiuniuGameVoucherResultActivity" android:theme="@style/NiuniuTheme.Transparent2"/>
+    <service android:enabled="true" android:exported="false" android:name="com.niuniu.android.sdk.service.NiuniuGameMenuService"/>
+	</applicationConfig>
+
+</manifest>

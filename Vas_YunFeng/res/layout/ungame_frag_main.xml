@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/ungame_coner_black_tran_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/ungame_rel_main_usercenter"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.ungame.android.sdk.widget.CircleImageView
+                    android:id="@+id/ungame_imv_main_header"
+                    android:layout_centerVertical="true"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/ungame_ic_header_gray"/>
+
+                <TextView
+                    android:id="@+id/ungame_imv_main_nickname"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/white"
+                    android:layout_alignTop="@+id/ungame_imv_main_header"
+                    android:layout_toRightOf="@+id/ungame_imv_main_header"
+                    android:text="昵称"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/ungame_imv_main_gold"
+                    android:textSize="14sp"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@android:color/white"
+                    android:layout_below="@id/ungame_imv_main_nickname"
+                    android:layout_alignLeft="@id/ungame_imv_main_nickname"
+                    android:text="余额"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ungame_ic_arrow_white"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <View
+                android:background="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"/>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:id="@+id/ungame_lin_main_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

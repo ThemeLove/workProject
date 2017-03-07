@@ -20,6 +20,7 @@ import com.vas.vassdk.bean.VasRoleInfo;
 import com.vas.vassdk.bean.VasUserInfo;
 import com.vas.vassdk.http.VasHttpUtil;
 import com.vas.vassdk.util.VasMD5Util;
+import com.vas.vassdk.util.VasStatisticUtil;
 import com.yolanda.nohttp.RequestMethod;
 import com.yolanda.nohttp.rest.OnResponseListener;
 import com.yolanda.nohttp.rest.Request;
@@ -133,6 +134,7 @@ public class PPTVSDK
                 paramUserInfo.setToken(mToken);
                 VasSDK.getInstance().getVasLoginCallback().onSuccess(paramUserInfo);
                 PptvVasAgent.showFloatingView(mActivity);
+                VasStatisticUtil.sendStatistic(mUid, VasStatisticUtil.LOGIN);
             }
 
             @Override
@@ -326,6 +328,7 @@ public class PPTVSDK
             PptvVasAgent.statisticCreateRole(mActivity);
         }else{
             PptvVasAgent.statisticEnterGame(mActivity);
+            VasStatisticUtil.sendStatistic(mUid, VasStatisticUtil.ENTERGAME);
         }
     }
 

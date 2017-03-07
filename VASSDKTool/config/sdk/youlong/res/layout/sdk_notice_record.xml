@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_notice_record"
+        android:layout_width="280.0dip"
+        android:layout_height="240dip"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@color/content_bg" >
+
+        <RelativeLayout
+            android:id="@+id/ti_record_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/title_bg"
+            android:padding="10.0dip" >
+
+            <LinearLayout
+                android:id="@+id/ll_record_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:background="@drawable/dialog_back" />
+
+                <TextView
+                    android:id="@+id/tv_recrod_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="个人中心"
+                    android:textColor="@color/grey_text_bg"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_record_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="消息列表"
+                android:textColor="@color/light_white"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:id="@+id/iv_record_close"
+                android:layout_width="25.0dip"
+                android:layout_height="25.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/sdk_delet" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/ti_record_title_layout"
+            android:layout_margin="10.0dip"
+            android:background="@drawable/common_white_bg"
+            android:orientation="vertical"
+            android:paddingBottom="5.0dip"
+            android:paddingTop="5.0dip" >
+
+            <com.game.sdk.xlistview.XListView
+                android:id="@+id/lv_notice_record"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:divider="@color/tranparent"
+                android:listSelector="@drawable/list_item_selector"
+                android:scrollbarThumbVertical="@color/tranparent" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

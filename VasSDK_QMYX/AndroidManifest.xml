@@ -71,7 +71,7 @@
         <!-- hb sdk game_id begin -->
         <meta-data
             android:name="GAME_ID"
-            android:value="199999" >
+            android:value="100146" >
         </meta-data>
         <!-- 必须的activity声明end -->
     </application>

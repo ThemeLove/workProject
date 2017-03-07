@@ -8,9 +8,7 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.text.TextUtils;
 
-import com.gamecat.common.callback.CallBackUtil;
 import com.gamecat.floatwindow.FloatWindowService;
-import com.gamecat.pay.fragment.ConfirmPayFragment;
 import com.gamecat.sdk.GameCatSDK;
 import com.gamecat.sdk.GameCatSDKListener;
 import com.vas.vassdk.VasLoadingDialog;
@@ -23,12 +21,12 @@ import com.vas.vassdk.bean.VasUserInfo;
 import com.vas.vassdk.http.VasHttpUtil;
 import com.vas.vassdk.util.VASLogUtil;
 import com.vas.vassdk.util.VasMD5Util;
+import com.vas.vassdk.util.VasStatisticUtil;
 import com.yolanda.nohttp.RequestMethod;
 import com.yolanda.nohttp.rest.OnResponseListener;
 import com.yolanda.nohttp.rest.Request;
 import com.yolanda.nohttp.rest.Response;
 import com.yolanda.nohttp.rest.StringRequest;
-import com.zwxpay.android.h5_library.manager.CheckOderManager;
 
 public class GCSDK
 {
@@ -175,6 +173,7 @@ public class GCSDK
                 VasSDK.getInstance().getVasLoginCallback().onSuccess(paramUserInfo);
                 FloatWindowService.startService(mActivity,true);
                 mIsDisplayFloatWindow = true;
+                VasStatisticUtil.sendStatistic(mUid, VasStatisticUtil.LOGIN);
             }
             
             @Override
@@ -308,7 +307,9 @@ public class GCSDK
     
     
     public void setGameRoleInfo(VasRoleInfo paramGameRoleInfo, boolean paramBoolean){
-        
+        if(!paramBoolean){
+            VasStatisticUtil.sendStatistic(mUid, VasStatisticUtil.ENTERGAME);
+        }
     }
     
     

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/qmyx_17168_white">
+
+    <TextView
+        android:id="@+id/tv_pack_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/qmyx_17168_light_black"
+        android:textSize="@dimen/qmyx_17168_text_size_30"
+        tools:text="大话封神特殊礼包"/>
+
+    <TextView
+        android:id="@+id/tv_remain_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_pack_name"
+        android:layout_below="@+id/tv_pack_name"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/qmyx_17168_icon_gift_package_time"
+        android:drawablePadding="10dp"
+        android:textColor="@color/qmyx_17168_light_grey_2"
+        android:textSize="@dimen/qmyx_17168_text_size_24"
+        tools:text="剩余：120天"/>
+
+    <TextView
+        android:id="@+id/tv_pack_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_pack_name"
+        android:layout_below="@+id/tv_remain_time"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/qmyx_17168_icon_gift_package"
+        android:drawablePadding="10dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/qmyx_17168_light_grey_2"
+        android:textSize="@dimen/qmyx_17168_text_size_24"
+        tools:text="fsdfsdfsd0120fsdfsdfsd0120fsdfsdfsd0120fsdfsdfsd0120fsdfsdfsd0120"/>
+
+    <TextView
+        android:id="@+id/tv_get_or_use_pack"
+        android:layout_width="60dp"
+        android:layout_height="27dp"
+        android:layout_above="@+id/tv_pack_detail"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/qmyx_17168_selector_shape_hollow_orange_listen_click_10_radius"
+        android:gravity="center"
+        android:text="领取"
+        android:textColor="@color/qmyx_17168_origin"
+        android:textSize="@dimen/qmyx_17168_text_size_28"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/tv_pack_detail"/>
+
+</RelativeLayout>

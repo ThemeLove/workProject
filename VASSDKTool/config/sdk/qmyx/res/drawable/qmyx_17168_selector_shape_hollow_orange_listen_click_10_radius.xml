@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/qmyx_17168_shape_bg_hollow_orange_click_10_radius"
+          android:state_pressed="true"></item>
+    <item android:drawable="@drawable/qmyx_17168_shape_bg_hollow_orange_10_radius" android:state_pressed="false"></item>
+</selector>

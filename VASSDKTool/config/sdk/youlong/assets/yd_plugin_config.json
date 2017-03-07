@@ -1,0 +1,8 @@
+[
+  {"plugnName":"com.zzydgame.bridgezyzsdk.DKPAuth","type":"1"},
+  {"plugnName":"com.zzydgame.bridgezyzsdk.DKPLogin","type":"2"},
+  {"plugnName":"com.zzydgame.bridgezyzsdk.DKPPay","type":"3"},
+  {"plugnName":"com.zzydgame.bridgezyzsdk.DKPGetInfo","type":"4"},
+  {"plugnName":"com.zzydgame.bridgezyzsdk.DKPAppLife","type":"5"},
+  {"plugnName":"com.zzydgame.bridgezyzsdk.DKPOther","type":"6"}
+]

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/shape_bg_hollow_orange_stroke_click_1px_6radius" android:state_pressed="true"></item>
+    <item android:drawable="@drawable/shape_bg_hollow_orange_stroke_1px_6radius" android:state_pressed="false"></item>
+</selector>

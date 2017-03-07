@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#f5f5f5"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/ungame_txt_voucher_value"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/ungame_txv_voucher_name"
+            android:textSize="13sp"
+            android:textColor="@color/ungame_balck_text_default"
+            android:text="宝贝联盟国庆优惠券宝贝联盟国庆优惠券宝贝联盟国庆优惠券"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/ungame_txv_voucher_restrict_value"
+            android:layout_marginLeft="3dp"
+            android:textSize="12sp"
+            android:textColor="@color/ungame_gray_2"
+            android:text="(满30可用)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/ungame_ch_use_voucher"
+        android:checked="false"
+        android:background="@null"
+        android:button="@drawable/ungame_pay_check"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/ungame_ch_use_voucher"
+        android:layout_centerVertical="true"
+        android:id="@+id/ungame_txt_voucher_value"
+        android:textSize="14sp"
+        android:textColor="@color/ungame_black_light"
+        android:text="-￥10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

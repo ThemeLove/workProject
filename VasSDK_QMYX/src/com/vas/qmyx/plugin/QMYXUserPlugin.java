@@ -26,19 +26,19 @@ public class QMYXUserPlugin implements IUserPlugin
     @Override
     public void login()
     {
-        
+        VASQMYXSDK.getInstance().login();
     }
 
     @Override
     public void logout()
     {
-        
+        VASQMYXSDK.getInstance().logout();
     }
 
     @Override
     public void setGameRoleInfo(VasRoleInfo arg0, boolean arg1)
     {
-        
+        VASQMYXSDK.getInstance().setGameRoleInfo(arg0, arg1);
     }
 
 }

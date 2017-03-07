@@ -2,7 +2,7 @@
 <config>
 <param name="DEBUG" value="true" />
 <param name="GAMEID" value="pptv_m" />
-<param name="VAS_GAMEID" value="1017" />
+<param name="VAS_GAMEID" value="1" />
 <param name="VAS_PLATFORMID" value="3" />
 <param name="VAS_SUBPLATFORMID" value="0" />
 <param name="VAS_CHANNELID" value="1" />

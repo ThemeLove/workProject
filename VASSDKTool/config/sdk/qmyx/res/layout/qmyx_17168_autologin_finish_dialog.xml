@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/qmyx_17168_bg_dialog_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="47dp"
+            android:layout_height="match_parent"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:src="@drawable/qmyx_17168_launcher"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/tv_welcome_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="欢迎回来"
+                android:singleLine="true"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:textColor="@color/qmyx_17168_deep_grey"
+                android:textSize="@dimen/qmyx_17168_text_size_30"/>
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_toLeftOf="@+id/tv_welcome_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:maxEms="15"
+                android:gravity="center"
+                android:textColor="@color/qmyx_17168_origin"
+                android:textSize="@dimen/qmyx_17168_text_size_30"/>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

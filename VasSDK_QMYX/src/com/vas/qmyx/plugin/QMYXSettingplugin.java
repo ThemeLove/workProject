@@ -2,6 +2,7 @@ package com.vas.qmyx.plugin;
 
 import android.app.Activity;
 
+import com.vas.vassdk.VasSDKConfig;
 import com.vas.vassdk.plugin.ISettingPlugin;
 
 public class QMYXSettingplugin implements ISettingPlugin
@@ -34,7 +35,16 @@ public class QMYXSettingplugin implements ISettingPlugin
     @Override
     public int getSubPlatformId()
     {
-        return 0;
+        int type = -1;
+        try
+        {
+            type = Integer.parseInt(VasSDKConfig.VAS_SUBPLATFORMID);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return type;
     }
 
     @Override
@@ -46,7 +56,7 @@ public class QMYXSettingplugin implements ISettingPlugin
     @Override
     public boolean isSDKShowExitDialog()
     {
-        return false;
+        return true;
     }
 
     @Override

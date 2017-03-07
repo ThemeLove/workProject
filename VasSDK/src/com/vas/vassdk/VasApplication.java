@@ -26,7 +26,7 @@ public class VasApplication extends Application
         super.onCreate();
         if (listener != null)
         {
-            listener.onProxyCreate();
+            listener.onProxyCreate(this);
         }
         //对外提供的时候改为false
         NoHttp.initialize(this);
@@ -44,7 +44,7 @@ public class VasApplication extends Application
 
         if (this.listener != null)
         {
-            this.listener.onProxyAttachBaseContext(base);
+            this.listener.onProxyAttachBaseContext(this,base);
         }
     }
 
@@ -56,7 +56,7 @@ public class VasApplication extends Application
         
         if (this.listener != null)
         {
-            this.listener.onProxyConfigurationChanged(newConfig);
+            this.listener.onProxyConfigurationChanged(this,newConfig);
         }
     }
 

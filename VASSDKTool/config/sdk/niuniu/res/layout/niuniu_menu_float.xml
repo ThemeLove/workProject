@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:id="@+id/niuniu_lin_menu_content"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/niuniu_view_menu_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@null"/>
+
+        <LinearLayout
+            android:id="@+id/niuniu_lin_menu_content_left"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="@drawable/niuniu_menu_float_bg_left"
+            android:paddingTop="3dip"
+            android:paddingBottom="3dip">
+
+            <TextView
+                android:id="@+id/niuniu_menu_txv_pay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dip"
+                android:layout_weight="1"
+                android:background="@null"
+                android:drawableTop="@drawable/niuniu_menu_payment"
+                android:gravity="center_horizontal"
+                android:text="充值"
+                android:textColor="@color/niuniu_color_white"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/niuniu_menu_txv_account"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dip"
+                android:layout_weight="1"
+                android:background="@null"
+                android:drawableTop="@drawable/niuniu_menu_account"
+                android:drawablePadding="1dip"
+                android:gravity="center_horizontal"
+                android:text="账户"
+                android:textColor="@color/niuniu_color_white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/niuniu_menu_txv_feedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dip"
+                android:layout_weight="1"
+                android:background="@null"
+                android:drawableTop="@drawable/niuniu_menu_feedback"
+                android:gravity="center_horizontal"
+                android:text="客服"
+                android:textColor="@color/niuniu_color_white"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/niuniu_view_menu_2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@null"/>
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:id="@+id/niuniu_fly_float_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/niuniu_imv_menu_float"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/niuniu_menu_btn_menu"/>
+    </FrameLayout>
+
+</FrameLayout>

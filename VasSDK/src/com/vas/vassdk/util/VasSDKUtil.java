@@ -15,7 +15,9 @@ import javax.crypto.KeyGenerator;
 import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -279,6 +281,16 @@ public class VasSDKUtil {
             VASLogUtil.e("to json fail 【" + data + "】", ex);
         }
         return result;
+    }
+    
+    public static boolean isFirstActive(Activity activity){
+        SharedPreferences setting = activity.getSharedPreferences(VasStatisticUtil.ACTIVE_NAME, 0);  
+        boolean user_first = setting.getBoolean("FIRST",true);  
+        if(user_first){//第一次  
+            setting.edit().putBoolean("FIRST", false).commit(); 
+            return true;
+         }
+        return false;
     }
     
 }

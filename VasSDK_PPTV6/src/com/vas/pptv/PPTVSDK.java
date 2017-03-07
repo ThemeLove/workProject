@@ -6,6 +6,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -23,7 +24,9 @@ import com.vas.vassdk.bean.VasOrderInfo;
 import com.vas.vassdk.bean.VasRoleInfo;
 import com.vas.vassdk.bean.VasUserInfo;
 import com.vas.vassdk.http.VasHttpUtil;
+import com.vas.vassdk.util.VASLogUtil;
 import com.vas.vassdk.util.VasMD5Util;
+import com.vas.vassdk.util.VasStatisticUtil;
 import com.yolanda.nohttp.RequestMethod;
 import com.yolanda.nohttp.rest.OnResponseListener;
 import com.yolanda.nohttp.rest.Request;
@@ -115,6 +118,10 @@ public class PPTVSDK
 
     public void login()
     {
+        channelLogin();
+    }
+    
+    private void channelLogin(){
         PptvVasAgent.startLoginActivity(mActivity, new LoginListener()
         {
 
@@ -133,6 +140,7 @@ public class PPTVSDK
                 paramUserInfo.setUserName(mAccount);
                 paramUserInfo.setToken(mToken);
                 VasSDK.getInstance().getVasLoginCallback().onSuccess(paramUserInfo);
+                VasStatisticUtil.sendStatistic(mUid, VasStatisticUtil.LOGIN);
             }
 
             @Override
@@ -150,6 +158,11 @@ public class PPTVSDK
 
     public void setGameRoleInfo(VasRoleInfo roleInfo, boolean isCreateRole)
     {
+        String level = "0";
+        if(roleInfo!= null){
+            level = roleInfo.getRoleLevel();
+        }
+        VASLogUtil.d("setGameRoleInfo : " + "isCreateRole = " + isCreateRole + ",roleLevel = " + level);
         if (isCreateRole)
         {
             PptvVasAgent.statisticCreateRole(mActivity);
@@ -157,6 +170,7 @@ public class PPTVSDK
         else
         {
             PptvVasAgent.statisticEnterGame(mActivity);
+            VasStatisticUtil.sendStatistic(mUid, VasStatisticUtil.ENTERGAME);
         }
     }
 

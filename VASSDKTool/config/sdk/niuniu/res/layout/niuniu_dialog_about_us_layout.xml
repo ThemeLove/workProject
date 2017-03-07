@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="340dip"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="340dip"
+        android:layout_height="wrap_content"
+        android:background="@drawable/niuniu_conner_bg">
+        <ScrollView
+            android:layout_width="340dip"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="340dip"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dip"
+                        android:textColor="@color/black_dark"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text="@string/niuniu_text_about_us"/>
+                    <ImageButton
+                        android:id="@+id/niuniu_dialog_about_us_colse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:src="@drawable/ic_menu_back"/>
+
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/gray_light"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="50dip"
+                        android:src="@drawable/niuniu_dialog_about_us_logo"/>
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/niuniu_dialog_about_us_txv_ver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:background="@drawable/niuniu_btn_forget_password"/>
+
+               <TextView
+                    android:layout_marginTop="150dip"
+                    android:layout_marginBottom="30dip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:text="@string/niuniu_about_us"/>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

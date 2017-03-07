@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/ungame_view_title_default" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ungame_common_act_gray_bg"
+        android:orientation="vertical">
+
+        <com.ungame.android.sdk.loadretry.BasicEmptyView
+            android:id="@+id/ungame_bev_voucher_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:scrollbars="none"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <!--订单金额-->
+                    <RelativeLayout
+                        android:padding="10dp"
+                        android:background="@drawable/ungame_coner_white_light_gray"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        
+                        <TextView
+                            android:id="@+id/ungame_txt_order_money_lable"
+                            style="@style/ungame_user_text_default"
+                            android:text="订单金额："
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:layout_toRightOf="@id/ungame_txt_order_money_lable"
+                            android:id="@+id/ungame_txt_order_money"
+                            android:textSize="14sp"
+                            android:textColor="@color/ungame_red"
+                            android:text="￥46"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:layout_below="@id/ungame_txt_order_money_lable"
+                            android:id="@+id/ungame_txt_accout"
+                            android:textSize="12sp"
+                            android:textColor="@color/ungame_gray_2"
+                            android:text="￥46"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </RelativeLayout>
+
+                    <!--支付信息-->
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/ungame_coner_white_light_gray"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!--1、代金券-->
+                        <LinearLayout
+                            android:id="@+id/ungame_lin_voucher_layout"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RelativeLayout
+                                android:padding="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_centerVertical="true"
+                                    android:id="@+id/ungame_txt_order_voucher_lable"
+                                    style="@style/ungame_user_text_default"
+                                    android:text="代金券："
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:layout_centerVertical="true"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp"
+                                    android:layout_toRightOf="@+id/ungame_txt_order_voucher_lable"
+                                    android:id="@+id/ungame_txt_order_voucher_count"
+                                    android:textSize="13sp"
+                                    android:textColor="@android:color/white"
+                                    android:background="@color/ungame_red"
+                                    android:text="2张可用"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <ImageView
+                                    android:padding="5dp"
+                                    android:id="@+id/ungame_imv_voucher_arrow"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/ungame_arrow_up"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:layout_marginRight="10dp"
+                                    android:layout_toLeftOf="@+id/ungame_imv_voucher_arrow"
+                                    android:layout_centerVertical="true"
+                                    android:id="@+id/ungame_txt_voucher_total_value"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/ungame_black_light"
+                                    android:text="-￥10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:id="@+id/ungame_lin_voucher_list"
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:background="#efefef"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <!--2、金币支付-->
+                        <RelativeLayout
+                            android:padding="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_centerVertical="true"
+                                android:id="@+id/ungame_txt_order_gold_use_lable"
+                                style="@style/ungame_user_text_default"
+                                android:text="使用乐币金额："
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <CheckBox
+                                android:id="@+id/ungame_ch_use_gold"
+                                android:checked="true"
+                                android:background="@null"
+                                android:button="@drawable/ungame_pay_check"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_marginRight="10dp"
+                                android:layout_toLeftOf="@+id/ungame_ch_use_gold"
+                                android:layout_centerVertical="true"
+                                android:id="@+id/ungame_txt_order_gold_use"
+                                android:textSize="14sp"
+                                android:textColor="@color/ungame_black_light"
+                                android:text="-￥10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </RelativeLayout>
+
+                        <View
+                            android:background="#efefef"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <!--3、还需支付-->
+                        <RelativeLayout
+                            android:padding="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_centerVertical="true"
+                                android:id="@+id/ungame_txt_order_need_pay_lable"
+                                style="@style/ungame_user_text_default"
+                                android:text="还需支付："
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <CheckBox
+                                android:id="@+id/ungame_ch_order_need_pay"
+                                android:visibility="invisible"
+                                android:checked="true"
+                                android:background="@null"
+                                android:button="@drawable/ungame_pay_check"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_marginRight="10dp"
+                               android:layout_toLeftOf="@id/ungame_ch_order_need_pay"
+                                android:layout_centerVertical="true"
+                                android:id="@+id/ungame_txt_order_need_pay"
+                                android:textSize="14sp"
+                                android:textColor="@color/ungame_red"
+                                android:text="-￥34.0"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <!--选择支付方式-->
+                    <LinearLayout
+                        android:id="@+id/ungame_lin_pay_method"
+                        android:padding="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ungame_coner_white_light_gray"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                style="@style/ungame_user_text_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="选择支付方式:" />
+
+                            <ImageView
+                                android:id="@+id/ungame_imv_pay_method_arrow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:padding="5dp"
+                                android:src="@drawable/ungame_arrow_down" />
+                        </RelativeLayout>
+
+                        <GridView
+                            android:listSelector="@android:color/transparent"
+                            android:cacheColorHint="@android:color/transparent"
+                            android:layout_marginTop="15dp"
+                            android:verticalSpacing="10dp"
+                            android:horizontalSpacing="10dp"
+                            android:id="@+id/ungame_gv_pay_method_list"
+                            android:numColumns="3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    </LinearLayout>
+
+                    <!--立即支付-->
+                    <com.ungame.android.sdk.widget.RoundButton
+                        android:text="@string/ungame_lable_pay_right_now"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/ungame_txv_go_pay"
+                        android:layout_height="38dp"
+                        android:textColor="@android:color/white"
+                        android:layout_width="match_parent"
+                        android:clickable="true"
+                        android:enabled="true"
+                        app:btnCornerRadius="10dp"
+                        app:btnPressedRatio="0.8"
+                        app:btnSolidColor="@color/ungame_red"/>
+
+                </LinearLayout>
+            </ScrollView>
+
+        </com.ungame.android.sdk.loadretry.BasicEmptyView>
+
+    </LinearLayout>
+
+</LinearLayout>

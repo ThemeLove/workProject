@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<permissionConfig>
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	</permissionConfig>
+
+	<applicationConfig>
+    <activity android:name="com.dianyou.pay.DYPayActivity"
+			android:configChanges="keyboardHidden|navigation|orientation|screenSize"
+			android:exported="false" android:launchMode="singleTop"
+			android:screenOrientation="behind"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+	<activity android:name="com.dianyou.pay.DYControlMethodActivity"
+			android:configChanges="keyboardHidden|navigation|orientation|screenSize"
+			android:exported="false" android:launchMode="singleTop"
+			android:screenOrientation="behind"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+	<activity
+			android:name="com.ipaynow.wechatpay.plugin.inner_plugin.wechat_plugin.activity.WeChatNotifyActivity"
+			android:configChanges="orientation|keyboardHidden|keyboard|smallestScreenSize|locale|screenLayout"
+			android:screenOrientation="behind" android:theme="@android:style/Theme.Translucent" />
+	<activity android:name="com.alipay.sdk.app.H5PayActivity"
+			android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+			android:exported="false" android:screenOrientation="behind"
+			android:windowSoftInputMode="adjustResize|stateHidden" />
+	</applicationConfig>
+
+</manifest>

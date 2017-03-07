@@ -32,13 +32,13 @@ public class DYUserPlugin implements IUserPlugin
     @Override
     public void logout()
     {
-        
+        DianYouSDK.getInstance().logout();
     }
 
     @Override
     public void setGameRoleInfo(VasRoleInfo arg0, boolean arg1)
     {
-        
+        DianYouSDK.getInstance().setGameRoleInfo(arg0, arg1);
     }
 
 }

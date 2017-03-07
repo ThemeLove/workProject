@@ -7,7 +7,6 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.text.TextUtils;
 
 import com.niuniu.android.sdk.NiuniuGame;
 import com.niuniu.android.sdk.extra.NiuniuGameCode;
@@ -22,7 +21,9 @@ import com.vas.vassdk.bean.VasOrderInfo;
 import com.vas.vassdk.bean.VasRoleInfo;
 import com.vas.vassdk.bean.VasUserInfo;
 import com.vas.vassdk.http.VasHttpUtil;
+import com.vas.vassdk.util.VASLogUtil;
 import com.vas.vassdk.util.VasMD5Util;
+import com.vas.vassdk.util.VasStatisticUtil;
 import com.yolanda.nohttp.RequestMethod;
 import com.yolanda.nohttp.rest.OnResponseListener;
 import com.yolanda.nohttp.rest.Request;
@@ -42,6 +43,8 @@ public class NiuNiuSDK
     private String mToken;
 
     private static final int REQUEST_ORDER = 1;
+    
+    private static final int REQUEST_LOGIN = 2;
     
     private VasUserInfo mUserInfo;
 
@@ -166,6 +169,19 @@ public class NiuNiuSDK
             {
                
                 case NiuniuGameCode.SWITCHACCOUNT:
+                    NiuniuGameUserInfo nnUserInfo = NiuniuGame.getInstance().getUserInfo();
+                    if(nnUserInfo != null){
+                        VasUserInfo userInfo = new VasUserInfo();
+                        mUid = nnUserInfo.getUserId();
+                        mToken = nnUserInfo.getUserToken();
+                        mAccount = nnUserInfo.getNickName();
+                        userInfo.setUid(mUid);
+                        userInfo.setToken(mToken);
+                        userInfo.setUserName(mAccount);
+                        VasSDK.getInstance().getVasSwitchAccountCallback().onSuccess(userInfo);
+                        getUserKey();
+                        VasStatisticUtil.sendStatistic(mUid, VasStatisticUtil.LOGIN);
+                    }
                     break;
                  // 注销
                 case NiuniuGameCode.LOGOUTSUCCESS:
@@ -203,6 +219,7 @@ public class NiuNiuSDK
                     mUserInfo.setUserName(mAccount);
                     VasSDK.getInstance().getVasLoginCallback().onSuccess(mUserInfo);
                     NiuniuGame.getInstance().showLogoButton(mActivity);// 显示悬浮框
+                    getUserKey();
                 }
                 else if (NiuniuGameCode.ERROR == code)
                 {
@@ -215,6 +232,57 @@ public class NiuNiuSDK
             }
         });
     }
+    
+    
+    private void getUserKey()
+    {
+        String time = System.currentTimeMillis() + "";
+        Request<String> request = new StringRequest("http://game.g.pptv.com/api/sdk/integration/check_user_info.php",
+                RequestMethod.POST);
+        TreeMap<String, String> treeMap = new TreeMap<String, String>();
+        treeMap.put("user_id", mUid);
+        treeMap.put("username", mAccount);
+        treeMap.put("token", mToken);
+        treeMap.put("platform", VasSDKConfig.VAS_PLATFORMID);
+        treeMap.put("sub_platform", VasSDKConfig.VAS_SUBPLATFORMID);
+        treeMap.put("time", time);
+        treeMap.put("channel", "pptv");
+        treeMap.put("gid", VasSDKConfig.VAS_GAMEID);
+        String sign = new VasMD5Util().MD5EncryptString(treeMap, VasSDKConfig.getInstance().getConfig("VAS_LOGINKEY"));
+        request.add(treeMap);
+        request.add("sign", sign);
+        VasHttpUtil.getInstance().add(REQUEST_LOGIN, request, new OnResponseListener<String>()
+        {
+
+            @Override
+            public void onFailed(int arg0, String arg1, Object arg2, Exception arg3, int arg4, long arg5)
+            {
+                
+            }
+
+            @Override
+            public void onFinish(int arg0)
+            {
+            }
+
+            @Override
+            public void onStart(int arg0)
+            {
+            }
+
+            @Override
+            public void onSucceed(int arg0, Response<String> response)
+            {
+                if (response.getHeaders().getResponseCode() == 200)
+                {// 请求成功。
+                    String result = response.get();
+                    VASLogUtil.d("login succeed:" + result);
+                }
+            }
+        });
+    }
+    
+    
 
     public void logout()
     {
@@ -348,14 +416,18 @@ public class NiuNiuSDK
         int roleLevel = 0;
         try
         {
-            roleLevel = Integer.getInteger(roleInfo.getRoleLevel());
+            roleLevel = Integer.parseInt(roleInfo.getRoleLevel());
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
+        VASLogUtil.d("setGameRoleInfo : " + "roleLevel = " + roleLevel + ",isCreateRole = " + isCreateRole);
         NiuniuGame.getInstance().setPlayerAndServerInfo(roleInfo.getRoleId(), roleInfo.getRoleName(), roleLevel,
                 roleInfo.getServerId(), roleInfo.getServerName());
+        if(!isCreateRole){
+            VasStatisticUtil.sendStatistic(mUid, VasStatisticUtil.ENTERGAME);
+        }
     }
 
 }

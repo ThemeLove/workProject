@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<config>
+    <operations>
+        <operation step="1" type="merge" from="SDKManifest.xml" to="AndroidManifest.xml" />
+        <operation step="2" type="copy" from="libs" to="lib" />
+        <operation step="3" type="copy" from="assets" to="assets" />
+    </operations>
+<plugins>
+	<plugin name="com.vas.dianyou.plugin.DYUserPlugin" type="1" />
+	<plugin name="com.vas.dianyou.plugin.DYPayPlugin"  type="2"/>
+	<plugin name="com.vas.dianyou.plugin.DYSettingPlugin"  type="3"/>
+</plugins>
+<applications>
+	 <application name="com.vas.dianyou.plugin.DYApplication"/>
+</applications>
+</config>

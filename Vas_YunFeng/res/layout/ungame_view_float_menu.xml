@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ungame_float_game_menu"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/ungame_float_game_frl"
+        android:layout_width="50dp"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/ungame_float_game_logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ungame_image_float_logo" />
+
+        <ImageView
+            android:id="@+id/ungame_float_game_loader"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ungame_float_anim_background" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/ungame_float_game_red_dot"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            android:layout_gravity="right|top"
+            android:src="@drawable/ungame_image_float_red_dot"
+            android:layout_width="15dp"
+            android:layout_height="15dp" />
+
+    </FrameLayout>
+
+</FrameLayout>

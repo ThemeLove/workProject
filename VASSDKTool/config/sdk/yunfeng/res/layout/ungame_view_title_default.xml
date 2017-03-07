@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/ungame_title_height"
+    android:background="@drawable/ungame_common_title_bg">
+
+    <TextView
+        android:lines="1"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:ellipsize="end"
+        android:id="@+id/ungame_txv_pager_title"
+        android:layout_centerInParent="true"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/ungame_imv_pager_back"
+        android:layout_marginLeft="15dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingRight="10dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ungame_ic_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/ungame_imv_pager_right"
+        android:layout_marginRight="15dp"
+        android:padding="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ungame_ic_title_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

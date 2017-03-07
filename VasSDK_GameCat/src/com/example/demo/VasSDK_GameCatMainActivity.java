@@ -244,6 +244,8 @@ public class VasSDK_GameCatMainActivity extends Activity
             public void onClick(View v)
             {
                 VasSDK.getInstance().logout();
+                VasSDK.getInstance().login();
+                VasSDK.getInstance().login();
             }
         });
         mPayBtn.setOnClickListener(new OnClickListener()

@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <config>
 <param name="DEBUG" value="true" />
-<param name="APPID" value="107352" />
-<param name="APPKEY" value="YGRD7YZMGT2PXS4B" />
+<param name="APPID" value="107548" />
+<param name="APPKEY" value="0LEGGPLHRX2ZRB11" />
 <param name="RATE" value="10" />
 <param name="VAS_GAMEID" value="1" />
 <param name="VAS_PLATFORMID" value="5" />

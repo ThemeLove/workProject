@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/ungame_coner_white_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/ungame_view_title_default"/>
+
+    <com.ungame.android.sdk.loadretry.BasicEmptyView
+        android:id="@+id/ungame_bev_common_web_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.ungame.android.sdk.widget.RoundAngleFrameLayout
+            android:id="@+id/ungame_frl_web_content"
+            app:bottomLeftRadius="8dp"
+            app:bottomRightRadius="8dp"
+            app:topLeftRadius="0dp"
+            app:topRightRadius="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <WebView
+                android:id="@+id/ungame_wv_common_webview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </com.ungame.android.sdk.widget.RoundAngleFrameLayout>
+
+
+    </com.ungame.android.sdk.loadretry.BasicEmptyView>
+
+</LinearLayout>

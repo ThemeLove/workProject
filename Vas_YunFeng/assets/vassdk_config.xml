@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<config>
+<param name="VAS_ORIENTATION" value="0" /> <!-- 0横屏 1竖屏 -->
+<param name="VAS_GAMEID" value="1" />
+<param name="VAS_PLATFORMID" value="13" />
+<param name="VAS_SUBPLATFORMID" value="0" />
+<param name="VAS_CHANNELID" value="1" />
+<param name="VAS_SUBCHANNEL_ID" value="1" />
+<plugins>
+<plugin name="com.vas.yunfeng.plugin.YFUserPlugin" type="1" />
+<plugin name="com.vas.yunfeng.plugin.YFPayPlugin"  type="2"/>
+<plugin name="com.vas.yunfeng.plugin.YFSettingPlugin"  type="3"/>
+</plugins>
+<applications>
+	 <application name="com.vas.yunfeng.plugin.YFApplication"/>
+</applications>
+</config>

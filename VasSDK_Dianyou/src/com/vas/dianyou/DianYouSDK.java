@@ -25,6 +25,7 @@ import com.vas.vassdk.bean.VasRoleInfo;
 import com.vas.vassdk.bean.VasUserInfo;
 import com.vas.vassdk.http.VasHttpUtil;
 import com.vas.vassdk.util.VasMD5Util;
+import com.vas.vassdk.util.VasStatisticUtil;
 import com.yolanda.nohttp.RequestMethod;
 import com.yolanda.nohttp.rest.OnResponseListener;
 import com.yolanda.nohttp.rest.Request;
@@ -80,7 +81,6 @@ public class DianYouSDK
     }
     
     private void channelInit(){
-        DYSDK.init(mActivity.getApplicationContext());
         VasSDK.getInstance().getVasInitCallback().onSuccess();
     }
     
@@ -110,6 +110,7 @@ public class DianYouSDK
                     paramUserInfo.setUserName(mAccount);
                     paramUserInfo.setToken(mToken);
                     VasSDK.getInstance().getVasLoginCallback().onSuccess(paramUserInfo);
+                    VasStatisticUtil.sendStatistic(mUid, VasStatisticUtil.LOGIN);
                 }
             }
             
@@ -236,7 +237,7 @@ public class DianYouSDK
             {
                 String oid = dataObj.optString("oid");
                 orderinfo.setOrderId(oid);// 设置聚合SDK的订单号
-                channalPay(orderinfo, roleInfo);
+                channelPay(orderinfo, roleInfo);
             }
             else
             {
@@ -250,7 +251,7 @@ public class DianYouSDK
         }
     }
     
-    private void channalPay(final VasOrderInfo orderinfo, VasRoleInfo roleInfo){
+    private void channelPay(final VasOrderInfo orderinfo, VasRoleInfo roleInfo){
         // 注意渠道SDK的参数orderid要传聚合SDK生成的oid,和callbackUrl
         orderinfo.setCallbackUrl("http://game.g.pptv.com/notify/dianyou/" + VasSDKConfig.VAS_GAMEID);
         DYPaySDK.payOrder(mActivity, orderinfo.getOrderId(), orderinfo.getGoodsId(),
@@ -268,6 +269,13 @@ public class DianYouSDK
                                 remain, "");
                     }
                 });
+    }
+    
+    
+    public void setGameRoleInfo(VasRoleInfo roleInfo, boolean isCreateRole){
+        if(!isCreateRole){
+            VasStatisticUtil.sendStatistic(mUid, VasStatisticUtil.ENTERGAME);
+        }
     }
     
 }

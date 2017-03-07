@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:background="@drawable/qmyx_17168_shape_bg_input"
+        android:id="@+id/ll_phone"
+        android:layout_below="@+id/header_nav"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent">
+
+        <EditText
+            android:background="@null"
+            android:drawableLeft="@drawable/qmyx_17168_icon_mobile_phone_account"
+            android:drawablePadding="18dp"
+            android:hint="请输入中国大陆手机号"
+            android:id="@+id/et_phone"
+            android:inputType="phone"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:maxLength="11"
+            android:paddingLeft="18dp"
+            android:singleLine="true"
+            android:textColor="@color/qmyx_17168_deep_black"
+            android:textColorHint="@color/qmyx_17168_default_grey"
+            android:textSize="@dimen/qmyx_17168_text_size_30"/>
+
+        <ImageView
+            android:id="@+id/iv_phone_num_delete"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:src="@drawable/qmyx_17168_icon_registered_undo"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_verification"
+        android:layout_below="@+id/ll_phone"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <EditText
+            android:background="@drawable/qmyx_17168_shape_bg_input"
+            android:drawableLeft="@drawable/qmyx_17168_icon_verification_code"
+            android:drawablePadding="18dp"
+            android:hint="验证码"
+            android:id="@+id/et_verification_code"
+            android:inputType="number"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:paddingLeft="18dp"
+            android:singleLine="true"
+            android:textColor="@color/qmyx_17168_deep_black"
+            android:textColorHint="@color/qmyx_17168_default_grey"
+            android:textSize="@dimen/qmyx_17168_text_size_30"/>
+
+        <TextView
+            android:background="@drawable/qmyx_17168_selector_shape_hollow_orange_listen_click_6_radius"
+            android:gravity="center"
+            android:id="@+id/btn_getVerify"
+            android:layout_gravity="center_vertical"
+            android:layout_height="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="85dp"
+            android:text="@string/qmyx_17168_get_verification"
+            android:textColor="@color/qmyx_17168_origin"
+            android:textSize="@dimen/qmyx_17168_text_size_24"/>
+    </LinearLayout>
+
+    <Button
+        style="@style/qmyx_17168_style_buttom_confirm"
+        android:id="@+id/btn_login"
+        android:layout_alignParentBottom="false"
+        android:layout_below="@+id/ll_verification"
+        android:layout_marginTop="15dp"
+        android:text="登录"/>
+
+    <LinearLayout
+        android:layout_below="@+id/btn_login"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:background="@drawable/qmyx_17168_user_protocol_selected"
+            android:button="@null"
+            android:checked="true"
+            android:id="@+id/cb_user_protocol"
+            android:layout_height="19dp"
+            android:layout_width="19dp"/>
+
+        <TextView
+            style="@style/qmyx_17168_style_grey_text"
+            android:id="@+id/tv_agree"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/cb_user_protocol"
+            android:text="@string/qmyx_17168_read_and_agree"/>
+
+        <TextView
+            style="@style/qmyx_17168_style_blue_text"
+            android:gravity="center_vertical"
+            android:id="@+id/tv_user_protocol"
+            android:layout_toRightOf="@id/tv_agree"
+            android:text="@string/qmyx_17168_user_protocol"/>
+    </LinearLayout>
+
+</RelativeLayout>

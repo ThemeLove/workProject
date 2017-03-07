@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/layout_dialog_clear_cache"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:background="@color/qmyx_17168_transeparent">
+
+    <RelativeLayout
+        android:id="@+id/rl_delete_apk_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="@color/qmyx_17168_white">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:text="登录失败"
+            android:textColor="@color/qmyx_17168_deep_black"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/tv_delete_apk_tip"
+            android:layout_width="match_parent"
+            android:layout_height="98dp"
+            android:layout_below="@id/tv_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="1.5"
+            android:text="@string/num_close_down"
+            android:textColor="@color/qmyx_17168_light_black"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/tv_qq_1"
+            android:layout_below="@+id/tv_delete_apk_tip"
+            android:layout_width="120dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:background="@drawable/qmyx_17168_bg_button_service"
+            android:drawableLeft="@drawable/qmyx_17168_customer_qq"
+            android:gravity="center"
+            android:paddingLeft="2dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/qmyx_17168_service_qq"
+            android:textColor="@color/qmyx_17168_white"
+            android:textSize="@dimen/qmyx_17168_text_size_28" />
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/qmyx_17168_icon_shut_down"/>
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<permissionConfig>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="andorid.permission.MONUN_UNMOUNT_FILESYSTEMS" /> 
+	</permissionConfig>
+
+	<applicationConfig>
+       <activity
+            android:name="com.zqsdk.a07073sy.ui.H5WebActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="sensor"
+            android:theme="@style/CY_DialogTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <receiver android:name="com.zqsdk.a07073sy.pay.wechat.AppReciver_zqhy" >
+            <intent-filter>
+                <action android:name="com.zqhy.wxpay.plugin.recive" />
+            </intent-filter>
+        </receiver>
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />	    
+	</applicationConfig>
+
+</manifest>

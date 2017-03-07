@@ -34,11 +34,11 @@
         </activity>
         <!-- 联运SDK相关配置开始 -->
 		<meta-data android:name="com.dianyou.game.api.GAME_ID"
-			android:value="ormThYe5g98=" />
+			android:value="3kq0gi18lm4=" />
 		<meta-data android:name="com.dianyou.game.api.APP_KEY"
-			android:value="0589983ddf451036" />
+			android:value="d026709ed1208cce" />
 		<meta-data android:name="com.dianyou.game.APP_SECRET"
-			android:value="804ad1f4f25159ecc8a55259cb83977d0eefa539c302c4fd" />
+			android:value="319d53d67aa8cf94c712212718e63d936e4d83321d6106a8" />
 
 		<!-- 点游支付中心 -->
 		<activity android:name="com.dianyou.pay.DYPayActivity"

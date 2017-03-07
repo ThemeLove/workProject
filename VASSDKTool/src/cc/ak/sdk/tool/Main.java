@@ -401,6 +401,11 @@ public class Main
                     size = 32;
                     iconMarkPath += "drawable-ldpi" + File.separator + gameChannel.getIcon() + ".png";
                 }
+                else if (file.getName().indexOf("drawable-mdpi") != -1)
+                {
+                    size = 48;
+                    iconMarkPath += "drawable-mdpi" + File.separator + gameChannel.getIcon() + ".png";
+                }
                 else if (file.getName().indexOf("drawable-hdpi") != -1)
                 {
                     size = 72;
@@ -446,9 +451,9 @@ public class Main
 
                     System.out.println("角标 size = " + size + ",iconMarkPath = " + iconMarkPath);
                     System.out.println("iconFile.getPath() " + iconFile.getPath());
-                    // 将角标图片压缩
-//                     Thumbnails.of(iconMark.getPath()).size(size,
-//                     size).keepAspectRatio(true).toFile(iconMark.getPath());
+                     // 将角标图片压缩
+                     Thumbnails.of(iconMark.getPath()).size(size,
+                     size).keepAspectRatio(true).toFile(iconMark.getPath());
                     // 将icon图片压缩
                     // Thumbnails.of(iconFile.getPath()).size(size,
                     // size).keepAspectRatio(true).toFile(iconFile.getPath());
@@ -742,12 +747,6 @@ public class Main
 
         System.out.println("oldPackageVal = " + oldPackageVal);
         String newPackageVal = "";
-        // if (gameChannel.getSuffix() == null) {
-        // newPackageVal = "com.xmfriends.sjyh"; //新包名
-        // } else {
-        // newPackageVal = "com.xmfriends.sjyh" + gameChannel.getSuffix();
-        // //新包名
-        // }
 
         if (gameChannel.getSuffix() == null)
         {// 打包的时候注意修改包名

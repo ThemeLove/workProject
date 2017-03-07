@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.vas_yunfeng"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="21" />
+    
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!--需要申请权限-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!-- 盛付通-->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="com.sdp.permission.WALLET_PAY"/>
+
+    <application
+        android:name="com.vas.vassdk.VasApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".VasSDK_YFMainActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:screenOrientation="landscape"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--一键注册-->
+        <activity
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="behind"
+            android:name="com.ungame.android.sdk.activity.UngameFrameActivity"
+            android:theme="@style/UngameTheme.ActivityDialog"/>
+
+        <!-- 支付宝 begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <!-- 支付宝 end -->
+
+        <!-- 盛付通-->
+        <activity
+            android:name="com.shengpay.express.smc.ExpressSmcClientActivity"
+            android:screenOrientation="behind"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <!--威富通-->
+        <activity
+            android:screenOrientation="behind"
+            android:name="com.switfpass.pay.activity.PayResultActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+
+        <!-- 盛付通 wap wechat-->
+        <activity
+            android:configChanges="keyboardHidden|orientation|screenSize|navigation"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            android:name="com.switfpass.pay.activity.QQWapPayWebView"/>
+
+        <service android:name="com.ungame.android.sdk.floatmenu.FloatMenuService"/>
+        
+        <!-- 设置appid -->
+        <meta-data android:name="UMGAME_PID" android:value="94"/>
+        <meta-data android:name="UMGAME_APP_KEY" android:value="4db813a2c0194147a2f3248af73d44a1"/>
+        
+    </application>
+
+</manifest>
